@@ -34,5 +34,4 @@ Wondering how to get this thing working? Well, do we have the READMEs for you!
 
 **What is the MERN stack?**
 
-MERN stands for MongoDB, Express, React, Node which are the technologies
-used in this template.
+MERN stands for MongoDB, Express, React, Node which are the technologies used in this template.
