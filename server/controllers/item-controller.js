@@ -1,4 +1,3 @@
-/* eslint-disable no-undef, arrow-body-style */
 const Item = require('../models/item-model');
 
 getItems = async (req, res) => {

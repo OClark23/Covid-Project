@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -24,3 +23,7 @@ app.use('/api', itemRouter);
 app.listen(apiPort, () => {
     console.log(`[Hack.Diversity React Template] - Server running on port ${apiPort}`);
 });
+
+app.listen(process.env.PORT || 3001, () => {
+    console.log(`app is running on port ${process.env.PORT}`);
+  });
