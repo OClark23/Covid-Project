@@ -1,0 +1,233 @@
+patient_Id,Diag to img study (days),Diagnosis to Imaging time (hrs),Image Study Description,study modality,FIO2 @ time of img study,key_findings,png_filename,exam_Id
+COVID-19-AR-16434409,0,15,XR CHEST AP PORTABLE,DX,,Subtle patchy bibasilar and right upper lobe airspace  opacities,COVID-19-AR-16434409_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16434381,0,18,XR CHEST AP PORTABLE,DX,,Streaky opacities in bilateral mid and left lower lung.  Patchy opacities  in the right lower lung.  No pleural effusion.  ,COVID-19-AR-16434381_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16434381,2,56,XR CHEST AP ONLY,DX,,Lung volumes remain low but there appears to have been clearing since  prior radiograph,COVID-19-AR-16434381_XR_CHEST_AP_ONLY_1.png,Exam-2
+COVID-19-AR-16406513,0,19,XR CHEST PA AND LATERAL,"CR,DX",," patchy increased opacity in the lower lobes bilaterally, more pronounced on the lateral view.  Small pleural effusions ",COVID-19-AR-16406513_XR_CHEST_PA_AND_LATERAL_2.png,Exam-1
+COVID-19-AR-16406513,2,51,XR CHEST AP PORTABLE,DX,,"Patchy, airspace opacities are seen within the bilateral lower lungs, predominantly left-sided.  Haziness of the left costophrenic angle.  ",COVID-19-AR-16406513_XR_CHEST_AP_PORTABLE_3.png,Exam-3
+COVID-19-AR-16439216,0,16,XR CHEST AP PORTABLE,DX,,No relevant findings,COVID-19-AR-16439216_XR_CHEST_AP_PORTABLE_3.png,Exam-1
+COVID-19-AR-16439216,4,98,XR CHEST AP PORTABLE,DX,,Interval development of patchy areas of consolidation predominately in  the lung bases suspicious for infection.,COVID-19-AR-16439216_XR_CHEST_AP_PORTABLE_3.png,Exam-2
+COVID-19-AR-16406491,10,254,XR CHEST AP PORTABLE,DX,,There has been development of bilateral lower lobe airspace disease  consistent with multilobar pneumonia,COVID-19-AR-16406491_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406496,0,21,XR CHEST AP PORTABLE,DX,,Patchy ground-glass opacities in the left lung and in the right lower  lobe which may be infectious in etiology,COVID-19-AR-16406496_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406496,2,55,XR CHEST AP ONLY,DX,,Patchy ground-glass  changes are seen within the left lung and in the right lower lung not  significantly changed compared to the prior study.,COVID-19-AR-16406496_XR_CHEST_AP_ONLY_3.png,Exam-2
+COVID-19-AR-16424082,0,13,XR CHEST AP ONLY,DX,,"Bilateral patchy airspace disease involving both mid and lower lung zones, left worse than the right. ",COVID-19-AR-16424082_XR_CHEST_AP_ONLY_3.png,Exam-1
+COVID-19-AR-16424082,2,58,XR CHEST AP PORTABLE,DX,,"significant worsening of airspace disease, now very extensive and patchy sparing only apices.",COVID-19-AR-16424082_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16424082,3,72,XR CHEST AP PORTABLE,DX,,significant worsening of bilateral patchy airspace changes involving all lung zones with relative sparing of both lung apices.,COVID-19-AR-16424082_XR_CHEST_AP_PORTABLE_2.png,Exam-3
+COVID-19-AR-16406504,0,21,XR CHEST AP PORTABLE,CR,,Bibasilar opacities are seen most pronounced on the left.  No large pleural effusion identified. ,COVID-19-AR-16406504_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16406504,10,247,XR CHEST AP ONLY,DX,,Left lower lobe airspace  disease is seen.,COVID-19-AR-16406504_XR_CHEST_AP_ONLY_1.png,Exam-2
+COVID-19-AR-16434350,0,11,XR CHEST AP PORTABLE,DX,,subtle peribronchovascular opacities are noted within both lung bases.  There is somewhat bandlike opacity seen in the region of the lateral right upper lung.  ,COVID-19-AR-16434350_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406502,0,23,XR CHEST PA AND LATERAL,DX,,No pleural effusions. ,COVID-19-AR-16406502_XR_CHEST_PA_AND_LATERAL_4.png,Exam-1
+COVID-19-AR-16406502,2,56,XR CHEST AP ONLY,DX,,Low lung volumes with minimal bibasilar subsegmental atelectasis. ,COVID-19-AR-16406502_XR_CHEST_AP_ONLY_2.png,Exam-2
+COVID-19-AR-16406502,3,82,XR CHEST AP PORTABLE,DX,,Lung volumes remain low but lungs are clear,COVID-19-AR-16406502_XR_CHEST_AP_PORTABLE_5.png,Exam-4
+COVID-19-AR-16406502,28,686,XR CHEST AP PORTABLE,DX,,The lungs  are clear and without focal consolidation. ,COVID-19-AR-16406502_XR_CHEST_AP_PORTABLE_5.png,Exam-6
+COVID-19-AR-16406494,0,18,XR CHEST AP PORTABLE,DX,,Bibasilar airspace opacities ,COVID-19-AR-16406494_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16406494,2,62,XR CHEST AP PORTABLE,CR,,Worsening bilateral  airspace disease is seen within the lower lobes,COVID-19-AR-16406494_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16424105,-1,-6,XR CHEST AP PORTABLE,DX,,No significant airspace consolidation bilaterally,COVID-19-AR-16424105_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16424105,0,13,XR CHEST PA AND LATERAL,"CR,DX",," Lungs are clear, no nodule, airspace disease or pleural  effusion.",COVID-19-AR-16424105_XR_CHEST_PA_AND_LATERAL_4.png,Exam-2
+COVID-19-AR-16424105,1,33,XR CHEST AP PORTABLE,DX,,Right  basilar atelectasis,COVID-19-AR-16424105_XR_CHEST_AP_PORTABLE_2.png,Exam-3
+COVID-19-AR-16439195,0,22,XR CHEST AP PORTABLE,DX,,The lungs are free of air space disease,COVID-19-AR-16439195_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16445144,0,15,XR CHEST AP PORTABLE,DX,,No focal consolidation in the lungs.,COVID-19-AR-16445144_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16424071,28,680,XR CHEST AP PORTABLE,DX,,Subtle patchy airspace disease in the right lung base.,COVID-19-AR-16424071_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16439186,4,119,XR CHEST AP PORTABLE,DX,,The lungs are clear and well  inflated.,COVID-19-AR-16439186_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16406521,1,45,XR CHEST AP PORTABLE,DX,,Bibasilar linear opacities may be related to atelectasis or infection. ,COVID-19-AR-16406521_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16406521,3,81,XR CHEST AP PORTABLE,CR,,There has been interval worsening of the diffuse  opacities throughout the lung bases. ,COVID-19-AR-16406521_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16406505,0,23,XR CHEST AP PORTABLE,DX,,multifocal lower lobe  predominant consolidation bilaterally.,COVID-19-AR-16406505_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406505,5,133,XR CHEST AP ONLY,CR,," Patchy opacities are noted at lung bases greater on left than right. There appears to be very slight worsening on left, no change on right. No large effusion noted.",COVID-19-AR-16406505_XR_CHEST_AP_ONLY_2.png,Exam-2
+COVID-19-AR-16406526,0,19,XR CHEST AP PORTABLE,DX,,he lungs are well-aerated  with no evidence of pneumonic infiltration or pleural effusion,COVID-19-AR-16406526_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16406526,5,126,XR CHEST AP PORTABLE,CR,,no acute airspace changes seen in both lungs,COVID-19-AR-16406526_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16434452,0,17,XR CHEST AP PORTABLE,DX,,"Indeterminate 2 cm left upper nodule, felt to represent a calcified  granuloma.",COVID-19-AR-16434452_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16434452,6,164,XR CHEST AP PORTABLE,DX,,Subtle airspace opacity in the right upper lobe.,COVID-19-AR-16434452_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16424075,0,23,XR CHEST AP PORTABLE,DX,,The lungs are  hypoinflated with worsening bibasilar opacities,COVID-19-AR-16424075_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16424075,2,53,XR CHEST AP PORTABLE,DX,,"Mild bibasilar airspace disease, slightly improved on the right",COVID-19-AR-16424075_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16424081,0,7,XR CHEST AP PORTABLE,DX,,No acute disease.,COVID-19-AR-16424081_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16424081,1,65,XR CHEST AP PORTABLE,DX,,Subtle bibasilar opacities are noted,COVID-19-AR-16424081_XR_CHEST_AP_PORTABLE_2.png,Exam-3
+COVID-19-AR-16434347,0,17,XR CHEST AP PORTABLE,DX,,Ground-glass opacities in bilateral lower lobes slightly more  pronounced on the right side with additional right lung base  ,COVID-19-AR-16434347_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406488,-7,-150,XR CHEST PA AND LATERAL,DX,,Persistent trace left pleural  effusion.,COVID-19-AR-16406488_XR_CHEST_PA_AND_LATERAL_1.png,Exam-1
+COVID-19-AR-16406488,0,21,XR CHEST AP ONLY,CR,,"perinflated lungs with flattened diaphragms, suggestive of COPD",COVID-19-AR-16406488_XR_CHEST_AP_ONLY_3.png,Exam-2
+COVID-19-AR-16406488,2,55,XR CHEST AP ONLY,DX,,subtle airspace  disease versus chronic parenchymal changes along the left lung base. ,COVID-19-AR-16406488_XR_CHEST_AP_ONLY_3.png,Exam-3
+COVID-19-AR-16445151,0,15,XR CHEST AP PORTABLE,DX,,Interval development of right infrahilar opacities,COVID-19-AR-16445151_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16445151,5,132,XR CHEST AP PORTABLE,DX,, The lungs are  clear without focal airspace opacification.,COVID-19-AR-16445151_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16424115,0,16,XR CHEST AP PORTABLE,DX,,patchy  bibasilar opacities,COVID-19-AR-16424115_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16424115,0,10,XR CHEST AP PORTABLE,DX,,Bibasilar atelectasis and low lung volumes.,COVID-19-AR-16424115_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16406490,0,18,XR CHEST AP PORTABLE,DX,,Subtle hazy opacities in the bilateral lung bases,COVID-19-AR-16406490_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406545,0,20,XR CHEST AP PORTABLE,DX,,subtle airspace disease developing in the left lower lobe,COVID-19-AR-16406545_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406561,1,38,XR CHEST AP PORTABLE,DX,,"Hazy airspace opacities are seen throughout the bilateral lower lungs, right greater than left. ",COVID-19-AR-16406561_XR_CHEST_AP_PORTABLE_3.png,Exam-1
+COVID-19-AR-16406561,7,181,XR CHEST AP PORTABLE,CR,," worsening of bilateral lower lobe opacities consistent with airspace disease, much more dense in the retrocardiac left lower lobe, consistent with consolidation. ",COVID-19-AR-16406561_XR_CHEST_AP_PORTABLE_3.png,Exam-2
+COVID-19-AR-16424116,0,21,XR CHEST AP PORTABLE,DX,,Haziness of the  left cardiac border,COVID-19-AR-16424116_XR_CHEST_AP_PORTABLE_3.png,Exam-1
+COVID-19-AR-16424116,3,79,XR CHEST AP PORTABLE,DX,,There is increasing airspace opacity in the right upper lobe.  ,COVID-19-AR-16424116_XR_CHEST_AP_PORTABLE_3.png,Exam-2
+COVID-19-AR-16424116,5,129,XR CHEST AP PORTABLE,DX,,Increased left pleural effusion with consolidation and/or atelectasis in the left lower lobe. ,COVID-19-AR-16424116_XR_CHEST_AP_PORTABLE_3.png,Exam-3
+COVID-19-AR-16434366,0,23,XR CHEST PA ONLY,DX,,Subtle hazy opacities at both lung bases ,COVID-19-AR-16434366_XR_CHEST_PA_ONLY_1.png,Exam-1
+COVID-19-AR-16434369,0,18,XR CHEST AP PORTABLE,DX,,Right  upper lobe atelectasis,COVID-19-AR-16434369_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16434369,4,102,XR CHEST AP PORTABLE,CR,,ncreased bilateral lower lung and right midlung airspace  opacities,COVID-19-AR-16434369_XR_CHEST_AP_PORTABLE_2.png,Exam-3
+COVID-19-AR-16406489,15,377,XR CHEST AP PORTABLE,DX,,"no acute disease, no focal pneumonia",COVID-19-AR-16406489_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16424093,2,69,XR CHEST AP PORTABLE,DX,, lungs appear clear without focal consolidation,COVID-19-AR-16424093_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16434358,3,87,XR CHEST AP PORTABLE,DX,,Diffuse bibasilar haziness with possible trace pleural effusion. ,COVID-19-AR-16434358_XR_CHEST_AP_PORTABLE_4.png,Exam-1
+COVID-19-AR-16434358,5,133,XR CHEST AP PORTABLE,DX,,Stable hazy ill-defined airspace opacities throughout both lungs,COVID-19-AR-16434358_XR_CHEST_AP_PORTABLE_4.png,Exam-2
+COVID-19-AR-16434358,5,128,XR CHEST AP PORTABLE,DX,80.0,Slight increase of the ill-defined hazy airspace opacifications  throughout the bilateral lungs with subtle lower lobe predominance,COVID-19-AR-16434358_XR_CHEST_AP_PORTABLE_4.png,Exam-3
+COVID-19-AR-16434358,6,150,XR CHEST AP PORTABLE,DX,,"Persistent bilateral airspace disease but perhaps slight improvement,",COVID-19-AR-16434358_XR_CHEST_AP_PORTABLE_4.png,Exam-4
+COVID-19-AR-16406498,3,88,XR CHEST AP PORTABLE,DX,,The lungs are clear,COVID-19-AR-16406498_XR_CHEST_AP_PORTABLE_3.png,Exam-1
+COVID-19-AR-16406498,12,288,XR CHEST AP PORTABLE,DX,,he lungs are clear and  without acute airspace disease,COVID-19-AR-16406498_XR_CHEST_AP_PORTABLE_3.png,Exam-2
+COVID-19-AR-16406498,22,535,XR CHEST AP PORTABLE,DX,,No significant pleural  effusions.  No acute consolidation.,COVID-19-AR-16406498_XR_CHEST_AP_PORTABLE_3.png,Exam-3
+COVID-19-AR-16407173,0,14,XR CHEST AP PORTABLE,DX,,Right lung is low in volume but  otherwise clear of significant consolidation.,COVID-19-AR-16407173_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16407173,2,55,XR CHEST AP ONLY,DX,,There is also interval improvement in the left retrocardiac airspace disease with the peribronchovascular changes noted. There is interval development of minimal peribronchovascular airspace disease in the right upper lobe.  ,COVID-19-AR-16407173_XR_CHEST_AP_ONLY_3.png,Exam-2
+COVID-19-AR-16407173,5,138,XR CHEST AP PORTABLE,DX,,"Trace peribronchovascular airspace disease is noted within the right upper lobe, otherwise the lungs are clear without focal consolidation. ",COVID-19-AR-16407173_XR_CHEST_AP_PORTABLE_2.png,Exam-3
+COVID-19-AR-16434380,0,19,XR CHEST AP PORTABLE,DX,,"There is mild, diffuse interstitial reticular pattern  throughout the lungs",COVID-19-AR-16434380_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406503,0,10,XR CHEST AP PORTABLE,CR,,"lungs appear clear with no nodule, airspace  consolidation or pleural effusion",COVID-19-AR-16406503_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16424083,0,18,XR CHEST AP PORTABLE,DX,,The lungs are free of air space  disease,COVID-19-AR-16424083_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406542,0,16,XR CHEST AP PORTABLE,DX,,subtle hazy opacities noted predominantly within the lung bases,COVID-19-AR-16406542_XR_CHEST_AP_PORTABLE_6.png,Exam-1
+COVID-19-AR-16406542,1,34,XR CHEST AP PORTABLE,CR,,"Diffuse bilateral peribronchovascular opacities throughout both lungs, worsened since recent prior.",COVID-19-AR-16406542_XR_CHEST_AP_PORTABLE_6.png,Exam-2
+COVID-19-AR-16406542,5,122,XR CHEST AP PORTABLE,DX,70.0,Fairly diffuse airspace disease throughout the lungs shows no improvement,COVID-19-AR-16406542_XR_CHEST_AP_PORTABLE_6.png,Exam-3
+COVID-19-AR-16406542,11,274,XR CHEST AP PORTABLE,DX,45.0,Ill-defined peripheral airspace opacities appear to have improved as compared to the prior study,COVID-19-AR-16406542_XR_CHEST_AP_PORTABLE_6.png,Exam-4
+COVID-19-AR-16406542,17,427,XR CHEST AP PORTABLE,DX,,"Bibasilar  consolidation and/or atelectasis with small left pleural  effusion,  increased from the previous exam. ",COVID-19-AR-16406542_XR_CHEST_AP_PORTABLE_6.png,Exam-5
+COVID-19-AR-16406542,21,509,XR CHEST AP PORTABLE,DX,,"Residual ill-defined bibasilar opacities, not  significantly changed",COVID-19-AR-16406542_XR_CHEST_AP_PORTABLE_6.png,Exam-6
+COVID-19-AR-16434378,1,34,XR CHEST AP PORTABLE,DX,,No definite acute cardiopulmonary findings,COVID-19-AR-16434378_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16424129,0,14,XR CHEST AP PORTABLE,DX,,No focal  consolidation or pleural effusion,COVID-19-AR-16424129_XR_CHEST_AP_PORTABLE_3.png,Exam-1
+COVID-19-AR-16424129,1,46,XR CHEST AP PORTABLE,DX,,Subtle bibasilar airspace opacities,COVID-19-AR-16424129_XR_CHEST_AP_PORTABLE_3.png,Exam-2
+COVID-19-AR-16424129,3,78,XR CHEST AP PORTABLE,DX,,bilateral lower lung atelectatic changes and  mild superimposed bilateral lower lung ill-defined airspace opacities  are not significantly changed,COVID-19-AR-16424129_XR_CHEST_AP_PORTABLE_3.png,Exam-3
+COVID-19-AR-16424103,3,82,XR CHEST AP PORTABLE,DX,,Patchy airspace opacity  within the left  lower lobe and to a lesser extent within the right lower lobe,COVID-19-AR-16424103_XR_CHEST_AP_PORTABLE_5.png,Exam-1
+COVID-19-AR-16424103,4,106,XR CHEST AP PORTABLE,DX,,mild bibasilar airspace disease is not significantly changed from prior ,COVID-19-AR-16424103_XR_CHEST_AP_PORTABLE_5.png,Exam-2
+COVID-19-AR-16424103,6,151,XR CHEST AP PORTABLE,DX,, streaky opacities mainly in the lung bases near the hemidiaphragms.  Increased somewhat patchy opacities are now seen in both lung bases more conspicuous compared to the prior studies. ,COVID-19-AR-16424103_XR_CHEST_AP_PORTABLE_5.png,Exam-3
+COVID-19-AR-16424103,7,177,XR CHEST AP PORTABLE,DX,, Stable bibasilar streaky opacities are noted with interval blunting of bilateral costophrenic angles. ,COVID-19-AR-16424103_XR_CHEST_AP_PORTABLE_5.png,Exam-4
+COVID-19-AR-16424079,3,86,XR CHEST AP PORTABLE,DX,,no evidence of  any pneumonic infiltration or pleural effusion,COVID-19-AR-16424079_XR_CHEST_AP_PORTABLE_3.png,Exam-1
+COVID-19-AR-16424079,6,158,XR CHEST AP PORTABLE,DX,,hazy opacities within the right lung base and to a lesser  extent within the left lung base,COVID-19-AR-16424079_XR_CHEST_AP_PORTABLE_3.png,Exam-2
+COVID-19-AR-16434361,0,8,XR CHEST AP PORTABLE,DX,,multiple patchy ill-defined  airspace opacities bilaterally,COVID-19-AR-16434361_XR_CHEST_AP_PORTABLE_3.png,Exam-1
+COVID-19-AR-16434361,1,30,XR CHEST AP PORTABLE,DX,,some worsening of now somewhat more diffuse airspace disease.  Airspace disease is increased in right upper lobe. Left upper lobe however spared.  Persistent airspace disease seen in both lower lobes.,COVID-19-AR-16434361_XR_CHEST_AP_PORTABLE_3.png,Exam-2
+COVID-19-AR-16434361,5,131,XR CHEST AP PORTABLE,DX,,Diffuse opacities are again noted. There may be small  layering pleural effusions.,COVID-19-AR-16434361_XR_CHEST_AP_PORTABLE_3.png,Exam-3
+COVID-19-AR-16434411,0,15,XR CHEST AP PORTABLE,DX,,Bibasilar opacities,COVID-19-AR-16434411_XR_CHEST_AP_PORTABLE_1.png,Exam-2
+COVID-19-AR-16439183,8,192,XR CHEST AP PORTABLE,DX,,The lungs are hypoinflated with bibasilar airspace opacities. ,COVID-19-AR-16439183_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406522,0,15,XR CHEST AP PORTABLE,DX,,interval  development of right pleural effusion with bibasilar linear opacity,COVID-19-AR-16406522_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16406522,3,83,XR CHEST AP PORTABLE,DX,,blunting of the left  costophrenic angle suggestive of small pleural effusion,COVID-19-AR-16406522_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16406559,7,178,XR CHEST AP PORTABLE,DX,, ill-defined densities at the lung bases left greater than the  right,COVID-19-AR-16406559_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406559,51,1234,XR CHEST PA AND LATERAL,DX,,clearing of previous ill-defined opacities at lung  base,COVID-19-AR-16406559_XR_CHEST_PA_AND_LATERAL_3.png,Exam-2
+COVID-19-AR-16439192,0,18,XR CHEST AP PORTABLE,DX,100.0,increased  patchy opacities throughout the lungs bilaterally ,COVID-19-AR-16439192_XR_CHEST_AP_PORTABLE_9.png,Exam-1
+COVID-19-AR-16439192,0,2,XR CHEST AP PORTABLE,DX,,Subtle perihilar hazy opacity noted bilaterally consistent with early  airspace disease but no dense consolidation,COVID-19-AR-16439192_XR_CHEST_AP_PORTABLE_9.png,Exam-2
+COVID-19-AR-16439192,4,106,XR CHEST AP PORTABLE,DX,,Significant worsening in multifocal infection involving both lung,COVID-19-AR-16439192_XR_CHEST_AP_PORTABLE_9.png,Exam-3
+COVID-19-AR-16439192,6,157,XR CHEST AP PORTABLE,DX,,"Patchy airspace opacities throughout both lungs, without  significant change",COVID-19-AR-16439192_XR_CHEST_AP_PORTABLE_9.png,Exam-4
+COVID-19-AR-16439192,8,214,XR CHEST AP PORTABLE,DX,,Interval development of moderate-sized right pneumothorax.    Stable patchy opacities throughout both lungs,COVID-19-AR-16439192_XR_CHEST_AP_PORTABLE_9.png,Exam-5
+COVID-19-AR-16439192,9,216,XR CHEST AP PORTABLE,DX,40.0,Stable patchy opacities throughout both lungs,COVID-19-AR-16439192_XR_CHEST_AP_PORTABLE_9.png,Exam-6
+COVID-19-AR-16439192,13,320,XR CHEST AP PORTABLE,DX,40.0, No improvement in the diffuse bilateral patchy infiltrates,COVID-19-AR-16439192_XR_CHEST_AP_PORTABLE_9.png,Exam-7
+COVID-19-AR-16406500,-1,-3,XR CHEST AP PORTABLE,DX,,"Lungs are well inflated and clear, no nodule, airspace disease or  pleural effusion",COVID-19-AR-16406500_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16406500,0,21,XR CHEST AP PORTABLE,DX,,No significant pleural  effusions.  No acute consolidation,COVID-19-AR-16406500_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16424106,-1,-1,XR CHEST AP PORTABLE,DX,,"No pleural effusion, pneumothorax or consolidation",COVID-19-AR-16424106_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16445138,1,25,XR CHEST AP PORTABLE,DX,,mild bibasilar opacities and some  peribronchovascular opacities in the right upper lobe,COVID-19-AR-16445138_XR_CHEST_AP_PORTABLE_1.png,Exam-2
+COVID-19-AR-16434371,0,20,XR CHEST AP PORTABLE,DX,,The lungs appear clear with no evidence of airspace consolidation,COVID-19-AR-16434371_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16434371,1,32,XR CHEST AP PORTABLE,DX,,The lungs are clear and  without evidence of focal consolidation.,COVID-19-AR-16434371_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16445168,0,15,XR CHEST AP PORTABLE,DX,,Wedge shaped opacity in the right middle lobe,COVID-19-AR-16445168_XR_CHEST_AP_PORTABLE_1.png,Exam-2
+COVID-19-AR-16406517,0,15,XR CHEST AP PORTABLE,DX,, lungs are clear and without  focal consolidation,COVID-19-AR-16406517_XR_CHEST_AP_PORTABLE_3.png,Exam-1
+COVID-19-AR-16406517,4,110,XR CHEST AP PORTABLE,CR,,subtle  increased perihilar hazy airspace opacities bilaterally,COVID-19-AR-16406517_XR_CHEST_AP_PORTABLE_3.png,Exam-2
+COVID-19-AR-16406517,7,181,XR CHEST AP PORTABLE,CR,,patchy lung opacities noted bilaterally which are slightly increased  from the prior examination,COVID-19-AR-16406517_XR_CHEST_AP_PORTABLE_3.png,Exam-3
+COVID-19-AR-16406524,1,42,XR CHEST AP PORTABLE,DX,,atelectatic and infiltrative  changes more in the left retrocardiac and paracardiac region with  blunting of the costophrenic sulcus,COVID-19-AR-16406524_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16406524,2,66,XR CHEST AP PORTABLE,CR,,"Slightly increased consolidation in the left lower lobe.   Few scattered patchy airspace opacities and linear  atelectatic changes in both lungs, grossly unchanged.",COVID-19-AR-16406524_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16439191,-6,-124,XR CHEST AP PORTABLE,DX,,The lungs are well-aerated with no evidence of pneumonic infiltration  or pleural effusion,COVID-19-AR-16439191_XR_CHEST_AP_PORTABLE_3.png,Exam-1
+COVID-19-AR-16439191,0,14,XR CHEST AP PORTABLE,DX,,he lungs are clear without focal airspace  opacification,COVID-19-AR-16439191_XR_CHEST_AP_PORTABLE_3.png,Exam-2
+COVID-19-AR-16424070,0,14,XR CHEST AP PORTABLE,"CR,DX",,Chronic lung disease/emphysema  noted.  Multifocal airspace opacities are noted throughout both lungs.,COVID-19-AR-16424070_XR_CHEST_AP_PORTABLE_6.png,Exam-1
+COVID-19-AR-16424070,6,154,XR CHEST AP PORTABLE,DX,50.0,Persistent consolidation in the  right upper lobe.  Small bilateral pleural effusions,COVID-19-AR-16424070_XR_CHEST_AP_PORTABLE_6.png,Exam-2
+COVID-19-AR-16424070,7,177,XR CHEST AP PORTABLE,DX,45.0,"Interval improved aeration from previous exam.  Patchy opacities   throughout the right upper, mid, and bilateral lower lungs ",COVID-19-AR-16424070_XR_CHEST_AP_PORTABLE_6.png,Exam-3
+COVID-19-AR-16424070,9,226,XR CHEST AP PORTABLE,DX,60.0,"Patchy lung opacities  again  noted bilaterally, possibly increased within the right lung base",COVID-19-AR-16424070_XR_CHEST_AP_PORTABLE_6.png,Exam-4
+COVID-19-AR-16424095,0,6,XR CHEST AP PORTABLE,DX,,"lungs are  clear, with no focal airspace disease",COVID-19-AR-16424095_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16424104,4,99,XR CHEST AP PORTABLE,DX,," Streaky opacities at both  lung bases,",COVID-19-AR-16424104_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16439188,5,135,XR CHEST AP PORTABLE,DX,,Patchy infiltrates in both lungs mainly in the periphery  bilaterally,COVID-19-AR-16439188_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16434356,0,10,XR CHEST AP PORTABLE,CR,,The lungs  are clear,COVID-19-AR-16434356_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406508,2,59,XR CHEST AP PORTABLE,DX,40.0,Interval development of diffuse bilateral airspace disease with only  partial sparing of the left lung apex.  ,COVID-19-AR-16406508_XR_CHEST_AP_PORTABLE_5.png,Exam-1
+COVID-19-AR-16406508,5,128,XR CHEST AP PORTABLE,DX,40.0,diffuse patchy airspace disease in both lungs,COVID-19-AR-16406508_XR_CHEST_AP_PORTABLE_5.png,Exam-2
+COVID-19-AR-16406508,18,446,XR CHEST AP PORTABLE,DX,,"marked improvement in previous bilateral airspace disease with  minimal residual at left base, right lung now essentially clear",COVID-19-AR-16406508_XR_CHEST_AP_PORTABLE_5.png,Exam-3
+COVID-19-AR-16406508,22,545,XR CHEST AP PORTABLE,DX,40.0,Ill-defined airspace disease continuing in the  lung bases mainly in the lower lobes and in the right perihilar region.  These airspace opacities have worsened slightly in the interval. ,COVID-19-AR-16406508_XR_CHEST_AP_PORTABLE_5.png,Exam-4
+COVID-19-AR-16406508,22,539,XR CHEST AP PORTABLE,DX,40.0, ill-defined bilateral airspace opacities within the central  mid to lower lungs ,COVID-19-AR-16406508_XR_CHEST_AP_PORTABLE_5.png,Exam-5
+COVID-19-AR-16434344,1,37,XR CHEST AP PORTABLE,DX,,"Atelectatic changes are seen in the right lung base.  On  the left, there is diffuse haziness with partial obliteration of the  left hemidiaphragm interface",COVID-19-AR-16434344_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16434344,2,54,XR CHEST AP PORTABLE,DX,,"left lower lobe opacity  improved but not fully resolved, minimal right infrahilar  opacity",COVID-19-AR-16434344_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16445167,0,18,XR CHEST AP PORTABLE,DX,,"Lungs are well inflated and clear,",COVID-19-AR-16445167_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16434346,1,44,XR CHEST AP PORTABLE,DX,,The lungs are clear,COVID-19-AR-16434346_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16434363,1,36,XR CHEST AP PORTABLE,DX,,"Patchy airspace opacities are seen in both lungs, involving the right  upper and right lower lobe and left lower lobe",COVID-19-AR-16434363_XR_CHEST_AP_PORTABLE_1.png,Exam-2
+COVID-19-AR-16424113,0,16,XR CHEST AP PORTABLE,DX,,The lungs are free of air space  disease,COVID-19-AR-16424113_XR_CHEST_AP_PORTABLE_3.png,Exam-1
+COVID-19-AR-16424113,3,84,XR CHEST AP PORTABLE,DX,,patchy and slightly worsened airspace opacities  predominately in the lung bases,COVID-19-AR-16424113_XR_CHEST_AP_PORTABLE_3.png,Exam-2
+COVID-19-AR-16424113,7,185,XR CHEST AP PORTABLE,DX,, Increased diffuse haziness consistent with airspace disease,COVID-19-AR-16424113_XR_CHEST_AP_PORTABLE_3.png,Exam-3
+COVID-19-AR-16424077,0,16,XR CHEST AP PORTABLE,DX,,The lungs are clear and without  focal consolidation,COVID-19-AR-16424077_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16434391,1,43,XR CHEST AP PORTABLE,DX,,"patchy airspace opacities in the bilateral lung  bases, right greater than left ",COVID-19-AR-16434391_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16424118,0,22,XR CHEST AP PORTABLE,DX,," Stable appearance of chest, no acute disease.  ",COVID-19-AR-16424118_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406531,-2,-37,XR CHEST AP PORTABLE,CR,,Increased interstitial changes in both lungs are symmetric,COVID-19-AR-16406531_XR_CHEST_AP_PORTABLE_10.png,Exam-1
+COVID-19-AR-16406531,0,21,XR CHEST AP PORTABLE,CR,,"Worsening patchy, airspace opacities are seen throughout the bilateral  lungs, predominantly within the lateral aspect of the left lower lung",COVID-19-AR-16406531_XR_CHEST_AP_PORTABLE_10.png,Exam-2
+COVID-19-AR-16406531,2,52,XR CHEST AP PORTABLE,CR,80.0,Worsening diffuse airspace disease noted throughout the  lungs,COVID-19-AR-16406531_XR_CHEST_AP_PORTABLE_10.png,Exam-3
+COVID-19-AR-16406531,3,79,XR CHEST AP PORTABLE,CR,60.0,interval worsening of diffuse  bilateral multifocal pneumonia with diffuse haziness of both lungs  consistent with the clinical concern for ARDS.  Changes in the right  are worse in comparison to the left. ,COVID-19-AR-16406531_XR_CHEST_AP_PORTABLE_10.png,Exam-4
+COVID-19-AR-16406531,4,103,XR CHEST AP PORTABLE,DX,80.0,no significant change in bilateral  airspace opacities and interstitial prominence from the prior study,COVID-19-AR-16406531_XR_CHEST_AP_PORTABLE_10.png,Exam-5
+COVID-19-AR-16406531,7,178,XR CHEST AP PORTABLE,CR,,Persistent perhaps somewhat more diffuse bilateral airspace disease ,COVID-19-AR-16406531_XR_CHEST_AP_PORTABLE_10.png,Exam-6
+COVID-19-AR-16406531,11,269,XR CHEST AP PORTABLE,"CR,",80.0,Multifocal consolidation and or atelectasis most significantly  involving the lingula/left lower lobe.  Small left pleural effusion ,COVID-19-AR-16406531_XR_CHEST_AP_PORTABLE_10.png,Exam-7
+COVID-19-AR-16406531,21,512,XR CHEST AP PORTABLE,DX,,Extensive airspace disease throughout the lungs  shows no improvement,COVID-19-AR-16406531_XR_CHEST_AP_PORTABLE_10.png,Exam-8
+COVID-19-AR-16406531,26,631,XR CHEST AP PORTABLE,DX,85.0,Largely unchanged extensive bilateral airspace opacities,COVID-19-AR-16406531_XR_CHEST_AP_PORTABLE_10.png,Exam-9
+COVID-19-AR-16406531,30,739,XR CHEST AP PORTABLE,DX,,Diffuse multifocal  consolidation involving both lungs is seen and is worsened,COVID-19-AR-16406531_XR_CHEST_AP_PORTABLE_10.png,Exam-10
+COVID-19-AR-16445143,0,17,XR CHEST AP PORTABLE,DX,,The lungs  are clear,COVID-19-AR-16445143_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406533,0,15,XR CHEST AP PORTABLE,DX,,diffuse opacities in the bilateral lung bases,COVID-19-AR-16406533_XR_CHEST_AP_PORTABLE_3.png,Exam-1
+COVID-19-AR-16406533,1,31,XR CHEST AP ONLY,DX,,"Patchy ill-defined airspace disease in both lung bases,  little changed",COVID-19-AR-16406533_XR_CHEST_AP_ONLY_2.png,Exam-2
+COVID-19-AR-16406533,2,56,XR CHEST AP ONLY,DX,,"Persistent bibasilar opacity consistent somewhat worse on left than right, overall very little change",COVID-19-AR-16406533_XR_CHEST_AP_ONLY_2.png,Exam-3
+COVID-19-AR-16424072,0,14,XR CHEST AP PORTABLE,DX,,patchy areas of ill-defined consolidation in both lower lobes.  The  upper lungs are still clear,COVID-19-AR-16424072_XR_CHEST_AP_PORTABLE_6.png,Exam-1
+COVID-19-AR-16424072,1,31,XR CHEST AP ONLY,DX,,interval decrease in aeration of the lungs with stable to  worsening bilateral lower lobe peribronchovascular airspace disease ,COVID-19-AR-16424072_XR_CHEST_AP_ONLY_5.png,Exam-2
+COVID-19-AR-16424072,2,54,XR CHEST AP ONLY,DX,,Minimal interval improvement in patchy bilateral  airspace opacities,COVID-19-AR-16424072_XR_CHEST_AP_ONLY_5.png,Exam-3
+COVID-19-AR-16424072,3,83,XR CHEST AP PORTABLE,DX,,"mild bibasilar atelectasis, patchy lung opacities bilaterally have not  changed significantly",COVID-19-AR-16424072_XR_CHEST_AP_PORTABLE_6.png,Exam-4
+COVID-19-AR-16424072,5,128,XR CHEST AP ONLY,DX,,worsening patchy areas  of consolidation in the mid to upper portions of the right lung and to  a lesser extent the lower left lung,COVID-19-AR-16424072_XR_CHEST_AP_ONLY_5.png,Exam-5
+COVID-19-AR-16406512,0,10,XR CHEST AP PORTABLE,DX,,Faint  airspace opacities in the left mid lung along the left heart border,COVID-19-AR-16406512_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16406512,3,78,XR CHEST AP PORTABLE,DX,,Worsening  consolidations noted in the lower lobes and mid right lung region,COVID-19-AR-16406512_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16434444,0,17,XR CHEST AP PORTABLE,DX,,Low lung volumes with bibasilar atelectatic changes,COVID-19-AR-16434444_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16434444,5,121,XR CHEST AP PORTABLE,DX,60.0,"Significant interval worsening in bilateral mid and lower lung  confluent peripheral airspace opacities,",COVID-19-AR-16434444_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16434370,0,18,XR CHEST AP PORTABLE,DX,,No significant airspace consolidation evident  bilaterally,COVID-19-AR-16434370_XR_CHEST_AP_PORTABLE_4.png,Exam-1
+COVID-19-AR-16434370,18,446,XR CHEST AP PORTABLE,DX,,Trace right basilar opacity felt to represent atelectatic changes.,COVID-19-AR-16434370_XR_CHEST_AP_PORTABLE_4.png,Exam-2
+COVID-19-AR-16407183,0,14,XR CHEST AP PORTABLE,DX,,subtle streaky opacities  in the left lung base,COVID-19-AR-16407183_XR_CHEST_AP_PORTABLE_6.png,Exam-1
+COVID-19-AR-16407183,1,31,XR CHEST AP ONLY,DX,, slightly increased interstitial opacities noted bilaterally ,COVID-19-AR-16407183_XR_CHEST_AP_ONLY_2.png,Exam-2
+COVID-19-AR-16407183,4,106,XR CHEST AP PORTABLE,DX,,The opacities within the right mid  lung and base persist but have improved from the prior examination.,COVID-19-AR-16407183_XR_CHEST_AP_PORTABLE_6.png,Exam-3
+COVID-19-AR-16407183,5,138,XR CHEST AP PORTABLE,DX,,persistent airspace disease within the left mid lung,COVID-19-AR-16407183_XR_CHEST_AP_PORTABLE_6.png,Exam-4
+COVID-19-AR-16407183,5,125,XR CHEST AP PORTABLE,DX,,Persistent minimally improved airspace disease within the left mid and  lower lung,COVID-19-AR-16407183_XR_CHEST_AP_PORTABLE_6.png,Exam-5
+COVID-19-AR-16407183,12,298,XR CHEST AP PORTABLE,DX,,airspace disease in left  mid lung appears largely unchanged,COVID-19-AR-16407183_XR_CHEST_AP_PORTABLE_6.png,Exam-6
+COVID-19-AR-16434395,0,13,XR CHEST AP PORTABLE,DX,,Focal area of consolidation within the right lower lobe,COVID-19-AR-16434395_XR_CHEST_AP_PORTABLE_7.png,Exam-1
+COVID-19-AR-16434395,6,165,XR CHEST AP PORTABLE,DX,,"Marked interval worsening with now multifocal airspace disease  throughout both lungs, somewhat patchy in density and distribution ",COVID-19-AR-16434395_XR_CHEST_AP_PORTABLE_7.png,Exam-2
+COVID-19-AR-16434395,7,181,XR CHEST AP PORTABLE,DX,, Little change in the diffuse bilateral airspace disease ,COVID-19-AR-16434395_XR_CHEST_AP_PORTABLE_7.png,Exam-3
+COVID-19-AR-16434395,11,266,XR CHEST AP PORTABLE,DX,100.0,worsening consolidative changes  in both mid and lower lung zones.  Minimal bilateral pleural effusions ,COVID-19-AR-16434395_XR_CHEST_AP_PORTABLE_7.png,Exam-4
+COVID-19-AR-16424076,0,23,XR CHEST AP PORTABLE,DX,,Upper lobe predominant emphysema,COVID-19-AR-16424076_XR_CHEST_AP_PORTABLE_6.png,Exam-1
+COVID-19-AR-16424076,0,20,XR CHEST AP PORTABLE,DX,40.0,The lungs appear clear with no evidence of airspace  consolidation,COVID-19-AR-16424076_XR_CHEST_AP_PORTABLE_6.png,Exam-2
+COVID-19-AR-16424076,1,25,XR CHEST AP PORTABLE,DX,60.0,The lungs remain clear.  No pleural effusion,COVID-19-AR-16424076_XR_CHEST_AP_PORTABLE_6.png,Exam-3
+COVID-19-AR-16424076,4,102,XR CHEST AP PORTABLE,DX,40.0,Mild atelectatic changes at the right lung base.  There is no  focal consolidation.  The left lung appears clear. ,COVID-19-AR-16424076_XR_CHEST_AP_PORTABLE_6.png,Exam-5
+COVID-19-AR-16439194,1,29,XR CHEST AP PORTABLE,DX,100.0,diffuse hazy  lung opacities  bilaterally most significant within the right  perihilar region and bilateral lung bases,COVID-19-AR-16439194_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16439194,2,62,XR CHEST AP PORTABLE,DX,80.0,Worsening  bilateral airspace disease  predominately in the perihilar regions  and in the mid left lung,COVID-19-AR-16439194_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16424120,-1,-2,XR CHEST AP PORTABLE,DX,,The lungs are  slightly hypoinflated with left basilar atelectasis.  The right lung is  predominantly clear,COVID-19-AR-16424120_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16424120,1,31,XR CHEST AP PORTABLE,DX,,worsening patchy multifocal airspace  opacities mainly in the mid to lower lungs bilaterally. ,COVID-19-AR-16424120_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16406492,5,133,XR CHEST AP PORTABLE,CR,,The lungs are clear and without  focal consolidation.,COVID-19-AR-16406492_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406579,0,13,XR CHEST AP PORTABLE,DX,,"subtle hazy opacity and left  lower lobe consistent with ground-glass airspace disease,  minimal right infrahilar airspace opacity, slight hazy right perihilar opacity",COVID-19-AR-16406579_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16434349,7,170,XR CHEST AP PORTABLE,DX,,Both lungs are clear,COVID-19-AR-16434349_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16434396,0,8,XR CHEST AP PORTABLE,CR,, mild bibasilar airspace  opacities,COVID-19-AR-16434396_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16406541,0,14,XR CHEST AP PORTABLE,DX,,No dense consolidation or pleural effusion,COVID-19-AR-16406541_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16406541,32,790,XR CHEST AP PORTABLE,DX,,The lungs appear clear,COVID-19-AR-16406541_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16407176,7,182,XR CHEST AP PORTABLE,DX,,atelectatic changes at the lung bases,COVID-19-AR-16407176_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16406529,0,11,XR CHEST AP PORTABLE,DX,,No focal  airspace consolidation or pleural effusion,COVID-19-AR-16406529_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16407177,8,208,XR CHEST AP PORTABLE,DX,,The lungs are clear and without  focal consolidation,COVID-19-AR-16407177_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16424074,0,18,XR CHEST AP PORTABLE,DX,,"Lungs are clear with no nodule,  airspace disease or pleural effusion",COVID-19-AR-16424074_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16424074,2,57,XR CHEST AP ONLY,DX,,Peripheral patchy opacities with a mid lung predominance in  the bilateral lungs,COVID-19-AR-16424074_XR_CHEST_AP_ONLY_3.png,Exam-2
+COVID-19-AR-16424074,7,180,XR CHEST AP ONLY,DX,,worsened diffuse bilateral mainly peripheral infiltrates  involving both lungs,COVID-19-AR-16424074_XR_CHEST_AP_ONLY_3.png,Exam-3
+COVID-19-AR-16407187,0,19,XR CHEST AP PORTABLE,DX,,Patchy bilateral ground-glass/consolidative opacities are seen in the bilateral lung bases.,COVID-19-AR-16407187_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16407187,2,61,XR CHEST AP ONLY,DX,,"patchy opacities throughout both lungs, not significantly  changed from the prior examination",COVID-19-AR-16407187_XR_CHEST_AP_ONLY_3.png,Exam-3
+COVID-19-AR-16407187,4,102,XR CHEST AP ONLY,DX,,Essentially stable bilateral patchy ground-glass and consolidative  opacities throughout both lungs. ,COVID-19-AR-16407187_XR_CHEST_AP_ONLY_3.png,Exam-4
+COVID-19-AR-16424108,0,17,XR CHEST AP PORTABLE,DX,,The lungs are clear without evidence of focal  consolidation,COVID-19-AR-16424108_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16424111,0,19,XR CHEST AP PORTABLE,DX,40.0,minimal right sided effusion and right basilar  atelectasis,COVID-19-AR-16424111_XR_CHEST_AP_PORTABLE_17.png,Exam-1
+COVID-19-AR-16424111,0,16,XR CHEST AP PORTABLE,DX,,Atelectasis and pleural effusion on the right with no acute airspace  changes on the left,COVID-19-AR-16424111_XR_CHEST_AP_PORTABLE_17.png,Exam-2
+COVID-19-AR-16424111,1,29,XR CHEST AP PORTABLE,DX,,Streaky consolidation still present in the lung bases without improvement.  There may be some residual pleural fluid mainly on the right side without worsening.,COVID-19-AR-16424111_XR_CHEST_AP_PORTABLE_17.png,Exam-4
+COVID-19-AR-16424111,2,55,XR ACUTE ABDOMINAL SERIES W PA CHEST PORTABLE,DX,,Evidence of bibasilar  atelectasis .  There is also blunting of the CP angles  indicative of small effusions. ,COVID-19-AR-16424111_XR_ACUTE_ABDOMINAL_SERIES_W_PA_CHEST_PORTABLE_4.png,Exam-5
+COVID-19-AR-16424111,3,80,XR CHEST AP PORTABLE,DX,, Lungs are underinflated with patchy and streaky airspace opacities along the lung bases and mid right lung region.,COVID-19-AR-16424111_XR_CHEST_AP_PORTABLE_17.png,Exam-6
+COVID-19-AR-16424111,4,103,XR CHEST AP PORTABLE,DX,,"Patchy bibasilar opacities again seen likely atelectasis, no change. ",COVID-19-AR-16424111_XR_CHEST_AP_PORTABLE_17.png,Exam-7
+COVID-19-AR-16424111,5,126,XR CHEST AP PORTABLE,DX,, Small right pleural effusion is seen with right lower lobe atelectasis.  No pneumothorax is seen.  Left basilar atelectasis is seen.,COVID-19-AR-16424111_XR_CHEST_AP_PORTABLE_17.png,Exam-8
+COVID-19-AR-16424111,6,144,XR CHEST AP PORTABLE,DX,,Linear opacities are seen within the bilateral lung bases with a small right-sided pleural effusion.  ,COVID-19-AR-16424111_XR_CHEST_AP_PORTABLE_17.png,Exam-9
+COVID-19-AR-16424111,7,174,XR CHEST AP PORTABLE,DX,,Mildly worsened right lung base airspace opacity.  Unchanged left lung base atelectasis. ,COVID-19-AR-16424111_XR_CHEST_AP_PORTABLE_17.png,Exam-10
+COVID-19-AR-16424111,8,198,XR CHEST AP PORTABLE,DX,,"Bilateral lower lung atelectatic changes with question of superimposed airspace opacity on both sides, mildly improved. ",COVID-19-AR-16424111_XR_CHEST_AP_PORTABLE_17.png,Exam-11
+COVID-19-AR-16424111,9,223,XR CHEST AP PORTABLE,DX,,Persistent linear  atelectasis is seen within the bilateral lung bases.  Probable small  bilateral pleural effusions.  ,COVID-19-AR-16424111_XR_CHEST_AP_PORTABLE_17.png,Exam-12
+COVID-19-AR-16424111,10,245,XR CHEST AP PORTABLE,DX,,Persistent bibasilar atelectatic changes  with probable small left pleural effusion.  ,COVID-19-AR-16424111_XR_CHEST_AP_PORTABLE_17.png,Exam-13
+COVID-19-AR-16424111,11,269,XR CHEST AP PORTABLE,DX,,"Small left pleural effusion.  Mild bibasilar atelectatic changes,  improving",COVID-19-AR-16424111_XR_CHEST_AP_PORTABLE_17.png,Exam-14
+COVID-19-AR-16424111,12,295,XR CHEST AP PORTABLE,DX,,Bibasilar atelectasis and small bilateral effusions are again noted,COVID-19-AR-16424111_XR_CHEST_AP_PORTABLE_17.png,Exam-15
+COVID-19-AR-16424111,13,319,XR CHEST AP PORTABLE,DX,,Trace  bilateral pleural effusions/pleural thickening.  Mild bibasilar  atelectatic changes.  No superimposed airspace consolidation. ,COVID-19-AR-16424111_XR_CHEST_AP_PORTABLE_17.png,Exam-16
+COVID-19-AR-16434399,0,19,XR CHEST AP PORTABLE,DX,,"There are confluent bilateral airspace opacities with a mid and lower lung predominance, more prominent on the left than the right, which represent multifocal infection.  ",COVID-19-AR-16434399_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16434453,0,22,XR CHEST AP PORTABLE,DX,,Ill-defined left lower lung airspace opacities ,COVID-19-AR-16434453_XR_CHEST_AP_PORTABLE_5.png,Exam-1
+COVID-19-AR-16434453,1,32,XR CHEST AP PORTABLE,DX,,"Ill-defined bilateral lower lung airspace opacities are again demonstrated, mildly worsened on this exam.  ",COVID-19-AR-16434453_XR_CHEST_AP_PORTABLE_5.png,Exam-2
+COVID-19-AR-16434453,9,236,XR ACUTE ABDOMINAL SERIES W PA CHEST PORTABLE,DX,,Hazy opacities  within the bilateral lung bases ,COVID-19-AR-16434453_XR_ACUTE_ABDOMINAL_SERIES_W_PA_CHEST_PORTABLE_3.png,Exam-4
+COVID-19-AR-16434383,0,1,XR CHEST AP PORTABLE,DX,,"There are bibasilar airspace opacities, left worse than right. ",COVID-19-AR-16434383_XR_CHEST_AP_PORTABLE_5.png,Exam-1
+COVID-19-AR-16434383,1,28,XR CHEST AP PORTABLE,DX,,Interval worsening airspace opacities in both lungs.  Mild bilateral pleural effusions.,COVID-19-AR-16434383_XR_CHEST_AP_PORTABLE_5.png,Exam-2
+COVID-19-AR-16434383,6,158,XR CHEST AP PORTABLE,DX,,There is been interval improvement in somewhat confluent diffuse airspace opacities throughout both lungs,COVID-19-AR-16434383_XR_CHEST_AP_PORTABLE_5.png,Exam-3
+COVID-19-AR-16434383,10,255,XR CHEST AP PORTABLE,DX,,There are stable patchy airspace opacities throughout the bilateral lungs.,COVID-19-AR-16434383_XR_CHEST_AP_PORTABLE_5.png,Exam-4
+COVID-19-AR-16434383,11,275,XR CHEST PA ONLY,DX,40.0,"Multiple predominately peripheral infiltrates are seen throughout both  lungs, somewhat more extensive in the right lung compared to the left",COVID-19-AR-16434383_XR_CHEST_PA_ONLY_4.png,Exam-5
+COVID-19-AR-16439200,0,14,XR CHEST AP PORTABLE,DX,,Hypoinflated lungs with bibasilar opacities,COVID-19-AR-16439200_XR_CHEST_AP_PORTABLE_2.png,Exam-1
+COVID-19-AR-16439200,4,101,XR CHEST AP PORTABLE,DX,,Lungs are moderately inflated but there are worsening ill-defined infiltrates predominately in the periphery of both lungs. ,COVID-19-AR-16439200_XR_CHEST_AP_PORTABLE_2.png,Exam-2
+COVID-19-AR-16439190,0,22,XR CHEST AP PORTABLE,DX,,Diffusely distributed throughout the lungs are areas of consolidation and ground-glass changes,COVID-19-AR-16439190_XR_CHEST_AP_PORTABLE_1.png,Exam-1
+COVID-19-AR-16445122,0,19,XR CHEST AP PORTABLE,DX,,Hazy airspace changes are seen in both lung bases with no evidence of consolidation.,COVID-19-AR-16445122_XR_CHEST_AP_PORTABLE_1.png,Exam-2
+COVID-19-AR-16445149,5,134,XR CHEST AP PORTABLE,DX,, Hypoinflated lungs with minimal bibasilar opacities,COVID-19-AR-16445149_XR_CHEST_AP_PORTABLE_1.png,Exam-1
