@@ -115,7 +115,7 @@ class ItemsTable extends Component {
 
   render() {
     const items = this.state.items || {};
-    console.log(items);
+    console.log("===", items);
 
     const columns = [
       {
@@ -137,6 +137,36 @@ class ItemsTable extends Component {
           return <span data-name={original.name}>{props.value}</span>;
         },
       },
+      {
+        Header: 'Gender',
+        accessor: 'gender',
+        // filterable: true,
+        Cell: props => {
+          const { original } = props.cell.row;
+          return <span data-gender={original.gender}>{props.value}</span>;
+        },
+      },
+
+      {
+        Header: 'Age',
+        accessor: 'age',
+        // filterable: true,
+        Cell: props => {
+          const { original } = props.cell.row;
+          return <span data-age={original.age}>{props.value}</span>;
+        },
+      },
+
+      {
+        Header: 'Zip',
+        accessor: 'zip',
+        // filterable: true,
+        Cell: props => {
+          const { original } = props.cell.row;
+          return <span data-zip={original.zip}>{props.value}</span>;
+        },
+      },
+
       {
         Header: 'Day(s)',
         accessor: 'daysOfWeek',
@@ -176,6 +206,21 @@ class ItemsTable extends Component {
           return <span data-priority={original.priority}>{props.value}</span>;
         },
       },
+
+      {
+        Header: 'Patient-info',
+        accessor: '_patient-info',
+        Cell: props => {
+          const { original } = props.cell.row;
+
+          return (
+            <Link data-update-id={original._id} to={`/item/patient-info/${original._id}`}>
+             Patient Info
+            </Link>
+          );
+        },
+      },
+
       {
         Header: 'Update',
         accessor: '_update',
@@ -189,6 +234,7 @@ class ItemsTable extends Component {
           );
         },
       },
+
       {
         Header: 'Delete',
         accessor: '_delete',
