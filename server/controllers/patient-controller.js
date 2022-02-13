@@ -2,6 +2,7 @@ var fs = require('fs');
 var { parse } = require('csv-parse');
 
 const Patient = require('../models/patient-model');
+const PatientImage = require('../models/patient-image-model');
 
 getPatients = async (req, res) => {
   await Patient.find({}, (err, items) => {
@@ -257,10 +258,56 @@ importPatientData = async(req, res) => {
                 message: "Patient has been imported!",
             });
         });
-    
         fs.createReadStream('./db/import/data.csv').pipe(parser);
     }
+}
 
+importPatientImageData = (req, res) => {
+    var parser = parse({columns: true}, function (err, records) {
+        // return res.status(200).json({
+        //     success: true,
+        //     data: records,
+        //     schemaPath: PatientImage.schema.paths
+        // });
+
+        records.forEach(record => {
+            let data = {};
+            let index = 0;
+            const modelKey = PatientImage.schema.paths
+            const recordKey = Object.keys(record);
+            
+            for(let key in modelKey) {
+                if (key === '_id' || key === 'updatedAt' || key === 'createdAt' || key === '__v')
+                    continue;
+                if (recordKey[index] === "study modality") {
+                    data[key] = record[recordKey[index]].split(',');
+                }
+                else {
+                    data[key] = record[recordKey[index]];
+                }
+                index++;
+            }
+            const patientImage = new PatientImage(data);
+            if(!patientImage) {
+                console.error(`[Hack.Diversity React Template] - 400 in 'importPatientData': 'patient' is malformed.`);
+                return res.status(400).json({
+                    success: false,
+                    message: "'patient' is malformed",
+                });
+            }
+
+            patientImage.save().then(() => {
+                console.log("Patient created! - " + patientImage._id);
+            });
+        });
+
+        return res.status(200).json({
+            success: true,
+            message: "Patient Images has been imported!",
+        });
+    });
+
+    fs.createReadStream('./db/import/images.csv').pipe(parser);
 }
 
 module.exports = {
@@ -270,4 +317,5 @@ module.exports = {
   updateItem,
   deletePatient,
   importPatientData,
+  importPatientImageData,
 };
