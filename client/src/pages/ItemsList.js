@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   }
 `;
 
+
 const Table = ({ columns, data }) => {
   const { getTableProps, headerGroups, rows, prepareRow } = useTable({
     columns,

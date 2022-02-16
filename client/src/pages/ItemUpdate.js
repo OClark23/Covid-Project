@@ -189,11 +189,20 @@ class ItemUpdate extends Component {
           <Label>Name: </Label>
           <InputText type="text" value={name} onChange={this.handleChangeInputName} />
 
-          <Label>Gender: </Label>
-          <InputText type="text" value={gender} onChange={this.handleChangeInputName} />
+          <br />
 
-          <Label>Age: </Label>
-          <InputText type="number" value={age} onChange={this.handleChangeInputAge} />
+          <Label>Gender:</Label>
+      <select type="text" value={this.state.gender} onChange={this.handleChangeInputGender}>
+        <option name="male"> Male</option>
+        <option name="female">Female</option>
+        <option name="female">Other</option>
+      </select> 
+
+          <br />
+          <br />
+
+          <Label>Age:</Label> 
+        <InputText type="number" min="18" max="100" value={age} onChange={this.handleChangeInputAge} />
 
           <Label>Zip Code:</Label>
           <InputText type="text" value={zip} onChange={this.handleChangeInputZip} />

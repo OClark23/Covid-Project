@@ -165,7 +165,6 @@ class ItemInsert extends Component {
         console.log('handleInsertItem: resp');
         console.log(resp);
         if (typeof resp === 'object' && resp.status < 300 && resp.status >= 200) {
-          console.log("===",resp);
           window.alert('Item saved!');
           this.setState({
             name: '',
@@ -204,7 +203,7 @@ class ItemInsert extends Component {
         <br />
 
         <Label>Gender:</Label>
-      <select value={this.state.gender} onChange={this.handleChangeInputGender}>
+        <select value={this.state.gender} onChange={this.handleChangeInputGender}>
         <option name="male"> Male</option>
         <option name="female">Female</option>
         <option name="female">Other</option>
@@ -214,7 +213,7 @@ class ItemInsert extends Component {
       <br />
 
         <Label> Age:</Label>
-        <InputText type="number" value={age}  onChange={this.handleChangeInputAge} />
+        <InputText type="number" min="18" max="100" value={age}  onChange={this.handleChangeInputAge} />
 
         <Label> Zip Code:</Label>
         <InputText type="text" value={zip}  onChange={this.handleChangeInputZip} />
