@@ -10,10 +10,5 @@ router.post('/item', ItemController.createItem);
 router.put('/item/:id', ItemController.updateItem);
 router.delete('/item/:id', ItemController.deleteItem);
 
-const app = express();
-
-app.listen(process.env.PORT || 3001, () => {
-  console.log(`app is running on port ${process.env.PORT}`);
-});
 
 module.exports = router;

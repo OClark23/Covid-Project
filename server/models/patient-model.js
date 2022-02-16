@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const PatientData = new Schema(
+const Patient = new Schema(
     {
         PATIENT_ID: {
             type: String,
             required: true
         },
         AGE: {
-            type: number,
+            type: Number,
             required: true
         },
         SEX: {
@@ -16,7 +16,7 @@ const PatientData = new Schema(
             required: true
         },
         RACE: {
-            type: Number,
+            type: String,
             required: false
         },
         ZIP: {
@@ -25,17 +25,17 @@ const PatientData = new Schema(
         },
         LATEST_BMI: {
             type: Number,
-            required: true
+            required: false
         },
         LATEST_WEIGHT: {
             type: Number,
-            required: true
+            required: false
         },
         LATEST_HEIGHT: {
-            type: Number,
+            type: String,
             required: true
         },
-        TUBERCULOSUS: {
+        TUBERCULOSIS: {
             type: String,
             required: true
         },
@@ -67,7 +67,7 @@ const PatientData = new Schema(
             type: String,
             required: true
         },
-        CHICKEN_POX: {
+        CHICKEN_POX: { 
             type: String,
             required: true
         },
@@ -87,10 +87,6 @@ const PatientData = new Schema(
             type: String,
             required: true
         },
-        ZIP: {
-            type: String,
-            required: true
-        },
         DIABETES_TYPE_I: {
             type: String,
             required: true
@@ -103,11 +99,11 @@ const PatientData = new Schema(
             type: String,
             required: true
         },
-        HEMODIALYSIS_Pre_Diagnosis: {
+        HEMODIALYSIS_PRE_DIAGNOSIS: {
             type: String,
             required: true
         },
-        HEMODIALYSIS_Post_diagnosis: {
+        HEMODIALYSIS_POST_DIAGNOSIS: {
             type: String,
             required: true
         },
@@ -127,11 +123,11 @@ const PatientData = new Schema(
             type: String,
             required: true
         },
-        #_ICU_ADMTIS: {
+        NUMBER_ICU_ADMTIS: {
             type: String,
             required: true
         },
-        MORTALTIY: { 
+        MORTALITY: { 
             type: String,
             required: true
         },
@@ -141,4 +137,4 @@ const PatientData = new Schema(
 
 
 
-module.exports = mongoose.model('patientdata', PatientData);
+module.exports = mongoose.model('patient', Patient);
