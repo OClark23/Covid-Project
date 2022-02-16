@@ -76,6 +76,9 @@ class ItemInsert extends Component {
     super(props);
     this.state = {
       name: '',
+      gender: '',
+      age: '',
+      zip: '',
       daysOfWeek: {},
       timeframeNote: '',
       priority: 0,
@@ -86,6 +89,21 @@ class ItemInsert extends Component {
   handleChangeInputName = async event => {
     const name = event.target.value;
     this.setState({ name });
+  };
+
+  handleChangeInputGender = async event => {
+    const gender = event.target.value;
+    this.setState({ gender });
+  };
+
+  handleChangeInputAge = async event => {
+    const age = event.target.value;
+    this.setState({ age });
+  };
+
+  handleChangeInputZip = async event => {
+    const zip = event.target.value;
+    this.setState({ zip });
   };
 
   handleChangeDays = async event => {
@@ -139,17 +157,20 @@ class ItemInsert extends Component {
   handleInsertItem = event => {
     event.preventDefault();
 
-    const { name, daysOfWeek, timeframeNote, priority, content } = this.state;
-    const item = { name, daysOfWeek, timeframeNote, priority, content };
+    const { name, gender, age, zip, daysOfWeek, timeframeNote, priority, content } = this.state;
+    const item = { name, gender, age, zip, daysOfWeek, timeframeNote, priority, content };
 
     this.insertSingleItem(item)
       .then(resp => {
         console.log('handleInsertItem: resp');
         console.log(resp);
         if (typeof resp === 'object' && resp.status < 300 && resp.status >= 200) {
-          window.alert('Item inserted successfully');
+          window.alert('Item saved!');
           this.setState({
             name: '',
+            gender: '',
+            age: '',
+            zip: '',
             daysOfWeek: {},
             timeframeNote: '',
             priority: 0,
@@ -168,7 +189,7 @@ class ItemInsert extends Component {
   };
 
   render() {
-    const { name, daysOfWeek, timeframeNote, priority, content } = this.state;
+    const { name, gender, age, zip, daysOfWeek, timeframeNote, priority, content } = this.state;
 
     const { DAYS_OF_WEEK } = shared;
 
@@ -178,6 +199,24 @@ class ItemInsert extends Component {
 
         <Label>Name: </Label>
         <InputText type="text" value={name} onChange={this.handleChangeInputName} />
+
+        <br />
+
+        <Label>Gender:</Label>
+        <select value={this.state.gender} onChange={this.handleChangeInputGender}>
+        <option name="male"> Male</option>
+        <option name="female">Female</option>
+        <option name="female">Other</option>
+      </select> 
+
+      <br />
+      <br />
+
+        <Label> Age:</Label>
+        <InputText type="number" min="18" max="100" value={age}  onChange={this.handleChangeInputAge} />
+
+        <Label> Zip Code:</Label>
+        <InputText type="text" value={zip}  onChange={this.handleChangeInputZip} />
 
         <Fieldset>
           <legend>Day(s) of the Week: </legend>

@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import Links from './Links';
 
+
+
 const Container = styled.div.attrs({
   className: 'container',
 })`
@@ -10,6 +12,7 @@ const Container = styled.div.attrs({
   padding-left: 0px;
   padding-right: 0px;
 `;
+
 
 const Nav = styled.nav.attrs({
   className: 'navbar navbar-expand-lg navbar-dark bg-dark',
@@ -20,6 +23,7 @@ const Nav = styled.nav.attrs({
     padding: 0.5em 25%;
   }
 `;
+
 
 const navBarItems = [
   {

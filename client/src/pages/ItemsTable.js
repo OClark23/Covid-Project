@@ -92,6 +92,30 @@ class ItemsList extends Component {
         },
       },
       {
+        Header: 'Gender',
+        accessor: 'gender',
+        filterable: true,
+        Cell: props => {
+          return <span data-gender={props.original.gender}>{props.value}</span>;
+        },
+      },
+    {
+      Header: 'Age',
+      accessor: 'age',
+      filterable: true,
+      Cell: props => {
+        return <span data-age={props.original.age}>{props.value}</span>;
+      },
+    },
+    {
+      Header: 'Zip',
+      accessor: 'zip',
+      filterable: true,
+      Cell: props => {
+        return <span data-zip={props.original}>{props.value}</span>;
+      },
+    },
+      {
         Header: 'Day(s)',
         accessor: 'daysOfWeek',
         filterable: true,

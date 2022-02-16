@@ -60,7 +60,10 @@ class ItemUpdate extends Component {
     super(props);
     this.state = {
       _id: '',
-      name: '',
+      name: '', 
+      gender: '',
+      age: '',
+      zip: '',
       daysOfWeek: {},
       timeframeNote: '',
       priority: 0,
@@ -146,8 +149,8 @@ class ItemUpdate extends Component {
   };
 
   handleUpdateItem = event => {
-    const { _id, name, daysOfWeek, timeframeNote, priority, content } = this.state;
-    const item = { _id, name, daysOfWeek, timeframeNote, priority, content };
+    const { _id, name, gender, age, zip, daysOfWeek, timeframeNote, priority, content } = this.state;
+    const item = { _id, name, gender, age, zip, daysOfWeek, timeframeNote, priority, content };
 
     return this.updateSingleItem(item)
       .then(resp => {
@@ -174,7 +177,7 @@ class ItemUpdate extends Component {
   };
 
   render() {
-    const { _id, name, daysOfWeek, timeframeNote, priority, content } = this.state;
+    const { _id, name, gender, age, zip, daysOfWeek, timeframeNote, priority, content } = this.state; 
 
     const { DAYS_OF_WEEK } = shared;
 
@@ -185,6 +188,24 @@ class ItemUpdate extends Component {
 
           <Label>Name: </Label>
           <InputText type="text" value={name} onChange={this.handleChangeInputName} />
+
+          <br />
+
+          <Label>Gender:</Label>
+      <select type="text" value={this.state.gender} onChange={this.handleChangeInputGender}>
+        <option name="male"> Male</option>
+        <option name="female">Female</option>
+        <option name="female">Other</option>
+      </select> 
+
+          <br />
+          <br />
+
+          <Label>Age:</Label> 
+        <InputText type="number" min="18" max="100" value={age} onChange={this.handleChangeInputAge} />
+
+          <Label>Zip Code:</Label>
+          <InputText type="text" value={zip} onChange={this.handleChangeInputZip} />
 
           <Fieldset>
             <legend>Day(s) of the Week: </legend>

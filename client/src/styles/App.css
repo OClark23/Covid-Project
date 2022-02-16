@@ -14,14 +14,14 @@
 }
 
 .app--header {
-  background-color: #282c34;
+  background-color: #696260;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #4CAF50;
 }
 
 @keyframes app--logo-spin {

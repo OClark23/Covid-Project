@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { routes } from './constants';
 
 // Styles
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline, ImageList, ImageListItemBar } from '@material-ui/core';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/App.css';
 
