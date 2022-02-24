@@ -9,8 +9,7 @@ router.get('/patients/import', PatientController.importPatientData);
 router.get('/patients/import/image', PatientController.importPatientImageData);
 router.get('/patient/:id', PatientController.getPatientById);
 router.post('/patient', PatientController.createPatient);
-// TODO: Uncomment route after fetching data
-// router.put('/patient/:id', PatientController.updatePatient);
+router.put('/patient/:id', PatientController.updatePatient);
 router.delete('/patient/:id', PatientController.deletePatient);
 
 

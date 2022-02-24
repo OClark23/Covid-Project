@@ -36,7 +36,7 @@ getPatients = async (req, res) => {
 };
 
 getPatientById = async (req, res) => {
-  await Item.find({ _id: req.params.id }, (err, items) => {
+  await Patient.find({ _id: req.params.id }, (err, patients) => {
     if (err) {
       console.error(`[Hack.Diversity React Template] - 400 in 'getPatientById': ${err}`);
       throw res.status(400).json({
@@ -44,17 +44,17 @@ getPatientById = async (req, res) => {
         error: err,
       });
     }
-    if (!items.length) {
-      console.error(`[Hack.Diversity React Template] - 404 in 'getPatientById': Item not found`);
+    if (!patients.length) {
+      console.error(`[Hack.Diversity React Template] - 404 in 'getPatientById': Patient not found`);
       return res.status(404).json({
         success: false,
-        error: 'Item not found',
+        error: 'Patient not found',
       });
     }
-    console.log(`[Hack.Diversity React Template] - 200 in 'getPatientById': Item fetched!`);
+    console.log(`[Hack.Diversity React Template] - 200 in 'getPatientById': Patient fetched!`);
     return res.status(200).json({
       success: true,
-      item: items[0],
+      patient: patients[0],
     });
   }).catch(err => {
     console.error(`[Hack.Diversity React Template] - caught error in 'getPatientById': ${err}`);
@@ -118,47 +118,73 @@ createPatient = (req, res) => {
     });
 };
 
-// TODO: Uncomment updatePatient after fetching data
-// updatePatient = async (req, res) => {
-//   const body = req.body;
-//   if (!body) {
-//     console.error(`[Hack.Diversity React Template] - 400 in 'updateItem': You must provide an item to update.`);
-//     return res.status(400).json({
-//       success: false,
-//       error: 'You must provide an item to update.',
-//     });
-//   }
+updatePatient = async (req, res) => {
+  const body = req.body;
+  if (!body) {
+    console.error(`[Hack.Diversity React Template] - 400 in 'updatePatient': You must provide an item to update.`);
+    return res.status(400).json({
+      success: false,
+      error: 'You must provide an Patient to update.',
+    });
+  }
 
-//   const itemForUpdate = {
-//     _id: req.params.id,
-//     name: body.name,
-//     daysOfWeek: body.daysOfWeek,
-//     timeframeNote: body.timeframeNote,
-//     priority: body.priority,
-//     content: body.content,
-//   };
+  // const patientForUpdate = {
+  //   _id: req.params.id,
+  //   PATIENT_ID: body.PATIENT_ID,
+  //   AGE: body.AGE,
+  //   SEX: body.SEX,
+  //   RACE: body.RACE,
+  //   ZIP: body.ZIP,
+  //   LATEST_BMI: body.LATEST_BMI  ,
+  //   LATEST_WEIGHT: body.LATEST_WEIGHT  ,
+  //   LATEST_HEIGHT:  body.LATEST_HEIGHT ,
+  //   TUBERCULOSIS:  body.TUBERCULOSIS ,
+  //   SYSTEMIC_LUPUS_ERYTHMATOSUS:  body.SYSTEMIC_LUPUS_ERYTHMATOSUS,
+  //   RHEUMATOID_ARTHRITIS:  body.RHEUMATOID_ARTHRITIS   ,
+  //   EXTENSIVE_BURNS:  body.EXTENSIVE_BURNS  ,
+  //   ASPLENIA:  body.ASPLENIA  ,
+  //   HYPOSPLENIA: body.HYPOSPLENIA  ,
+  //   MEASLES: body.MEASLES  ,
+  //   CYTOMEGALOVIRUS:  body.CYTOMEGALOVIRUS  ,
+  //   CHICKEN_POX:  body.CHICKEN_POX  ,
+  //   HERPES_ZOSTER:  body.HERPES_ZOSTER  ,
+  //   MALNUTRITION: body.MALNUTRITION   ,
+  //   CURRENT_PREGNANT: body.CURRENT_PREGNANT   ,
+  //   CHRONIC_KIDNEY_DISEASE: body.CHRONIC_KIDNEY_DISEASE   ,
+  //   DIABETES_TYPE_I:  body.DIABETES_TYPE_I  ,
+  //   DIABETES_TYPE_II: body.DIABETES_TYPE_II   ,
+  //   TRANSPLANT:  body.TRANSPLANT  ,
+  //   HEMODIALYSIS_PRE_DIAGNOSIS:  body.HEMODIALYSIS_PRE_DIAGNOSIS   ,
+  //   HEMODIALYSIS_POST_DIAGNOSIS:  body.HEMODIALYSIS_POST_DIAGNOSIS  ,
+  //   CANCER: body.CANCER    ,
+  //   COVID_TEST_POSITIVE: body.COVID_TEST_POSITIVE   ,
+  //   TEST_NAME:   body.TEST_NAME ,
+  //   ICU_ADMIT: body.ICU_ADMIT    ,
+  //   NUMBER_ICU_ADMTIS:  body.NUMBER_ICU_ADMTIS ,
+  //   MORTALITY: body.MORTALITY, 
+  // };
 
 //   // console.log('----------------------- updateItem: res -----------------------');
 //   // console.log(res);
 
-//   try {
-//     await Item.findOneAndUpdate({ _id: req.params.id }, itemForUpdate);
-//   } catch (err) {
-//     console.error(`[Hack.Diversity React Template] - caught error in 'updateItem': ${err}`);
-//     console.error(err);
-//     return res.status(400).json({
-//       success: false,
-//       error: err,
-//     });
-//   }
+  try {
+    await Patient.findOneAndUpdate({ _id: req.params.id }, body);
+  } catch (err) {
+    console.error(`[Hack.Diversity React Template] - caught error in 'updatePatient': ${err}`);
+    console.error(err);
+    return res.status(400).json({
+      success: false,
+      error: err,
+    });
+  }
 
-//   console.log(`[Hack.Diversity React Template] - 200 in 'updateItem': Item updated!`);
-//   return res.status(200).json({
-//     success: true,
-//     id: req.params.id,
-//     message: 'Item updated!',
-//   });
-// };
+  console.log(`[Hack.Diversity React Template] - 200 in 'updatePatient': Patient updated!`);
+  return res.status(200).json({
+    success: true,
+    id: req.params.id,
+    message: 'Patient updated!',
+  });
+};
 
 deletePatient = async (req, res) => {
   await Patient.findOneAndDelete({ _id: req.params.id }, (err, patient) => {
@@ -314,7 +340,7 @@ module.exports = {
   getPatients,
   getPatientById,
   createPatient,
-  updateItem,
+  updatePatient,
   deletePatient,
   importPatientData,
   importPatientImageData,
