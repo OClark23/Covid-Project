@@ -4,4 +4,3 @@ import NavBar from './NavBar';
 import Welcome from './Welcome';
 
 export { Links, Logo, NavBar, Welcome };
-

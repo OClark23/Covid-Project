@@ -184,7 +184,7 @@ class ItemUpdate extends Component {
     return (
       _id && (
         <Wrapper>
-          <Title>Create Item</Title>
+          <Title>Update Item</Title>
 
           <Label>Name: </Label>
           <InputText type="text" value={name} onChange={this.handleChangeInputName} />

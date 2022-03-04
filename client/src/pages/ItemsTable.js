@@ -80,9 +80,17 @@ class ItemsList extends Component {
         accessor: '_id',
         filterable: true,
         Cell: props => {
-          return <span data-item-id={props.original._id}>{props.original._id}</span>;
+          return ( 
+            <span data-item-id={props.original._id}>
+           <Link data-exam-id={props.original._id} to={`/item/itemPatientExam/${props.original._id}`}>
+              {props.original._id}
+            </Link>
+            </span>
+          )
         },
       },
+
+      /*Original code: return <span data-item-id={props.original._id}>{props.original._id}</span>;*/
       {
         Header: 'Name',
         accessor: 'name',
