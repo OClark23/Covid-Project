@@ -231,9 +231,11 @@ class ItemInsert extends Component {
               max="100"
               pattern="[0-9]+([,\.][0-9]+)?"
               value={age}
-              onChange={this.handleChangeInputAge}
+              onChange={this.handleChangeInputPriority}
         />
 
+        <Label> Patient ID:</Label>
+        <InputText type="text" value={patient_id}  onChange={this.handleChangeInputPatientId} />
 
         <Label> Zip Code:</Label>
         <InputText type="text" value={zip}  onChange={this.handleChangeInputZip} />
