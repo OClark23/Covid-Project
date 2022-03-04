@@ -14,7 +14,7 @@ import './styles/App.css';
 import { NavBar, Welcome } from './components';
 
 // Pages
-import { ItemInsert, Items, ItemUpdate, itemPatientExam,itemExamUpdate, ItemInfo } from './pages';
+import { ItemInsert, Items, ItemUpdate, itemPatientExam,itemExamUpdate } from './pages';
 
 
 

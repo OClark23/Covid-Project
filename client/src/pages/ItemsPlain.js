@@ -139,7 +139,7 @@ class ItemsPlain extends Component {
               <ItemContainer key={item._id}>
                 <ItemImage src={generateRandomCat()}></ItemImage>
                 <NameHeader>{item.name}</NameHeader>
-                <DetailParagraph>ID: {item._id}</DetailParagraph>
+                <DetailParagraph> Exam ID: <Link data-id={item.__id} to={`/item/itemPatientExam/${item._id}`}>{item._id}</Link></DetailParagraph>
                 <DetailParagraph>Priority: {item.priority}</DetailParagraph>
                 <DetailParagraph>Zip: {item.zip}</DetailParagraph>
                 <ButtonsWrapper>

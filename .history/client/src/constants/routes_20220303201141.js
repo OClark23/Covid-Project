@@ -22,6 +22,6 @@ export const routes = {
   ITEM,
   ITEM_INSERT,
   ITEM_UPDATE,
-  ITEM_INFO,
-  ITEM_PATIENTEXAM
+  ITEM_INFO
+  ITEM_PATIENTEXAM,
 };
