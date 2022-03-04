@@ -234,6 +234,8 @@ class ItemInsert extends Component {
               onChange={this.handleChangeInputAge}
         />
 
+        <Label> Patient ID:</Label>
+        <InputText type="text" value={patient_id}  onChange={this.handleChangeInputPatientId} />
 
         <Label> Zip Code:</Label>
         <InputText type="text" value={zip}  onChange={this.handleChangeInputZip} />
