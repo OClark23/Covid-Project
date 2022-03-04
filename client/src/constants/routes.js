@@ -9,6 +9,8 @@ const ITEMS = '/items';
 const ITEM = '/item/:id';
 const ITEM_INSERT = '/item/create';
 const ITEM_UPDATE = '/item/update/:id';
+const ITEM_PATIENTEXAM = '/item/itemPatientExam/:id';
+
 
 export const routes = {
   HOME,
@@ -19,4 +21,5 @@ export const routes = {
   ITEM,
   ITEM_INSERT,
   ITEM_UPDATE,
+  ITEM_PATIENTEXAM,
 };

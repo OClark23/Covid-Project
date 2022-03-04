@@ -120,15 +120,20 @@ class ItemsTable extends Component {
 
     const columns = [
       {
-        Header: 'ID',
+        Header: 'Exam ID',
         accessor: '_id',
         // filterable: true,
         Cell: props => {
           console.log(props);
           const { original } = props.cell.row;
-          return <span data-item-id={original._id}>{props.value}</span>;
+          
+          return(
+
+            <Link data-item-id to={`item/itemPatientExam/${original._id}`}> {`${original._id}`}</Link>
+            );
+          },
         },
-      },
+
       {
         Header: 'Name',
         accessor: 'name',
@@ -208,19 +213,6 @@ class ItemsTable extends Component {
         },
       },
 
-      {
-        Header: 'Patient-info',
-        accessor: '_patient-info',
-        Cell: props => {
-          const { original } = props.cell.row;
-
-          return (
-            <Link data-update-id={original._id} to={`/item/patient-info/${original._id}`}>
-             Patient Info
-            </Link>
-          );
-        },
-      },
 
       {
         Header: 'Update',
