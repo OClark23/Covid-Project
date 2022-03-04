@@ -52,9 +52,12 @@ getPatientById = async (req, res) => {
       });
     }
     console.log(`[Hack.Diversity React Template] - 200 in 'getPatientById': Patient fetched!`);
-    return res.status(200).json({
-      success: true,
-      patient: patients[0],
+    PatientImage.find({PATIENT_ID: patients[0].PATIENT_ID}, (err, patients_image) => {
+      return res.status(200).json({
+        success: true,
+        patient: patients[0],
+        patient_image: patients_image,
+      });
     });
   }).catch(err => {
     console.error(`[Hack.Diversity React Template] - caught error in 'getPatientById': ${err}`);

@@ -12,5 +12,4 @@ router.post('/patient', PatientController.createPatient);
 router.put('/patient/:id', PatientController.updatePatient);
 router.delete('/patient/:id', PatientController.deletePatient);
 
-
 module.exports = router;
