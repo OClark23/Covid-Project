@@ -75,7 +75,7 @@ class ItemsTable extends Component {
 
   fetchAllItems = () => {
     api
-      .getAllItems()
+      .getAllPatients()
       .then(resp => {
         const { items } = resp.data;
         console.log('getAllItems: resp');

@@ -4,15 +4,13 @@ import { shared } from '../constants';
 import styled from 'styled-components';
 import ItemsPlain from './ItemsPlain';
 import './itemPatient.css';
-/*
-import PatientImage from 'PatientImage';
-*/
 
 
 
 class itemPatientExam extends Component{
     constructor(props){
         super(props);
+        /*
         this.state = {
             _id: '',
             name: '',
@@ -20,21 +18,35 @@ class itemPatientExam extends Component{
             age: '',
             zip: '',
             priority: '',
-
+            PatientImage: '',
         };
-       
+       */
+       this.state = {
+         _id: 0,
+         PATIENT_ID: '',
+         AGE: 0,
+         SEX: "",
+         RACE: "",
+         ZIP: "",
+         IMAGES: []
+       }
     }
 
     componentDidMount() {
         const itemId = this.props.match.params.id;
         this.fetchSingleItem(itemId).then(resp => {
-          const { item } = resp.data;
-          this.setState({ ...item });
+          console.log("Response: ", resp);
+          const { patient } = resp.data;
+          let images = resp.data.patient_image.map(image => {
+            return image.PNG_FILENAME;
+          })
+          this.setState({ ...patient });
+          this.setState({IMAGES: images});
         });
     };
         fetchSingleItem = itemId => {
             return api
-              .getItemById(itemId)
+              .getPatientById(itemId)
               .then(resp => {
                 console.log('getItemById: resp');
                 console.log(resp);
@@ -48,8 +60,9 @@ class itemPatientExam extends Component{
           };
     
     render(){
-        const {_id, name, gender, age, zip, priority, PatientImage} = this.state;
-    
+        //const {_id, name, gender, age, zip, priority, PatientImage} = this.state;
+        const {_id, PATIENT_ID, SEX, AGE, ZIP, IMAGES} = this.state;
+        console.log("STate:", this.state);
         return (
             _id && (
               <div className="ItemPage">
@@ -58,29 +71,23 @@ class itemPatientExam extends Component{
               <div className="ItemPatient">
 
                 <h1 className="card-title">Patient</h1>
-                <div className="ItemText">
-                <h1>Name:</h1>
-                <h1>{name}</h1>
-                </div>
+            
+                
                 <div className="ItemText">
                 <h1>ID:</h1>
                 <h1>{_id}</h1>
                 </div>
                 <div className="ItemText">
-                <h1>Gender:</h1>
-                <h1>{gender}</h1>
+                <h1>Sex:</h1>
+                <h1>{SEX}</h1>
                 </div>
                 <div className="ItemText">
                 <h1>Age:</h1>
-                <h1>{age}</h1>
+                <h1>{AGE}</h1>
                 </div>
                 <div className="ItemText">
                 <h1>Zip Code:</h1>
-                <h1>{zip}</h1>
-                </div>
-                <div className="ItemText">
-                <h1>Priority:</h1>
-                <h1>{priority}</h1>
+                <h1>{ZIP}</h1>
                 </div>
                 </div>
 
@@ -100,21 +107,18 @@ class itemPatientExam extends Component{
                 </div>
                 <div className="ItemText">
                 <h1>Key Finding</h1>
-                <h1>{age}</h1>
+                <h1>{AGE}</h1>
                 </div>
                 <div className="ItemText">
                 <h1>Zip Code:</h1>
-                <h1>{zip}</h1>
+                <h1>{ZIP}</h1>
                 </div>
-                <div className="ItemText">
-                <h1>Priority:</h1>
-                <h1>{priority}</h1>
-                </div>
+                
                 </div>
                    </div>
                    
                 <div className="ExamPhoto">
-                <h1>{PatientImage}</h1>
+                <img src={`https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${IMAGES[0]}`}></img>
                 </div>
             </div>
         ));
