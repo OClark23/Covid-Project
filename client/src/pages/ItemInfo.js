@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import api, { getItemById } from '../api';
+import api, { getPatientById } from '../api';
 import { shared } from '../constants';
 import styled from 'styled-components';
 import ItemsPlain from './ItemsPlain';
@@ -32,58 +32,55 @@ class ItemInfo extends Component{
         super(props);
         this.state = {
             _id: '',
-            name: '',
-            gender: '',
-            age: '',
-            patient_id: '',
-            zip: '',
-            priority: '',
+            PATIENT_ID: '',
+            SEX: '',
+            AGE: '',
+            ZIP: '',
         };
        
     }
 
     componentDidMount() {
-        const itemId = this.props.match.params.id;
-        this.fetchSingleItem(itemId).then(resp => {
-          const { item } = resp.data;
-          this.setState({ ...item });
-        });
-      }
+      const patientID = this.props.match.params.id;
+      this.fetchSinglePatient(patientID).then(resp => {
+        const { patient } = resp.data;
+        this.setState({ ...patient });
+      });
+    }
 
-      fetchSingleItem = itemId => {
-        return api
-          .getItemById(itemId)
-          .then(resp => {
-            console.log('getItemById: resp');
-            console.log(resp);
-            return resp;
-          })
-          .catch(err => {
-            console.error(`ERROR in 'fetchSingleItem': ${err}`);
-            console.error(err);
-            return err;
-          });
-      };
+    fetchSinglePatient = patientID => {
+      return api
+        .getPatientById(patientID)
+        .then(resp => {
+          console.log('getPatientById: resp');
+          console.log(resp);
+          return resp;
+        })
+        .catch(err => {
+          console.error(`ERROR in 'fetchSinglePatient': ${err}`);
+          console.error(err);
+          return err;
+        });
+    };
 
 render(){
-    const {_id, name, gender, age, patient_id, zip, priority} = this.state;
+    const {_id, PATIENT_ID, SEX, AGE, ZIP} = this.state;
+
+    console.log("State:", this.state);
 
     return (
         _id && (
-        
         <Wrapper>
             <Title>Patient Info</Title>
-            <Label>Name:</Label>
-            <InfoParagraph>{name}</InfoParagraph>
-            <Label>ID:</Label>
-            <InfoParagraph>{_id}</InfoParagraph>
-            <Label>Priority:</Label>
-            <InfoParagraph>{priority}</InfoParagraph>
-            <Label>Patient ID:</Label>
-            <InfoParagraph>{patient_id}</InfoParagraph>
-            
+            <Label>PATIENT ID:</Label>
+            <InfoParagraph>{PATIENT_ID}</InfoParagraph>
+            <Label>Sex:</Label>
+            <InfoParagraph>{SEX}</InfoParagraph>
+            <Label>Age:</Label>
+            <InfoParagraph>{AGE}</InfoParagraph>
+            <Label>Zip:</Label>
+            <InfoParagraph>{ZIP}</InfoParagraph>
         </Wrapper>
-      
     ));
 }
 };
