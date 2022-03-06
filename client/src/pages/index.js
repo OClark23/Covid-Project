@@ -3,7 +3,6 @@ import Items from './Items';
 import ItemsList from './ItemsList';
 import ItemsPlain from './ItemsPlain';
 import ItemsTable from './ItemsTable';
-import ItemUpdate from './ItemUpdate';
 import ItemInfo from './ItemInfo';
 import itemPatientExam from './itemPatientExam';
 
@@ -14,7 +13,6 @@ export {
     ItemsList,
     ItemsPlain,
     ItemsTable,
-    ItemUpdate,
     ItemInfo,
     itemPatientExam
 };
