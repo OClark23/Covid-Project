@@ -4,7 +4,7 @@ import { shared } from '../constants';
 import styled from 'styled-components';
 import ItemsPlain from './ItemsPlain';
 import './itemPatient.css';
-
+import ItemExamUpdate from './itemExamUpdate';
 
 
 class itemPatientExam extends Component{
@@ -72,7 +72,6 @@ class itemPatientExam extends Component{
 
                 <h1 className="card-title">Patient</h1>
             
-                
                 <div className="ItemText">
                 <h1>ID:</h1>
                 <h1>{_id}</h1>
@@ -87,9 +86,13 @@ class itemPatientExam extends Component{
                 </div>
                 <div className="ItemText">
                 <h1>Zip Code:</h1>
+                <div className="examUpdateZip"></div>
+    
+                <h1>Update Zipcode</h1>
                 <h1>{ZIP}</h1>
                 </div>
                 </div>
+                
 
                 <div className="ItemExam">
                 <h1 className="card-title">Exam</h1>
@@ -113,16 +116,25 @@ class itemPatientExam extends Component{
                 <h1>Zip Code:</h1>
                 <h1>{ZIP}</h1>
                 </div>
-                
                 </div>
-                   </div>
-                   
+                                   
                 <div className="ExamPhoto">
                 <img src={`https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${IMAGES[0]}`}></img>
                 </div>
+                   </div>
             </div>
         ));
        }
+
+       /*
+            <div className="examUpdate">
+                <h1 className="card-title">Update Exam</h1>
+                
+                <h1><ItemExamUpdate/></h1>
+                </div>
+        */
+      
+       
     };
 
     export default itemPatientExam;
