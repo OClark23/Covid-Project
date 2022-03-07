@@ -113,10 +113,12 @@ class ItemInsert extends Component {
 
   componentDidMount() {
     const patientID = this.props.match.params.id;
-    this.fetchSinglePatient(patientID).then(resp => {
-      const { patient } = resp.data;
-      this.setState({ ...patient });
-    });
+    if(patientID){
+      this.fetchSinglePatient(patientID).then(resp => {
+        const { patient } = resp.data;
+        this.setState({ ...patient });
+      });
+    }
   }
 
   fetchSinglePatient = patientID => {
