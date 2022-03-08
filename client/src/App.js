@@ -14,9 +14,7 @@ import './styles/App.css';
 import { NavBar, Welcome } from './components';
 
 // Pages
-import { ItemInsert, Items, ItemUpdate, itemPatientExam,itemExamUpdate, ItemInfo } from './pages';
-
-
+import { ItemInsert, Items, itemPatientExam,ItemInfo } from './pages';
 
 
 class App extends Component {
@@ -38,8 +36,7 @@ class App extends Component {
       </Switch>
     );
 
-/*ADD  
-<Route exact path={routes.ITEM_EXAMUPDATE} component={itemExamUpdate} />
+/*ADD  <Route exact path={routes.ITEM_EXAMUPDATE} component={itemExamUpdate} />
 */
     return (
       <BrowserRouter>
