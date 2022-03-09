@@ -5,7 +5,12 @@ const Patient = require('../models/patient-model');
 const PatientImage = require('../models/patient-image-model');
 
 getPatients = async (req, res) => {
-  await Patient.find({}, (err, items) => {
+  await Patient.aggregate([{$lookup: {
+    from: 'patient-images',
+    localField: 'PATIENT_ID',
+    foreignField: 'PATIENT_ID',
+    as: 'PATIENT_IMAGES'
+  }}], (err, items) => {
     if (err) {
       console.error(`[Hack.Diversity React Template] - 400 in 'getPatients': ${err}`);
       return res.status(400).json({
