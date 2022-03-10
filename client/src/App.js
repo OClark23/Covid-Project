@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch, Redirect, Link, NavLink} from 'react-router-dom';
-
+import { BrowserRouter, Route, Switch, Redirect, Link, NavLink } from 'react-router-dom';
 
 // Constants
 import { routes } from './constants';
- 
+
 // Styles
 import { Container, CssBaseline, ImageList, ImageListItemBar } from '@material-ui/core';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,17 +13,25 @@ import './styles/App.css';
 import { NavBar, Welcome } from './components';
 
 // Pages
-import { ItemInsert, Items, itemPatientExam,ItemInfo } from './pages';
-
+import {
+  ItemInsert,
+  Items,
+  ItemUpdate,
+  itemPatientExam,
+  itemExamUpdate,
+  ItemInfo,
+  SignUp,
+} from './pages';
 
 class App extends Component {
   render() {
     // TODO: maybe only need one route for Items?
     const publicViews = (
       <Switch>
-        <Route exact path={routes.HOME}>
-          <Redirect to={routes.ITEMS} />
-        </Route>
+        <Route exact path={routes.HOME} component={SignUp} />
+        {/* <Redirect to={routes.ITEMS} /> */}
+        <Route exact path={routes.ITEM_UPDATE} component={ItemUpdate} />
+        <Route exact path={routes.ITEM_INFO} component={ItemInfo} />
         <Route exact path={routes.HOME} component={Welcome} />
         <Route exact path={routes.ITEMS} component={Items} />
         <Route exact path={`${routes.ITEMS}/items-plain`} component={Items} />
@@ -36,8 +43,8 @@ class App extends Component {
       </Switch>
     );
 
-/*ADD  <Route exact path={routes.ITEM_EXAMUPDATE} component={itemExamUpdate} />
-*/
+    /*ADD  <Route exact path={routes.ITEM_EXAMUPDATE} component={itemExamUpdate} />
+     */
     return (
       <BrowserRouter>
         <CssBaseline />
