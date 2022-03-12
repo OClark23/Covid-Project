@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { UserContext } from '../context/userContext';
 
 import Logo from './Logo';
 
@@ -43,10 +44,8 @@ const logoStyles = {
   width: '40px',
 };
 
-class Links extends Component {
-  render() {
-    const { navBarItems } = this.props;
-
+const Links = ({navBarItems}) => {
+  const {userInfo} = useContext(UserContext)
     return (
       <React.Fragment>
         <HomeWrapper>
@@ -59,7 +58,7 @@ class Links extends Component {
           <List>
             {navBarItems.map(navBarItem => (
               <Item key={navBarItem.name}>
-                <Link to={navBarItem.toPathname} className={navBarItem.className}>
+                <Link to={userInfo.email ? navBarItem.toPathname : '/'} className={navBarItem.className}>
                   {navBarItem.name}
                 </Link>
               </Item>
@@ -67,8 +66,7 @@ class Links extends Component {
           </List>
         </Collapse>
       </React.Fragment>
-    );
-  }
+    )
 }
 
 export default Links;

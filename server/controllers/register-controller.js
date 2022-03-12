@@ -50,6 +50,7 @@ const User = require('../models/user-model');
     }
   
     const user = new User(body);
+    console.log(user)
   
     if (!user) {
       console.error(`[Hack.Diversity React Template] - 400 in 'createItem': 'user' is malformed.`);
@@ -69,11 +70,18 @@ const User = require('../models/user-model');
         return res.status(201).json({
           success: true,
           id: user._id,
+          name: user.name,
+          email: user.email,
           message: 'User created!',
         });
       })
       .catch(err => {
+        console.log(err)
         console.error(`[Hack.Diversity React Template] - caught error in 'createUser'`);
+        if (err.name === 'MongoError' && err.code === 11000) {
+          // Duplicate username
+          return res.status(422).send({ succes: false, message: 'User already exist!' });
+        }
         Object.keys(err.errors).forEach(errorKey => {
           console.error(`[Hack.Diversity React Template] ERROR for: ${errorKey}`);
           console.error(

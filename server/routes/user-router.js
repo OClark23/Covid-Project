@@ -18,7 +18,6 @@ router.get("/", (req, res) => {
 router.post("/signin", signin.handleSignin( bcrypt));
 router.post("/register", (req, res) => {
   register.handleRegister(req, res, db, bcrypt);
-  console.log(req.body)
 });
 router.get("/profile/:id", (req, res) => {
   profile.handleProfileGet(req, res, db);

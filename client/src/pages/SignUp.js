@@ -1,6 +1,8 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState, useContext} from 'react';
+import { useHistory } from 'react-router-dom'
 import styled from 'styled-components';
+import { UserContext } from '../context/userContext';
 
 const Input = styled.input`
   padding: 4px 8px;
@@ -31,36 +33,55 @@ const Form = styled.form`
 `;
 
 const Button = styled.button`
-    color: white;
-    background: blue;
-    font-weight: bold;    
-    box-shadow: none;
-    border: none;
-    width: 100%;
-    display: block;
-    white-space: none;
+  color: white;
+  background: blue;
+  font-weight: bold;
+  box-shadow: none;
+  border: none;
+  width: 100%;
+  display: block;
+  white-space: none;
 `;
 
-const SignUp = () => {
-    const [password, setPassword] = useState('')
-    const [email, setEmail] = useState('')
-    const register = (e) => {
-      console.log('fired')
-      e.preventDefault()
-      const api = axios.create({
-        baseURL: process.env.REACT_APP_API_URL || 'http://localhost:3000/api',
-        hostname: process.env.REEACT_APP_API_HOST || 'http://localhost:3000/',
-        // httpsAgent: https.Agent({
-        //   rejectUnauthorized: false,
-        // }),
-      });
-     api.post('/register', {email, password})
+const SignUp = (props) => {
+  const {setUserInfo} = useContext(UserContext)
+  const history = useHistory()
+  const [name, setName] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const register = async e => {
+    e.preventDefault();
+    const api = axios.create({
+      baseURL: process.env.REACT_APP_API_URL || 'http://localhost:3000/api',
+      hostname: process.env.REEACT_APP_API_HOST || 'http://localhost:3000/',
+      // httpsAgent: https.Agent({
+      //   rejectUnauthorized: false,
+      // }),
+    });
+    try {
+      const userInfo = await api.post('/register', { name, email, password })
+      setUserInfo({name, email})
+      history.push('/items')
+    } catch (err) {
+      console.log(err.message);
     }
+  };
   return (
     <Form>
-      <Input name="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} value={email}/>
-      <Input name="password" placeholder="password" onChange={(e) => setPassword(e.target.value)} value={password} />
-      <Button onClick={register}>Login</Button>
+      <Input name="name" placeholder="name" onChange={e => setName(e.target.value)} value={name} />
+      <Input
+        name="email"
+        placeholder="email"
+        onChange={e => setEmail(e.target.value)}
+        value={email}
+      />
+      <Input
+        name="password"
+        placeholder="password"
+        onChange={e => setPassword(e.target.value)}
+        value={password}
+      />
+      <Button onClick={register}>Register</Button>
     </Form>
   );
 };

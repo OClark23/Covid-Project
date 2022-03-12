@@ -75,7 +75,7 @@ class ItemsTable extends Component {
 
   fetchAllPatients = () => {
     api
-      .getAllPatients()
+      .getAllItems()
       .then(resp => {
         const { items } = resp.data;
         console.log('getAllItems: resp');
@@ -91,7 +91,7 @@ class ItemsTable extends Component {
 
   deleteSinglePatient = itemId => {
     return api
-      .deletePatientById(itemId)
+      .deleteItemById(itemId)
       .then(resp => {
         console.log('deletePatientById: resp');
         console.log(resp);
