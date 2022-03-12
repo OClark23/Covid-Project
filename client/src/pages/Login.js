@@ -43,10 +43,9 @@ const Button = styled.button`
   white-space: none;
 `;
 
-const SignUp = (props) => {
+const Login = (props) => {
   const {setUserInfo} = useContext(UserContext)
   const history = useHistory()
-  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const register = async e => {
@@ -59,8 +58,8 @@ const SignUp = (props) => {
       // }),
     });
     try {
-      const userInfo = await api.post('/register', { name, email, password })
-      setUserInfo({name, email})
+      const userInfo = await api.post('/signin', { email, password })
+      setUserInfo({ email })
       history.push('/items')
     } catch (err) {
       console.log(err.message);
@@ -68,7 +67,6 @@ const SignUp = (props) => {
   };
   return (
     <Form>
-      <Input name="name" placeholder="name" onChange={e => setName(e.target.value)} value={name} />
       <Input
         name="email"
         placeholder="email"
@@ -81,10 +79,9 @@ const SignUp = (props) => {
         onChange={e => setPassword(e.target.value)}
         value={password}
       />
-      <Button onClick={register}>Register</Button>
-      <p>Already Registered? <a href='/login'>Login</a> </p>
+      <Button onClick={register}>Login</Button>
     </Form>
   );
 };
 
-export default SignUp;
+export default Login;

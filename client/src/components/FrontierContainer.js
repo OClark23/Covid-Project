@@ -9,6 +9,7 @@ import {
     // itemExamUpdate,
     ItemInfo,
     SignUp,
+    Login
   } from '../pages';
 
 import { routes } from '../constants';
@@ -24,6 +25,7 @@ const FrontierContainer = () => {
     return <>  <NavBar />
     <Switch>
     <Route exact path={routes.HOME} component={SignUp} />
+    <Route exact path={routes.LOG_IN} component={Login} />
     {/* <Redirect to={routes.ITEMS} /> */}
     <Route exact path={routes.ITEM_INFO} component={ItemInfo} />
     <Route exact path={routes.HOME} component={Welcome} />

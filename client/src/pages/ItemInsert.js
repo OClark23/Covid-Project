@@ -187,39 +187,42 @@ class ItemInsert extends Component {
           if (typeof resp === 'object' && resp.status < 300 && resp.status >= 200) {
             window.alert('patient saved!');
             this.setState({
-              PATIENT_ID:"",
-              AGE:0,
-              SEX:"",
-              RACE:"",
-              ZIP:"",
-              LATEST_BMI:0,
-              LATEST_WEIGHT:0,
-              LATEST_HEIGHT:"",
-              TUBERCULOSIS:"N",
-              SYSTEMIC_LUPUS_ERYTHMATOSUS:"N",
-              RHEUMATOID_ARTHRITIS:"N",
-              EXTENSIVE_BURNS:"N",
-              ASPLENIA:"N",
-              HYPOSPLENIA:"N",
-              MEASLES:"N",
-              CYTOMEGALOVIRUS:"N",
-              CHICKEN_POX:"N",
-              HERPES_ZOSTER:"N",
-              MALNUTRITION:"N",
-              CURRENT_PREGNANT:"N",
-              CHRONIC_KIDNEY_DISEASE:"N",
-              DIABETES_TYPE_I:"N",
-              DIABETES_TYPE_II:"N",
-              TRANSPLANT:"N",
-              HEMODIALYSIS_PRE_DIAGNOSIS:"N",
-              HEMODIALYSIS_POST_DIAGNOSIS:"N",
-              CANCER:"N",
-              COVID_TEST_POSITIVE:"N",
-              TEST_NAME:"",
-              ICU_ADMIT:"N",
-              NUMBER_ICU_ADMTIS:0,
-              MORTALITY:"N",
-            });
+                name: {
+                    type: String,
+                    required: true
+                },
+                gender: {
+                    type: String,
+                    required: true
+                },
+                age: {
+                    type: Number,
+                    required: true
+                },
+                zip: {
+                    type: Number,
+                    required: true
+                },
+        
+                daysOfWeek: {
+                    type: Map,
+                    of: String,
+                    required: false
+                },
+                timeframeNote: {
+                    type: String,
+                    required: false
+                },
+                priority: {
+                    type: Number,
+                    required: false
+                },
+                content: {
+                    type: String,
+                    required: true
+                },
+            },
+            );
           } else {
             throw resp;
           }
@@ -235,7 +238,7 @@ class ItemInsert extends Component {
 
   insertSinglePatient = patient => {
     return api
-      .insertPatient(patient)
+      .insertItem(patient)
       .then(resp => {
         console.log('insertPatient: resp');
         console.log(resp);
@@ -254,7 +257,7 @@ class ItemInsert extends Component {
 
   updateSinglePatient = patient => {
     return api
-      .updatePatientById(patient._id, patient)
+      .updateItemById(patient._id, patient)
       .then(resp => {
         console.log('updatePatient: resp');
         console.log(resp);
@@ -338,7 +341,7 @@ class ItemInsert extends Component {
           onChange={this.handleChangeInput}
         />
 
-        <Label>Patient Latest Height:</Label>
+        {/* <Label>Patient Latest Height:</Label>
         <InputText type="text" name="LATEST_HEIGHT" value={patient.LATEST_HEIGHT} onChange={this.handleChangeInput} />
 
         <Label>Tuberculosis:</Label>
@@ -411,7 +414,7 @@ class ItemInsert extends Component {
         <InputText type="text" name="NUMBER_ICU_ADMTIS" value={patient.NUMBER_ICU_ADMTIS} onChange={this.handleChangeInput} />
 
         <Label>MORTALITY:</Label>
-        <InputText type="checkbox" name="MORTALITY" value="N" onChange={this.handleChangeInput} checked={patient.MORTALITY == "Y"} />
+        <InputText type="checkbox" name="MORTALITY" value="N" onChange={this.handleChangeInput} checked={patient.MORTALITY == "Y"} /> */}
 
         {/* <Label> Patient Age:</Label>
         <InputText

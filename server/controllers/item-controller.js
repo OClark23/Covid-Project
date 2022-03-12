@@ -61,6 +61,7 @@ getItemById = async (req, res) => {
 
 createItem = (req, res) => {
   const body = req.body;
+  console.log(body)
   // console.log('----------------------- createItem: req -----------------------')
   // console.log(req);
   // console.log('----------------------- createItem: body -----------------------')

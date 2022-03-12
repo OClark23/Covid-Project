@@ -15,16 +15,16 @@ const router = express.Router();
 router.get("/", (req, res) => {
   res.send("it is working");
 });
-router.post("/signin", signin.handleSignin( bcrypt));
-router.post("/register", (req, res) => {
-  register.handleRegister(req, res, db, bcrypt);
+router.post("/signin", ( req, res ) => {
+  console.log('fired')
+  signin.handleSignin(req, res)
+})
+router.post("/register", (req, res)  => {
+  register.handleRegister(req, res, bcrypt);
 });
-router.get("/profile/:id", (req, res) => {
-  profile.handleProfileGet(req, res, db);
-});
-router.put("/image", (req, res) => {
-  image.handleImage(req, res, db);
-});
+// router.put("/image", (req, res) => {
+//   image.handleImage(req, res, db);
+// });
 // app.post("/imageurl", (req, res) => {
 //   image.handleApiCall(req, res);
 // });
