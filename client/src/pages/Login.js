@@ -3,6 +3,7 @@ import React, { useState, useContext} from 'react';
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components';
 import { UserContext } from '../context/userContext';
+import PatientForm from '../components/forms/PatientForm';
 
 const Input = styled.input`
   padding: 4px 8px;

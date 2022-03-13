@@ -1,4 +1,5 @@
 const Item = require('../models/item-model');
+var ObjectID = require('mongodb').ObjectID;
 
 getItems = async (req, res) => {
   await Item.find({}, (err, items) => {
@@ -32,7 +33,8 @@ getItems = async (req, res) => {
 };
 
 getItemById = async (req, res) => {
-  await Item.find({ _id: req.params.id }, (err, items) => {
+  console.log(req.params.id)
+  await Item.find({ _id: "622d50390c046ba0b44298dd" }, (err, items) => {
     if (err) {
       console.error(`[Hack.Diversity React Template] - 400 in 'getItemById': ${err}`);
       throw res.status(400).json({
@@ -128,10 +130,14 @@ updateItem = async (req, res) => {
   const itemForUpdate = {
     _id: req.params.id,
     name: body.name,
-    daysOfWeek: body.daysOfWeek,
-    timeframeNote: body.timeframeNote,
+    gender: body.gender,
+    age: body.age,
+    zip: body.zip,
     priority: body.priority,
+    covid: body.covid,
+    testName: body.testName,
     content: body.content,
+
   };
 
   // console.log('----------------------- updateItem: res -----------------------');
