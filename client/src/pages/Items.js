@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactTable from 'react-table-6';
+// import ReactTable from 'react-table-6';
 import { Link } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
 

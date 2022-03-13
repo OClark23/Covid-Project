@@ -35,6 +35,7 @@
         "@emotion/styled": "^11.8.1",
         "@mui/material": "^5.4.4",
         "cross-env": "^7.0.3",
+        "dotenv": "^16.0.0",
         "node-notifier": "^8.0.1",
         "object-path": "^0.11.5"
     }

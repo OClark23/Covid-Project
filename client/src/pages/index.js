@@ -5,6 +5,8 @@ import ItemsPlain from './ItemsPlain';
 import ItemsTable from './ItemsTable';
 import ItemInfo from './ItemInfo';
 import itemPatientExam from './itemPatientExam';
+import SignUp from './SignUp'
+import Login from './Login'
 
 
 export {
@@ -14,5 +16,7 @@ export {
     ItemsPlain,
     ItemsTable,
     ItemInfo,
-    itemPatientExam
+    itemPatientExam,
+    SignUp,
+    Login
 };

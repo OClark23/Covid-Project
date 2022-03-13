@@ -123,7 +123,7 @@ const Patient = new Schema(
             type: String,
             required: true
         },
-        NUMBER_ICU_ADMTIS: {
+        NUMBER_ICU_ADMITS: {
             type: String,
             required: true
         },
