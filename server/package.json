@@ -11,7 +11,12 @@
     "scripts": {
         "debugServer": "npx nodemon inspect index.js",
         "server": "npx nodemon index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "cd client && npm run build",
+        "install-client": "cd client && npm install",
+        "heroku-postbuild": "npm run install-client && npm run build",
+        "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
+        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
     },
     "keywords": [],
     "author": "",

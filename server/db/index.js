@@ -1,5 +1,5 @@
-const items = 'mongodb://127.0.0.1:27017/items'
-const data = 'mongodb://127.0.0.1:27017/data'
+const items = 'mongodb+srv://Frontier:l8KhcHSYBhnWUw9w@cluster0.ddl8n.mongodb.net/items'
+
 const mongoose = require('mongoose');
 
 mongoose
