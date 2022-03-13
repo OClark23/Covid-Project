@@ -1,6 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import styled from 'styled-components';
 import Links from './Links';
+import { UserContext } from '../context/userContext';
+import { useHistory } from 'react-router-dom';
+
+
 
 
 
@@ -37,16 +41,22 @@ const navBarItems = [
   },
 ];
 
-class NavBar extends Component {
-  render() {
-    return (
+const NavBar = () =>   {
+  const {userInfo, setUserInfo} = useContext(UserContext)
+  let history = useHistory()
+  const handleSignOut = () => {
+  localStorage.removeItem('name', 'email');
+  setUserInfo({name: '', email: ''})
+  history.push('/')
+  }
+   return (
       <Container>
         <Nav>
-          <Links navBarItems={navBarItems} />
-        </Nav>
+          <Links navBarItems={userInfo.email ? navBarItems : []} />
+{  userInfo.email && <button onClick={handleSignOut}>Sign out</button>
+}        </Nav>
       </Container>
     );
-  }
 }
 
 export default NavBar;

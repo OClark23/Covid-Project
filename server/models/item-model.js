@@ -16,7 +16,7 @@ const Item = new Schema(
             required: true
         },
         zip: {
-            type: Number,
+            type: String,
             required: true
         },
 
@@ -33,10 +33,22 @@ const Item = new Schema(
             type: Number,
             required: false
         },
+        covid : {
+type: String,
+require: true
+        },
+        testName : {
+            type: String,
+            require: true
+                    },
         content: {
             type: String,
             required: true
         },
+        // savedBy: {
+        //     type: Schema.ObjectId,
+        //     required: true
+        // }
     },
     { timestamps: true },
 );

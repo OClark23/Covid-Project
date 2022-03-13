@@ -3,6 +3,7 @@ import React, { useState, useContext} from 'react';
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components';
 import { UserContext } from '../context/userContext';
+import PatientForm from '../components/forms/PatientForm';
 
 const Input = styled.input`
   padding: 4px 8px;
@@ -18,6 +19,7 @@ const Input = styled.input`
 
 const Form = styled.form`
     width: 100%;
+    margin: auto;
     max-width: 400px;
     background: white;
     border: 1px solid #eee;
@@ -43,12 +45,13 @@ const Button = styled.button`
   white-space: none;
 `;
 
-const SignUp = (props) => {
+const Login = () => {
   const {userInfo, setUserInfo} = useContext(UserContext)
   const history = useHistory()
-  const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+
+
   if (userInfo.email) {
     history.push('/items')
   }
@@ -62,10 +65,10 @@ const SignUp = (props) => {
       // }),
     });
     try {
-      const user = await api.post('/register', { name, email, password })
+      const user = await api.post('/signin', { email, password })
+      setUserInfo({ email, name : user.data.user[0].name  })
       window.localStorage.setItem('name', user.data.user[0].name)
       window.localStorage.setItem('email', user.data.user[0].email)
-      setUserInfo({ email, name : user.data.user[0].name  })
       history.push('/items')
     } catch (err) {
       console.log(err.message);
@@ -73,7 +76,6 @@ const SignUp = (props) => {
   };
   return (
     <Form>
-      <Input name="name" placeholder="name" onChange={e => setName(e.target.value)} value={name} />
       <Input
         name="email"
         placeholder="email"
@@ -86,10 +88,9 @@ const SignUp = (props) => {
         onChange={e => setPassword(e.target.value)}
         value={password}
       />
-      <Button onClick={register}>Register</Button>
-      <p>Already Registered? <a href='/login'>Login</a> </p>
+      <Button onClick={register}>Login</Button>
     </Form>
   );
 };
 
-export default SignUp;
+export default Login;

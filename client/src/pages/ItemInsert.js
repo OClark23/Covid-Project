@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { shared } from '../constants';
 import api from '../api';
+import PatientForm from '../components/forms/PatientForm';
 
 import styled from 'styled-components';
 
@@ -187,39 +188,42 @@ class ItemInsert extends Component {
           if (typeof resp === 'object' && resp.status < 300 && resp.status >= 200) {
             window.alert('patient saved!');
             this.setState({
-              PATIENT_ID:"",
-              AGE:0,
-              SEX:"",
-              RACE:"",
-              ZIP:"",
-              LATEST_BMI:0,
-              LATEST_WEIGHT:0,
-              LATEST_HEIGHT:"",
-              TUBERCULOSIS:"N",
-              SYSTEMIC_LUPUS_ERYTHMATOSUS:"N",
-              RHEUMATOID_ARTHRITIS:"N",
-              EXTENSIVE_BURNS:"N",
-              ASPLENIA:"N",
-              HYPOSPLENIA:"N",
-              MEASLES:"N",
-              CYTOMEGALOVIRUS:"N",
-              CHICKEN_POX:"N",
-              HERPES_ZOSTER:"N",
-              MALNUTRITION:"N",
-              CURRENT_PREGNANT:"N",
-              CHRONIC_KIDNEY_DISEASE:"N",
-              DIABETES_TYPE_I:"N",
-              DIABETES_TYPE_II:"N",
-              TRANSPLANT:"N",
-              HEMODIALYSIS_PRE_DIAGNOSIS:"N",
-              HEMODIALYSIS_POST_DIAGNOSIS:"N",
-              CANCER:"N",
-              COVID_TEST_POSITIVE:"N",
-              TEST_NAME:"",
-              ICU_ADMIT:"N",
-              NUMBER_ICU_ADMTIS:0,
-              MORTALITY:"N",
-            });
+                name: {
+                    type: String,
+                    required: true
+                },
+                gender: {
+                    type: String,
+                    required: true
+                },
+                age: {
+                    type: Number,
+                    required: true
+                },
+                zip: {
+                    type: Number,
+                    required: true
+                },
+
+                daysOfWeek: {
+                    type: Map,
+                    of: String,
+                    required: false
+                },
+                timeframeNote: {
+                    type: String,
+                    required: false
+                },
+                priority: {
+                    type: Number,
+                    required: false
+                },
+                content: {
+                    type: String,
+                    required: true
+                },
+            },
+            );
           } else {
             throw resp;
           }
@@ -229,13 +233,13 @@ class ItemInsert extends Component {
           window.alert(`There was an error creating the item... :(`);
           console.log('handleInsertPatient: err');
           console.log(err);
-        }); 
+        });
     }
   };
 
   insertSinglePatient = patient => {
     return api
-      .insertPatient(patient)
+      .insertItem(patient)
       .then(resp => {
         console.log('insertPatient: resp');
         console.log(resp);
@@ -254,7 +258,7 @@ class ItemInsert extends Component {
 
   updateSinglePatient = patient => {
     return api
-      .updatePatientById(patient._id, patient)
+      .updateItemById(patient._id, patient)
       .then(resp => {
         console.log('updatePatient: resp');
         console.log(resp);
@@ -274,200 +278,200 @@ class ItemInsert extends Component {
   render() {
     const patient = this.state;
 
-    return (
-      <Wrapper>
-        <Title>Add Patient</Title>
+    return ( <PatientForm/>
+      // <Wrapper>
+      //   <Title>Add Patient</Title>
 
-        <Label>Patient ID: </Label>
-        <InputText type="text" name="PATIENT_ID" value={patient.PATIENT_ID} onChange={this.handleChangeInput} />
+      //   <Label>Patient ID: </Label>
+      //   <InputText type="text" name="PATIENT_ID" value={patient.PATIENT_ID} onChange={this.handleChangeInput} />
 
-        <Label>Patient Sex:</Label>
-        <select name="SEX" value={patient.SEX} onChange={this.handleChangeInput}>
-          <option value="M"> Male</option>
-          <option value="F">Female</option>
-        </select> 
+      //   <Label>Patient Sex:</Label>
+      //   <select name="SEX" value={patient.SEX} onChange={this.handleChangeInput}>
+      //     <option value="M"> Male</option>
+      //     <option value="F">Female</option>
+      //   </select>
 
-        <Label>Patient Age:</Label>
-        <InputText
-          type="number"
-          name="AGE"
-          step="1"
-          lang="en-US"
-          min="1"
-          max="10"
-          pattern="[0-9]+([,\.][0-9]+)?"
-          value={patient.AGE}
-          onChange={this.handleChangeInput}
-        />
+      //   <Label>Patient Age:</Label>
+      //   <InputText
+      //     type="number"
+      //     name="AGE"
+      //     step="1"
+      //     lang="en-US"
+      //     min="1"
+      //     max="10"
+      //     pattern="[0-9]+([,\.][0-9]+)?"
+      //     value={patient.AGE}
+      //     onChange={this.handleChangeInput}
+      //   />
 
-        <Label>Patient Race:</Label>
-        <select name="RACE" value={patient.RACE} onChange={this.handleChangeInput}>
-          <option value="BLACK OR AFRICAN AMERICAN"> BLACK OR AFRICAN AMERICAN</option>
-          <option value="WHITE">WHITE</option>
-          <option value="ASIAN">ASIAN</option>
-          <option value="NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER">NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER</option>
-          <option value="OTHER">OTHER</option>
-        </select> 
+      //   <Label>Patient Race:</Label>
+      //   <select name="RACE" value={patient.RACE} onChange={this.handleChangeInput}>
+      //     <option value="BLACK OR AFRICAN AMERICAN"> BLACK OR AFRICAN AMERICAN</option>
+      //     <option value="WHITE">WHITE</option>
+      //     <option value="ASIAN">ASIAN</option>
+      //     <option value="NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER">NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER</option>
+      //     <option value="OTHER">OTHER</option>
+      //   </select>
 
-        <Label>Patient Zip:</Label>
-        <InputText type="text" name="ZIP" value={patient.ZIP} onChange={this.handleChangeInput} />
+      //   <Label>Patient Zip:</Label>
+      //   <InputText type="text" name="ZIP" value={patient.ZIP} onChange={this.handleChangeInput} />
 
-        <Label>Patient Latest BMI:</Label>
-        <InputText
-          type="number"
-          name="LATEST_BMI"
-          step="1"
-          lang="en-US"
-          min="1"
-          max="10"
-          pattern="[0-9]+([,\.][0-9]+)?"
-          value={patient.LATEST_BMI}
-          onChange={this.handleChangeInput}
-        />
+      //   <Label>Patient Latest BMI:</Label>
+      //   <InputText
+      //     type="number"
+      //     name="LATEST_BMI"
+      //     step="1"
+      //     lang="en-US"
+      //     min="1"
+      //     max="10"
+      //     pattern="[0-9]+([,\.][0-9]+)?"
+      //     value={patient.LATEST_BMI}
+      //     onChange={this.handleChangeInput}
+      //   />
 
-        <Label>Patient Latest Weight:</Label>
-        <InputText
-          type="number"
-          name="LATEST_WEIGHT"
-          step="1"
-          lang="en-US"
-          min="1"
-          max="10"
-          pattern="[0-9]+([,\.][0-9]+)?"
-          value={patient.LATEST_WEIGHT}
-          onChange={this.handleChangeInput}
-        />
+      //   <Label>Patient Latest Weight:</Label>
+      //   <InputText
+      //     type="number"
+      //     name="LATEST_WEIGHT"
+      //     step="1"
+      //     lang="en-US"
+      //     min="1"
+      //     max="10"
+      //     pattern="[0-9]+([,\.][0-9]+)?"
+      //     value={patient.LATEST_WEIGHT}
+      //     onChange={this.handleChangeInput}
+      //   />
 
-        <Label>Patient Latest Height:</Label>
-        <InputText type="text" name="LATEST_HEIGHT" value={patient.LATEST_HEIGHT} onChange={this.handleChangeInput} />
+      //   {/* <Label>Patient Latest Height:</Label>
+      //   <InputText type="text" name="LATEST_HEIGHT" value={patient.LATEST_HEIGHT} onChange={this.handleChangeInput} />
 
-        <Label>Tuberculosis:</Label>
-        <InputText type="checkbox" name="TUBERCULOSIS" value="N" onChange={this.handleChangeInput} checked={patient.TUBERCULOSIS == "Y"} />
+      //   <Label>Tuberculosis:</Label>
+      //   <InputText type="checkbox" name="TUBERCULOSIS" value="N" onChange={this.handleChangeInput} checked={patient.TUBERCULOSIS == "Y"} />
 
-        <Label>Systemic Lupus Erythmatosus:</Label>
-        <InputText type="checkbox" name="SYSTEMIC_LUPUS_ERYTHMATOSUS" value="N" onChange={this.handleChangeInput} checked={patient.SYSTEMIC_LUPUS_ERYTHMATOSUS == "Y"} />
+      //   <Label>Systemic Lupus Erythmatosus:</Label>
+      //   <InputText type="checkbox" name="SYSTEMIC_LUPUS_ERYTHMATOSUS" value="N" onChange={this.handleChangeInput} checked={patient.SYSTEMIC_LUPUS_ERYTHMATOSUS == "Y"} />
 
-        <Label>Rheumatoid Arthritis:</Label>
-        <InputText type="checkbox" name="RHEUMATOID_ARTHRITIS" value="N" onChange={this.handleChangeInput} checked={patient.RHEUMATOID_ARTHRITIS == "Y"} />
+      //   <Label>Rheumatoid Arthritis:</Label>
+      //   <InputText type="checkbox" name="RHEUMATOID_ARTHRITIS" value="N" onChange={this.handleChangeInput} checked={patient.RHEUMATOID_ARTHRITIS == "Y"} />
 
-        <Label>EXTENSIVE BURNS:</Label>
-        <InputText type="checkbox" name="EXTENSIVE_BURNS" value="N" onChange={this.handleChangeInput} checked={patient.EXTENSIVE_BURNS == "Y"} />
+      //   <Label>EXTENSIVE BURNS:</Label>
+      //   <InputText type="checkbox" name="EXTENSIVE_BURNS" value="N" onChange={this.handleChangeInput} checked={patient.EXTENSIVE_BURNS == "Y"} />
 
-        <Label>ASPLENIA:</Label>
-        <InputText type="checkbox" name="ASPLENIA" value="N" onChange={this.handleChangeInput} checked={patient.ASPLENIA == "Y"} />
+      //   <Label>ASPLENIA:</Label>
+      //   <InputText type="checkbox" name="ASPLENIA" value="N" onChange={this.handleChangeInput} checked={patient.ASPLENIA == "Y"} />
 
-        <Label>HYPOSPLENIA:</Label>
-        <InputText type="checkbox" name="HYPOSPLENIA" value="N" onChange={this.handleChangeInput} checked={patient.HYPOSPLENIA == "Y"} />
+      //   <Label>HYPOSPLENIA:</Label>
+      //   <InputText type="checkbox" name="HYPOSPLENIA" value="N" onChange={this.handleChangeInput} checked={patient.HYPOSPLENIA == "Y"} />
 
-        <Label>MEASLES:</Label>
-        <InputText type="checkbox" name="MEASLES" value="N" onChange={this.handleChangeInput} checked={patient.MEASLES == "Y"} />
+      //   <Label>MEASLES:</Label>
+      //   <InputText type="checkbox" name="MEASLES" value="N" onChange={this.handleChangeInput} checked={patient.MEASLES == "Y"} />
 
-        <Label>CYTOMEGALOVIRUS:</Label>
-        <InputText type="checkbox" name="CYTOMEGALOVIRUS" value="N" onChange={this.handleChangeInput} checked={patient.CYTOMEGALOVIRUS == "Y"} />
+      //   <Label>CYTOMEGALOVIRUS:</Label>
+      //   <InputText type="checkbox" name="CYTOMEGALOVIRUS" value="N" onChange={this.handleChangeInput} checked={patient.CYTOMEGALOVIRUS == "Y"} />
 
-        <Label>CHICKEN POX:</Label>
-        <InputText type="checkbox" name="CHICKEN_POX" value="N" onChange={this.handleChangeInput} checked={patient.CHICKEN_POX == "Y"} />
-        
-        <Label>HERPES ZOSTER:</Label>
-        <InputText type="checkbox" name="HERPES_ZOSTER" value="N" onChange={this.handleChangeInput} checked={patient.HERPES_ZOSTER == "Y"} />
+      //   <Label>CHICKEN POX:</Label>
+      //   <InputText type="checkbox" name="CHICKEN_POX" value="N" onChange={this.handleChangeInput} checked={patient.CHICKEN_POX == "Y"} />
 
-        <Label>MALNUTRITION:</Label>
-        <InputText type="checkbox" name="MALNUTRITION" value="N" onChange={this.handleChangeInput} checked={patient.MALNUTRITION == "Y"} />
+      //   <Label>HERPES ZOSTER:</Label>
+      //   <InputText type="checkbox" name="HERPES_ZOSTER" value="N" onChange={this.handleChangeInput} checked={patient.HERPES_ZOSTER == "Y"} />
 
-        <Label>CURRENT PREGNANT:</Label>
-        <InputText type="checkbox" name="CURRENT_PREGNANT" value="N" onChange={this.handleChangeInput} checked={patient.CURRENT_PREGNANT == "Y"} />
+      //   <Label>MALNUTRITION:</Label>
+      //   <InputText type="checkbox" name="MALNUTRITION" value="N" onChange={this.handleChangeInput} checked={patient.MALNUTRITION == "Y"} />
 
-        <Label>CHRONIC KIDNEY DISEASE:</Label>
-        <InputText type="checkbox" name="CHRONIC_KIDNEY_DISEASE" value="N" onChange={this.handleChangeInput} checked={patient.CHRONIC_KIDNEY_DISEASE == "Y"} />
+      //   <Label>CURRENT PREGNANT:</Label>
+      //   <InputText type="checkbox" name="CURRENT_PREGNANT" value="N" onChange={this.handleChangeInput} checked={patient.CURRENT_PREGNANT == "Y"} />
 
-        <Label>DIABETES TYPE I:</Label>
-        <InputText type="checkbox" name="DIABETES_TYPE_I" value="N" onChange={this.handleChangeInput} checked={patient.DIABETES_TYPE_I == "Y"} />
+      //   <Label>CHRONIC KIDNEY DISEASE:</Label>
+      //   <InputText type="checkbox" name="CHRONIC_KIDNEY_DISEASE" value="N" onChange={this.handleChangeInput} checked={patient.CHRONIC_KIDNEY_DISEASE == "Y"} />
 
-        <Label>DIABETES TYPE II:</Label>
-        <InputText type="checkbox" name="DIABETES_TYPE_II" value="N" onChange={this.handleChangeInput} checked={patient.DIABETES_TYPE_II == "Y"}/>
+      //   <Label>DIABETES TYPE I:</Label>
+      //   <InputText type="checkbox" name="DIABETES_TYPE_I" value="N" onChange={this.handleChangeInput} checked={patient.DIABETES_TYPE_I == "Y"} />
 
-        <Label>TRANSPLANT:</Label>
-        <InputText type="checkbox" name="TRANSPLANT" value="N" onChange={this.handleChangeInput} checked={patient.TRANSPLANT == "Y"} />
+      //   <Label>DIABETES TYPE II:</Label>
+      //   <InputText type="checkbox" name="DIABETES_TYPE_II" value="N" onChange={this.handleChangeInput} checked={patient.DIABETES_TYPE_II == "Y"}/>
 
-        <Label>HEMODIALYSIS PRE DIAGNOSIS:</Label>
-        <InputText type="checkbox" name="HEMODIALYSIS_PRE_DIAGNOSIS" value="N" onChange={this.handleChangeInput} checked={patient.HEMODIALYSIS_PRE_DIAGNOSIS == "Y"} />
-        
-        <Label>HEMODIALYSIS POST DIAGNOSIS:</Label>
-        <InputText type="checkbox" name="HEMODIALYSIS_POST_DIAGNOSIS" value="N" onChange={this.handleChangeInput} checked={patient.HEMODIALYSIS_POST_DIAGNOSIS == "Y"} />
-        
-        <Label>CANCER:</Label>
-        <InputText type="checkbox" name="CANCER" value="N" onChange={this.handleChangeInput} checked={patient.CANCER == "Y"} />
+      //   <Label>TRANSPLANT:</Label>
+      //   <InputText type="checkbox" name="TRANSPLANT" value="N" onChange={this.handleChangeInput} checked={patient.TRANSPLANT == "Y"} />
 
-        <Label>COVID_TEST_POSITIVE:</Label>
-        <InputText type="checkbox" name="COVID_TEST_POSITIVE" value="N" onChange={this.handleChangeInput} checked={patient.COVID_TEST_POSITIVE == "Y"} />
+      //   <Label>HEMODIALYSIS PRE DIAGNOSIS:</Label>
+      //   <InputText type="checkbox" name="HEMODIALYSIS_PRE_DIAGNOSIS" value="N" onChange={this.handleChangeInput} checked={patient.HEMODIALYSIS_PRE_DIAGNOSIS == "Y"} />
 
-        <Label>Test Name:</Label>
-        <InputText type="text" name="TEST_NAME" value={patient.TEST_NAME} onChange={this.handleChangeInput} />
+      //   <Label>HEMODIALYSIS POST DIAGNOSIS:</Label>
+      //   <InputText type="checkbox" name="HEMODIALYSIS_POST_DIAGNOSIS" value="N" onChange={this.handleChangeInput} checked={patient.HEMODIALYSIS_POST_DIAGNOSIS == "Y"} />
 
-        <Label>ICU ADMIT:</Label>
-        <InputText type="checkbox" name="ICU_ADMIT" value="N" onChange={this.handleChangeInput} checked={patient.ICU_ADMIT == "Y"} />
+      //   <Label>CANCER:</Label>
+      //   <InputText type="checkbox" name="CANCER" value="N" onChange={this.handleChangeInput} checked={patient.CANCER == "Y"} />
 
-        <Label># ICU ADMTIS:</Label>
-        <InputText type="text" name="NUMBER_ICU_ADMTIS" value={patient.NUMBER_ICU_ADMTIS} onChange={this.handleChangeInput} />
+      //   <Label>COVID_TEST_POSITIVE:</Label>
+      //   <InputText type="checkbox" name="COVID_TEST_POSITIVE" value="N" onChange={this.handleChangeInput} checked={patient.COVID_TEST_POSITIVE == "Y"} />
 
-        <Label>MORTALITY:</Label>
-        <InputText type="checkbox" name="MORTALITY" value="N" onChange={this.handleChangeInput} checked={patient.MORTALITY == "Y"} />
+      //   <Label>Test Name:</Label>
+      //   <InputText type="text" name="TEST_NAME" value={patient.TEST_NAME} onChange={this.handleChangeInput} />
 
-        {/* <Label> Patient Age:</Label>
-        <InputText
-              type="number"
-              step="1"
-              lang="en-US"
-              min="18"
-              max="100"
-              pattern="[0-9]+([,\.][0-9]+)?"
-              value={age}
-              onChange={this.handleChangeInputAge}
-        />
+      //   <Label>ICU ADMIT:</Label>
+      //   <InputText type="checkbox" name="ICU_ADMIT" value="N" onChange={this.handleChangeInput} checked={patient.ICU_ADMIT == "Y"} />
+
+      //   <Label># ICU ADMTIS:</Label>
+      //   <InputText type="text" name="NUMBER_ICU_ADMTIS" value={patient.NUMBER_ICU_ADMTIS} onChange={this.handleChangeInput} />
+
+      //   <Label>MORTALITY:</Label>
+      //   <InputText type="checkbox" name="MORTALITY" value="N" onChange={this.handleChangeInput} checked={patient.MORTALITY == "Y"} /> */}
+
+      //   {/* <Label> Patient Age:</Label>
+      //   <InputText
+      //         type="number"
+      //         step="1"
+      //         lang="en-US"
+      //         min="18"
+      //         max="100"
+      //         pattern="[0-9]+([,\.][0-9]+)?"
+      //         value={age}
+      //         onChange={this.handleChangeInputAge}
+      //   />
 
 
-        <Label> Zip Code:</Label>
-        <InputText type="text" value={zip}  onChange={this.handleChangeInputZip} />
+      //   <Label> Zip Code:</Label>
+      //   <InputText type="text" value={zip}  onChange={this.handleChangeInputZip} />
 
-        <Fieldset>
-          <legend>Day(s) of the Week: </legend>
-          {Object.keys(DAYS_OF_WEEK).map((day, i) => (
-            <React.Fragment key={day}>
-              <Label htmlFor={day}>
-                <DayInput
-                  type="checkbox"
-                  id={day}
-                  value={day}
-                  onChange={this.handleChangeDays}
-                  checked={typeof daysOfWeek[day] === 'string'}
-                />
-                {DAYS_OF_WEEK[day]}
-              </Label>
-            </React.Fragment>
-          ))}
-        </Fieldset>
+      //   <Fieldset>
+      //     <legend>Day(s) of the Week: </legend>
+      //     {Object.keys(DAYS_OF_WEEK).map((day, i) => (
+      //       <React.Fragment key={day}>
+      //         <Label htmlFor={day}>
+      //           <DayInput
+      //             type="checkbox"
+      //             id={day}
+      //             value={day}
+      //             onChange={this.handleChangeDays}
+      //             checked={typeof daysOfWeek[day] === 'string'}
+      //           />
+      //           {DAYS_OF_WEEK[day]}
+      //         </Label>
+      //       </React.Fragment>
+      //     ))}
+      //   </Fieldset>
 
-        <Label>Timeframe Note: </Label>
-        <InputText type="text" value={timeframeNote} onChange={this.handleChangeInputTimeframe} />
+      //   <Label>Timeframe Note: </Label>
+      //   <InputText type="text" value={timeframeNote} onChange={this.handleChangeInputTimeframe} />
 
-        <Label>Priority: </Label>
-        <InputText
-          type="number"
-          step="1"
-          lang="en-US"
-          min="1"
-          max="10"
-          pattern="[0-9]+([,\.][0-9]+)?"
-          value={priority}
-          onChange={this.handleChangeInputPriority}
-        />
+      //   <Label>Priority: </Label>
+      //   <InputText
+      //     type="number"
+      //     step="1"
+      //     lang="en-US"
+      //     min="1"
+      //     max="10"
+      //     pattern="[0-9]+([,\.][0-9]+)?"
+      //     value={priority}
+      //     onChange={this.handleChangeInputPriority}
+      //   />
 
-        <Label>Content: </Label>
-        <InputText type="textarea" value={content} onChange={this.handleChangeInputContent} /> */}
+      //   <Label>Content: </Label>
+      //   <InputText type="textarea" value={content} onChange={this.handleChangeInputContent} /> */}
 
-        <Button onClick={this.handleInsertPatient}>Add Item</Button>
-        <CancelButton href={'/items'}>Cancel</CancelButton>
-      </Wrapper>
+      //   <Button onClick={this.handleInsertPatient}>Add Item</Button>
+      //   <CancelButton href={'/items'}>Cancel</CancelButton>
+      // </Wrapper>
     );
   }
 }

@@ -6,6 +6,7 @@ import ItemsTable from './ItemsTable';
 import ItemInfo from './ItemInfo';
 import itemPatientExam from './itemPatientExam';
 import SignUp from './SignUp'
+import Login from './Login'
 
 
 export {
@@ -16,5 +17,6 @@ export {
     ItemsTable,
     ItemInfo,
     itemPatientExam,
-    SignUp
+    SignUp,
+    Login
 };

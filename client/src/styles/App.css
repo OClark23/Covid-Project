@@ -3,6 +3,10 @@
   height: 100vh;
 }
 
+body, html {
+  height: 100%
+}
+
 .app--logo {
   height: 40vmin;
   pointer-events: none;
