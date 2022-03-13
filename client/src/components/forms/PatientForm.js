@@ -1,4 +1,3 @@
-
   import axios from 'axios';
   import React, { useState, useContext, useEffect} from 'react';
   import { useHistory, useLocation } from 'react-router-dom'
@@ -151,7 +150,7 @@ e.persist();
           setForm(prevName => ({...prevName, gender: e.target.value}))
         }
         } >
-         <option value="" disabled selected hidden>Gender</option>
+         <option value="" disabled selected hidden>gender</option>
         <option  value="Male">Male</option>
         <option   value="Female">Female</option>
       </Select>

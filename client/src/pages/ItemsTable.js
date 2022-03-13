@@ -32,7 +32,6 @@ class ItemsList extends Component {
     api
       .getAllItems()
       .then(resp => {
-        debugger;
         const { items } = resp.data;
         console.log('getAllItems: resp');
         console.log(items);

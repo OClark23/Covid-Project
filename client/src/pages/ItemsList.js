@@ -120,7 +120,7 @@ class ItemsTable extends Component {
 
     const columns = [
       {
-        Header: 'Exam ID',
+        Header: 'Patient ID',
         accessor: '_id',
         // filterable: true,
         Cell: props => {
@@ -131,93 +131,51 @@ class ItemsTable extends Component {
         },
       },
       {
-        Header: 'Patient ID',
-        accessor: 'PATIENT_ID',
-        // filterable: true,
+        Header: 'Name',
+        accessor: 'name',
+        filterable: true,
         Cell: props => {
           const { original } = props.cell.row;
           return <span data-name={original.name}>{props.value}</span>;
         },
       },
       {
-        Header: 'Sex',
-        accessor: 'SEX',
+        Header: 'Day(s)',
+        accessor: 'daysOfWeek',
         // filterable: true,
         Cell: props => {
-          const { original } = props.cell.row;
-          return <span data-gender={original.gender}>{props.value}</span>;
-        },
-      },
-
-      {
-        Header: 'Age',
-        accessor: 'AGE',
-        // filterable: true,
-        Cell: props => {
-          const { original } = props.cell.row;
-          return <span data-age={original.age}>{props.value}</span>;
-        },
-      },
-
-      {
-        Header: 'Zip',
-        accessor: 'ZIP',
-        // filterable: true,
-        Cell: props => {
-          const { original } = props.cell.row;
-          return <span data-zip={original.zip}>{props.value}</span>;
-        },
-      },
-      // {
-      //   Header: 'Day(s)',
-      //   accessor: 'daysOfWeek',
-      //   // filterable: true,
-      //   Cell: props => {
-      //     const { daysOfWeek } = props.cell.row.original;
-      //     let daysToDisplay = '';
-      //     if (daysOfWeek && typeof daysOfWeek === 'object') {
-      //       for (const day in daysOfWeek) {
-      //         daysToDisplay =
-      //           daysToDisplay === '' ? daysOfWeek[day] : `${daysToDisplay}, ${daysOfWeek[day]}`;
-      //       }
-      //     }
-      //     return (
-      //       <span
-      //         data-daysofweek={daysOfWeek && JSON.stringify(daysOfWeek)}
-      //         data-daysofweek-by-id={props.value}>
-      //         {daysToDisplay || '-'}
-      //       </span>
-      //     );
-      //   },
-      // },
-      // {
-      //   Header: 'Timeframe',
-      //   accessor: 'timeframeNote',
-      //   Cell: props => {
-      //     const { original } = props.cell.row;
-      //     return <span data-timeframe={original.timeframeNote}>{props.value || '-'}</span>;
-      //   },
-      // },
-      // {
-      //   Header: 'Priority',
-      //   accessor: 'priority',
-      //   // filterable: true,
-      //   Cell: props => {
-      //     const { original } = props.cell.row;
-      //     return <span data-priority={original.priority}>{props.value}</span>;
-      //   },
-      // },
-      {
-        Header: 'Patient ID',
-        accessor: 'patient_id',
-        Cell: props => {
-          const { original } = props.cell.row;
+          const { daysOfWeek } = props.cell.row.original;
+          let daysToDisplay = '';
+          if (daysOfWeek && typeof daysOfWeek === 'object') {
+            for (const day in daysOfWeek) {
+              daysToDisplay =
+                daysToDisplay === '' ? daysOfWeek[day] : `${daysToDisplay}, ${daysOfWeek[day]}`;
+            }
+          }
           return (
-            <Link data-patient-id={original.patient_id} to={`/item/patient-info/${original._id}`}>
-             Patient Info
-            </Link>
-            
+            <span
+              data-daysofweek={daysOfWeek && JSON.stringify(daysOfWeek)}
+              data-daysofweek-by-id={props.value}>
+              {daysToDisplay || '-'}
+            </span>
           );
+        },
+      },
+      {
+        Header: 'Timeframe',
+        accessor: 'timeframeNote',
+        Cell: props => {
+          const { original } = props.cell.row;
+          return <span data-timeframe={original.timeframeNote}>{props.value || '-'}</span>;
+        },
+      },
+      {
+        Header: 'Priority',
+        accessor: 'priority',
+        // filterable: true,
+        Cell: props => {
+          const { original } = props.cell.row;
+          return <span data-priority={original.priority}>{props.value}</span>;
         },
       },
       {

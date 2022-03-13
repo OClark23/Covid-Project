@@ -44,11 +44,14 @@ const Button = styled.button`
 `;
 
 const SignUp = (props) => {
-  const {setUserInfo} = useContext(UserContext)
+  const {userInfo, setUserInfo} = useContext(UserContext)
   const history = useHistory()
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  if (userInfo.email) {
+    history.push('/items')
+  }
   const register = async e => {
     e.preventDefault();
     const api = axios.create({
@@ -59,8 +62,10 @@ const SignUp = (props) => {
       // }),
     });
     try {
-      const userInfo = await api.post('/register', { name, email, password })
-      setUserInfo({name, email})
+      const user = await api.post('/register', { name, email, password })
+      window.localStorage.setItem('name', user.data.user[0].name)
+      window.localStorage.setItem('email', user.data.user[0].email)
+      setUserInfo({ email, name : user.data.user[0].name  })
       history.push('/items')
     } catch (err) {
       console.log(err.message);

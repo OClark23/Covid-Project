@@ -16,7 +16,6 @@ router.get("/", (req, res) => {
   res.send("it is working");
 });
 router.post("/signin", ( req, res ) => {
-  console.log('fired')
   signin.handleSignin(req, res)
 })
 router.post("/register", (req, res)  => {

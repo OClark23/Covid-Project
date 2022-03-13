@@ -19,6 +19,7 @@ const Input = styled.input`
 
 const Form = styled.form`
     width: 100%;
+    margin: auto;
     max-width: 400px;
     background: white;
     border: 1px solid #eee;
@@ -44,11 +45,16 @@ const Button = styled.button`
   white-space: none;
 `;
 
-const Login = (props) => {
-  const {setUserInfo} = useContext(UserContext)
+const Login = () => {
+  const {userInfo, setUserInfo} = useContext(UserContext)
   const history = useHistory()
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+
+
+  if (userInfo.email) {
+    history.push('/items')
+  }
   const register = async e => {
     e.preventDefault();
     const api = axios.create({
@@ -59,8 +65,10 @@ const Login = (props) => {
       // }),
     });
     try {
-      const userInfo = await api.post('/signin', { email, password })
-      setUserInfo({ email })
+      const user = await api.post('/signin', { email, password })
+      setUserInfo({ email, name : user.data.user[0].name  })
+      window.localStorage.setItem('name', user.data.user[0].name)
+      window.localStorage.setItem('email', user.data.user[0].email)
       history.push('/items')
     } catch (err) {
       console.log(err.message);

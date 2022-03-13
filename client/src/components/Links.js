@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { UserContext } from '../context/userContext';
 
-import Logo from './Logo';
 
 const HomeWrapper = styled.div``;
 
@@ -46,10 +45,11 @@ const logoStyles = {
 
 const Links = ({navBarItems}) => {
   const {userInfo} = useContext(UserContext)
+  console.log(userInfo)
     return (
       <React.Fragment>
         <HomeWrapper>
-          <Logo logoStyles={logoStyles} />
+          <span style={{color: 'white'}}> {userInfo.name ? 'Dr. ' + userInfo.name : ''}</span>
           <Link to="/" className="navbar-brand" style={homeStyles}>
             Home
           </Link>

@@ -20,15 +20,12 @@ import PatientForm from './forms/PatientForm';
 
 const FrontierContainer = () => {
     let history = useHistory();
-    // const {userInfo} = useContext(UserContext)
-    // const {email} = userInfo
-
-    return <>  <NavBar />
+    
+    return <>  <NavBar/>
     <Switch>
     <Route exact path={routes.HOME} component={SignUp} />
     <Route exact path={routes.LOG_IN} component={Login} />
     <Route exact path={routes.ITEM_UPDATE} component={PatientForm} />
-    {/* <Redirect to={routes.ITEMS} /> */}
     <Route exact path={routes.ITEM_INFO} component={ItemInfo} />
     <Route exact path={routes.HOME} component={Welcome} />
     <Route exact path={routes.ITEMS} component={Items} />
