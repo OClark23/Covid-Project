@@ -4,7 +4,7 @@ import { shared } from '../constants';
 import styled from 'styled-components';
 import ItemsPlain from './ItemsPlain';
 import './itemPatient.css';
-import ItemExamUpdate from './itemExamUpdate';
+//import ItemExamUpdate from './itemExamUpdate';
 
 
 class itemPatientExam extends Component{

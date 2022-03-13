@@ -30,7 +30,6 @@
     padding-left: 30px;
 }
 
-
 .ItemExam{
     position: relative;
     background-color:#F5F5F5;
@@ -74,3 +73,29 @@ img{
     align-items: right;
     padding-left: 30px;
 }
+
+.previewExam img{
+    margin-top: 20px;
+    width:100px;
+    height:100px;
+    margin-right: 60px;
+
+}
+
+.examLink{
+    margin-right:35px;
+    margin-top: 20px;
+}
+
+.examLink:hover{
+    color: blue;
+    font-weight: bold;
+}
+
+.card-title{
+    display:grid;
+    align-items: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 50px 1fr; /*look this up*/
+}
+

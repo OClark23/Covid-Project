@@ -23,16 +23,14 @@ class ItemsList extends Component {
   componentDidMount() {
     console.log('ItemsList: props');
     console.log(this.props);
-    // if (((this.props.itemData || {}).items || []).length) return;
 
-    this.fetchAllItems();
+    this.fetchAllPatients();
   }
 
-  fetchAllItems = () => {
+  fetchAllPatients = () => {
     api
-      .getAllItems()
+      .getAllPatients()
       .then(resp => {
-        debugger;
         const { items } = resp.data;
         console.log('getAllItems: resp');
         console.log(items);
@@ -45,30 +43,21 @@ class ItemsList extends Component {
       });
   };
 
-  deleteSingleItem = itemId => {
+  deleteSinglePatient = itemId => {
     return api
-      .deleteItemById(itemId)
+      .deletePatientById(itemId)
       .then(resp => {
-        console.log('deleteItemById: resp');
+        console.log('deletePatientById: resp');
         console.log(resp);
         return resp;
       })
       .catch(err => {
-        console.error(`ERROR in 'deleteSingleItem': ${err}`);
+        console.error(`ERROR in 'deleteSinglePatient': ${err}`);
         console.error(err);
         return err;
       });
   };
 
-  handleRemoveItem = data => {
-    const itemId = data;
-
-    this.deleteSingleItem(itemId).then(resp => {
-      console.log('handleRemoveItem: resp');
-      console.log(resp);
-      this.fetchAllItems();
-    });
-  };
 
   render() {
     const items = this.state.items || {};
@@ -91,38 +80,38 @@ class ItemsList extends Component {
       },
 
       /*Original code: return <span data-item-id={props.original._id}>{props.original._id}</span>;*/
-      {
+     /* {
         Header: 'Name',
         accessor: 'name',
         filterable: true,
         Cell: props => {
           return <span data-name={props.original.name}>{props.value}</span>;
         },
-      },
+      },*/
       {
         Header: 'Gender',
-        accessor: 'gender',
+        accessor: 'SEX',
         filterable: true,
         Cell: props => {
-          return <span data-gender={props.original.gender}>{props.value}</span>;
+          return <span data-gender={props.original.SEX}>{props.value}</span>;
         },
       },
     {
       Header: 'Age',
-      accessor: 'age',
+      accessor: 'AGE',
       filterable: true,
       Cell: props => {
-        return <span data-age={props.original.age}>{props.value}</span>;
+        return <span data-age={props.original.AGE}>{props.value}</span>;
       },
     },
     {
       Header: 'Zip',
-      accessor: 'zip',
+      accessor: 'ZIP',
       filterable: true,
       Cell: props => {
-        return <span data-zip={props.original}>{props.value}</span>;
+        return <span data-zip={props.original.ZIP}>{props.value}</span>;
       },
-    },
+    },/*
       {
         Header: 'Day(s)',
         accessor: 'daysOfWeek',
@@ -145,34 +134,33 @@ class ItemsList extends Component {
           );
         },
       },
-      {
+     /* {
         Header: 'Timeframe',
         accessor: 'timeframeNote',
         Cell: props => {
           return <span data-timeframe={props.original.timeframeNote}>{props.value || '-'}</span>;
         },
-      },
-      {
+      },*/
+    /*  {
         Header: 'Priority',
         accessor: 'priority',
         filterable: true,
         Cell: props => {
           return <span data-priority={props.original.priority}>{props.value}</span>;
         },
-      },
+      },*/
       {
         Header: 'Patient ID',
-        accessor: 'patient_id',
+        accessor: 'PATIENT_ID',
         filterable: true,
         Cell: props => {
           return (
             <span data-patient-id={props.original.patient_id}>
            <Link data-patient-id={props.original._id} to={`/item/patient-info/${props.original._id}`}>
-              {props.original._id}
+              {props.original.PATIENT_ID}
             </Link>
             </span>
           );
-          return <span data-patient-id={props.patient._id}>{props.value}</span>;
         },
       },
       {

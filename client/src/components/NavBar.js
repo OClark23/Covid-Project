@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-
+//import '/client/src/pages/itemPatient.css';
 import Links from './Links';
 
 
@@ -24,15 +24,16 @@ const Nav = styled.nav.attrs({
   }
 `;
 
-
 const navBarItems = [
   {
-    name: 'Items',
+    //name: 'Items',
+    name:'Exams',
     toPathname: '/items',
     className: 'nav-link',
   },
   {
-    name: 'Create Item',
+    //name: 'Create Item',
+    name:'Add Exam',
     toPathname: '/item/create',
     className: 'nav-link',
   },

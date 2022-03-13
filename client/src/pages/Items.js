@@ -32,17 +32,20 @@ const linkTextColor = linkPathname => {
 
 const itemsPageVariants = [
   {
-    name: 'Items',
+    //name: 'Items',
+    name: 'EXAMS',
     toPathname: routes.ITEMS,
     pageComonent: ItemsList,
   },
   {
-    name: 'Items (using react-table-v6)',
+    //name: 'Items (using react-table-v6)',
+    name: 'EXAMS (TABLE VIEW)',
     toPathname: `${routes.ITEMS}/react-table-v6`,
     pageComponent: ItemsTable,
   },
   {
-    name: 'Items (with only styled-components)',
+  //  name: 'Items (with only styled-components)',
+    name: 'EXAMS (LIST)',
     toPathname: `${routes.ITEMS}/items-plain`,
     pageComponent: ItemsPlain,
   },

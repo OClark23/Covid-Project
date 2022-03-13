@@ -136,7 +136,12 @@ class ItemsTable extends Component {
         // filterable: true,
         Cell: props => {
           const { original } = props.cell.row;
-          return <span data-name={original.name}>{props.value}</span>;
+          return (
+            <Link data-patient-id={original._id} to={`/item/patient-info/${original._id}`}>
+            {original.PATIENT_ID}
+            </Link>
+            
+          );
         },
       },
       {
@@ -207,19 +212,14 @@ class ItemsTable extends Component {
       //     return <span data-priority={original.priority}>{props.value}</span>;
       //   },
       // },
-      {
+      /*{
         Header: 'Patient ID',
         accessor: 'patient_id',
         Cell: props => {
           const { original } = props.cell.row;
-          return (
-            <Link data-patient-id={original.patient_id} to={`/item/patient-info/${original._id}`}>
-             Patient Info
-            </Link>
-            
-          );
+          
         },
-      },
+      },*/
       {
         Header: 'Update',
         accessor: '_update',

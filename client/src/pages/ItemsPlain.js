@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { DeleteButton } from '../components/buttons';
 import api from '../api';
-
 import styled from 'styled-components';
+import {FaIdCard, FaBookMedical, FaCity, FaPenSquare, FaTrash } from 'react-icons/fa';
+
 
 const generateRandomImageWidth = () => {
   // between 40-69, with default of 42
@@ -62,6 +63,10 @@ const NameHeader = styled.h1`
 
 const DetailParagraph = styled.p`
   width: 100%;
+  display:grid;
+  align-items: center;
+  grid-template-rows: 1fr;
+  grid-template-columns: 20px 1fr;
 `;
 
 const ButtonsWrapper = styled.div`
@@ -82,14 +87,12 @@ class ItemsPlain extends Component {
   componentDidMount() {
     console.log('ItemsList: props');
     console.log(this.props);
-    // if (((this.props.itemData || {}).items || []).length) return;
-
-    this.fetchAllItems();
+    this.fetchAllPatients();
   }
 
-  fetchAllItems = () => {
+  fetchAllPatients = () => {
     api
-      .getAllItems()
+      .getAllPatients()
       .then(resp => {
         const { items } = resp.data;
         console.log('getAllItems: resp');
@@ -103,21 +106,21 @@ class ItemsPlain extends Component {
       });
   };
 
-  deleteSingleItem = itemId => {
+  deleteSinglePatient = itemId => {
     return api
-      .deleteItemById(itemId)
+      .deletePatientById(itemId)
       .then(resp => {
-        console.log('deleteItemById: resp');
+        console.log('deletePatientById: resp');
         console.log(resp);
         return resp;
       })
       .catch(err => {
-        console.error(`ERROR in 'deleteSingleItem': ${err}`);
+        console.error(`ERROR in 'deleteSinglePatient': ${err}`);
         console.error(err);
         return err;
       });
   };
-
+  
   handleRemoveItem = data => {
     const itemId = data;
 
@@ -131,26 +134,31 @@ class ItemsPlain extends Component {
   render() {
     const items = this.state.items || {};
     console.log(items);
-
-    return (
+    
+    return(
       <Wrapper>
-        {(items || []).length > 0
+        {(items || []).length > 0 
           ? items.map(item => (
-              <ItemContainer key={item._id}>
-                <ItemImage src={generateRandomCat()}></ItemImage>
-                <NameHeader>{item.name}</NameHeader>
-                <DetailParagraph> Exam ID: <Link data-id={item.__id} to={`/item/itemPatientExam/${item._id}`}>{item._id}</Link></DetailParagraph>
-                <DetailParagraph>Priority: {item.priority}</DetailParagraph>
-                <DetailParagraph>Zip: {item.zip}</DetailParagraph>
+                <ItemContainer key={item._id}>
+                {item.PATIENT_IMAGES.length > 0  ? (
+                  <ItemImage src={`https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${item.PATIENT_IMAGES[0].PNG_FILENAME ? item.PATIENT_IMAGES[0].PNG_FILENAME:""}`}></ItemImage>    
+                  ):(
+                    <ItemImage src={generateRandomCat()}></ItemImage>  
+                )}      
+                <DetailParagraph>  <FaBookMedical/> Exam ID: <Link data-id={item._id} to={`/item/itemPatientExam/${item._id}`}>{item._id}</Link></DetailParagraph>
+                <DetailParagraph> <FaIdCard/> Patient ID: <Link data-patient-id={item._id} to={`/item/patient-info/${item._id}`}>{item.PATIENT_ID}</Link>
+                </DetailParagraph>
+                <DetailParagraph><FaCity/> Zip: {item.ZIP}</DetailParagraph>
                 <ButtonsWrapper>
-                  <Link data-update-id={item._id} to={`/item/update/${item._id}`}>
+                <FaPenSquare/>
+                   <Link data-update-id={item._id} to={`/item/update/${item._id}`}>
                     Update Item
                   </Link>
-                  <Link data-patient-id={item.patient_id} to={`/item/patient-info/${item.patient_id}`}>{item.patient_id}</Link>
+                  <FaTrash/> 
                   <DeleteButton id={item._id} onDelete={this.handleRemoveItem} />
                 </ButtonsWrapper>
               </ItemContainer>
-            ))
+          ))
           : `No items to render... :(`}
       </Wrapper>
     );
