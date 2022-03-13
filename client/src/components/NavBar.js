@@ -1,9 +1,5 @@
 import React, { Component, useContext } from 'react';
 import styled from 'styled-components';
-<<<<<<< HEAD
-//import '/client/src/pages/itemPatient.css';
-=======
->>>>>>> 4092184e5c4d019249512df2839ad55988ed8b7a
 import Links from './Links';
 import { UserContext } from '../context/userContext';
 import { useHistory } from 'react-router-dom';
