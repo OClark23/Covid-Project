@@ -4,9 +4,9 @@
     "description": "",
     "main": "index.js",
     "engines": {
-        "node": ">=10.14.2",
-        "npm": ">=6.4.1",
-        "yarn": ">=1.22.5"
+        "node": "16.11.11",
+        "npm": "8.0.0",
+        "yarn": "1.22.11"
     },
     "scripts": {
         "debugServer": "npx nodemon inspect index.js",
