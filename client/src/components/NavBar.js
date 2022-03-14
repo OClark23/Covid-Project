@@ -18,9 +18,11 @@ const Container = styled.div.attrs({
 
 
 const Nav = styled.nav.attrs({
-  className: 'navbar navbar-expand-lg navbar-dark bg-dark',
+  className: 'navbar navbar-expand-sm navbar-dark',
 })`
   margin-bottom: 20px;
+  background-color: navy;
+  font-color: white;
 
   @media screen and (min-width: 992px) {
     padding: 0.5em 25%;
