@@ -33,103 +33,103 @@ const Patient = new Schema(
         },
         LATEST_HEIGHT: {
             type: String,
-            required: true
+            required: false
         },
         TUBERCULOSIS: {
             type: String,
-            required: true
+            required: false
         },
         SYSTEMIC_LUPUS_ERYTHMATOSUS: {
             type: String,
-            required: true
+            required: false
         },
         RHEUMATOID_ARTHRITIS: {
             type: String,
-            required: true
+            required: false
         },
         EXTENSIVE_BURNS: {
             type: String,
-            required: true
+            required: false
         },
         ASPLENIA: {
             type: String,
-            required: true
+            required: false
         },
         HYPOSPLENIA: {
             type: String,
-            required: true
+            required: false
         },
         MEASLES: {
             type: String,
-            required: true
+            required: false
         },
         CYTOMEGALOVIRUS: {
             type: String,
-            required: true
+            required: false
         },
         CHICKEN_POX: { 
             type: String,
-            required: true
+            required: false
         },
         HERPES_ZOSTER: {
             type: String,
-            required: true
+            required: false
         },
         MALNUTRITION: {
             type: String,
-            required: true
+            required: false
         },
         CURRENT_PREGNANT: {
             type: String,
-            required: true
+            required: false
         },
         CHRONIC_KIDNEY_DISEASE: {
             type: String,
-            required: true
+            required: false
         },
         DIABETES_TYPE_I: {
             type: String,
-            required: true
+            required: false
         },
         DIABETES_TYPE_II: {
             type: String,
-            required: true
+            required: false
         },
         TRANSPLANT: {
             type: String,
-            required: true
+            required: false
         },
         HEMODIALYSIS_PRE_DIAGNOSIS: {
             type: String,
-            required: true
+            required: false
         },
         HEMODIALYSIS_POST_DIAGNOSIS: {
             type: String,
-            required: true
+            required: false
         },
         CANCER: {
             type: String,
-            required: true
+            required: false
         },
         COVID_TEST_POSITIVE: {
             type: String,
-            required: true
+            required: false
         },
         TEST_NAME: {
             type: String,
-            required: true
+            required: false
         },
         ICU_ADMIT: {
             type: String,
-            required: true
+            required: false
         },
         NUMBER_ICU_ADMITS: {
             type: String,
-            required: true
+            required: false
         },
         MORTALITY: { 
             type: String,
-            required: true
+            required: false
         },
     },
     { timestamps: true },

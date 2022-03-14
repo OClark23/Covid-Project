@@ -22,7 +22,6 @@
 
 
 const items = 'mongodb://127.0.0.1:27017/items'
-const data = 'mongodb://127.0.0.1:27017/data'
 const mongoose = require('mongoose');
 
 mongoose

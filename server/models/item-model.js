@@ -5,19 +5,19 @@ const Item = new Schema(
     {
         name: {
             type: String,
-            required: true
+            required: false
         },
         gender: {
             type: String,
-            required: true
+            required: false
         },
         age: {
             type: Number,
-            required: true
+            required: false
         },
         zip: {
             type: String,
-            required: true
+            required: false
         },
 
         daysOfWeek: {
@@ -43,7 +43,7 @@ require: true
                     },
         content: {
             type: String,
-            required: true
+            required: false
         },
         // savedBy: {
         //     type: Schema.ObjectId,

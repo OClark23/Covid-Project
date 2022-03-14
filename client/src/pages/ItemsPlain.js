@@ -141,7 +141,7 @@ class ItemsPlain extends Component {
           ? items.map(item => (
                 <ItemContainer key={item._id}>
                 {item.PATIENT_IMAGES.length > 0  ? (
-                  <ItemImage src={`https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${item.PATIENT_IMAGES[0].PNG_FILENAME ? item.PATIENT_IMAGES[0].PNG_FILENAME:""}`}></ItemImage>    
+                  <ItemImage src={`https://ohif-hack-diversity-covid.s3.amazonaws.com/covid-png/${item.PATIENT_IMAGES[0].png_filename ? item.PATIENT_IMAGES[0].png_filename :""}`}></ItemImage>    
                   ):(
                     <ItemImage src={generateRandomCat()}></ItemImage>  
                 )}      
