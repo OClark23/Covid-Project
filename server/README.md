@@ -15,7 +15,7 @@ Required Versions:
 Upgrading versions:
 - Node.js
 https://bytearcher.com/articles/ways-to-get-the-latest-node.js-version-on-a-mac/
-_(We would suggest using nvm, as it's well-supported and makes managing different node versions easy!)_
+_(We would suggest using nvm, as it's well-supported and makes managing different node versions easy!)
 
 - npm
 https://docs.npmjs.com/try-the-latest-stable-version-of-npm
