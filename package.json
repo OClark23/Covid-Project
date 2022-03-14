@@ -10,7 +10,13 @@
     },
     "scripts": {
         "startDev": "cd ./server && yarn server && cd ../client && yarn start",
-        "postinstall": "(cd server && yarn install); (cd client && yarn install)"
+        "postinstall": "(cd server && yarn install); (cd client && yarn install)",
+        "build": "cd client && npm run build",
+        "install-client": "cd client && npm install",
+        "heroku-postbuild": "npm run install-client && npm run build",
+        "server": "cd ./server nodemon index.js",
+        "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
+        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -35,6 +41,7 @@
         "@emotion/styled": "^11.8.1",
         "@mui/material": "^5.4.4",
         "cross-env": "^7.0.3",
+        "dotenv": "^16.0.0",
         "node-notifier": "^8.0.1",
         "object-path": "^0.11.5"
     }
