@@ -38,10 +38,6 @@ const homeStyles = {
   marginLeft: `1em`,
 };
 
-const logoStyles = {
-  height: '40px',
-  width: '40px',
-};
 
 const Links = ({navBarItems}) => {
   const {userInfo} = useContext(UserContext)
@@ -51,7 +47,7 @@ const Links = ({navBarItems}) => {
         <HomeWrapper>
           <span style={{color: 'white'}}> {userInfo.name ? 'Dr. ' + userInfo.name : ''}</span>
           <Link to="/" className="navbar-brand" style={homeStyles}>
-            Home
+            COVID-19 Reporting App
           </Link>
         </HomeWrapper>
         <Collapse>
