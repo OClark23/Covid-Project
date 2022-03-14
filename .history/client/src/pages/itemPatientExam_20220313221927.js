@@ -68,11 +68,11 @@ class itemPatientExam extends Component{
         return (
             _id && (
               <div className="ItemPage">
-                <h1 className='title'><FaInfoCircle size={28} color="blue"/> <strong>Exam Details</strong></h1>
+                <h1 className='title'><strong>Exam Details</strong></h1>
             <div className="ItemContainer">
               <div className="ItemPatient">
 
-                <h1 className="card-title"><FaHospitalUser size={34} color={"green"}/>Patient</h1>
+                <h1 className="card-title">Patient</h1>
             
                 <div className="ItemText">
                 <h1>ID:</h1>
@@ -90,14 +90,14 @@ class itemPatientExam extends Component{
                 <h1>Zip Code:</h1>
                 <div className="examUpdateZip"></div>
     
-                <h1>Update Zipcode</h1> 
+                <h1>Update Zipcode</h1>
                 <h1>{ZIP}</h1>
                 </div>
                 </div>
                 
 
                 <div className="ItemExam">
-                <h1 className="card-title"><FaXRay size={34}/>Exam</h1>
+                <h1 className="card-title">Exam</h1>
                 <div className="ItemText">
                 <h1>Exam ID:</h1>
                 <h1>Exam-2</h1>
@@ -111,7 +111,7 @@ class itemPatientExam extends Component{
                 <h1>..</h1>
                 </div>
                 <div className="ItemText">
-                <h1>Key Finding: </h1>
+                <h1>Key Finding</h1>
                 <h1>{AGE}</h1>
                 </div>
                 <div className="ItemText">

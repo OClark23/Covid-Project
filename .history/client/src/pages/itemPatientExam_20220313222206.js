@@ -4,7 +4,7 @@ import { shared } from '../constants';
 import styled from 'styled-components';
 import ItemsPlain from './ItemsPlain';
 import './itemPatient.css';
-import {FaXRay,  FaHospitalUser, FaInfoCircle} from 'react-icons/fa';
+import {FaXRay,  FaHospitalUser, FaInfoCircle, FaCir} from 'react-icons/fa';
 
 //import ItemExamUpdate from './itemExamUpdate';
 
@@ -68,7 +68,7 @@ class itemPatientExam extends Component{
         return (
             _id && (
               <div className="ItemPage">
-                <h1 className='title'><FaInfoCircle size={28} color="blue"/> <strong>Exam Details</strong></h1>
+                <h1 className='title'><strong>Exam Details</strong></h1>
             <div className="ItemContainer">
               <div className="ItemPatient">
 
@@ -90,7 +90,7 @@ class itemPatientExam extends Component{
                 <h1>Zip Code:</h1>
                 <div className="examUpdateZip"></div>
     
-                <h1>Update Zipcode</h1> 
+                <h1>Update Zipcode</h1>
                 <h1>{ZIP}</h1>
                 </div>
                 </div>
@@ -111,7 +111,7 @@ class itemPatientExam extends Component{
                 <h1>..</h1>
                 </div>
                 <div className="ItemText">
-                <h1>Key Finding: </h1>
+                <h1>Key Finding</h1>
                 <h1>{AGE}</h1>
                 </div>
                 <div className="ItemText">

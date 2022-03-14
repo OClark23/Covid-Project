@@ -111,7 +111,7 @@ class itemPatientExam extends Component{
                 <h1>..</h1>
                 </div>
                 <div className="ItemText">
-                <h1>Key Finding: </h1>
+                <h1>Key Finding</h1>
                 <h1>{AGE}</h1>
                 </div>
                 <div className="ItemText">

@@ -142,32 +142,58 @@ class ItemsTable extends Component {
         },
       },
       {
-        Header: 'Gender',
-        accessor: 'SEX',
+        Header: 'Name',
+        accessor: 'name',
         filterable: true,
         Cell: props => {
           const { original } = props.cell.row;
-          return <span data-gender={original.SEX}>{props.value}</span>;
+          return (
+            <Link data-patient-id={original._id} to={`/item/patient-info/${original._id}`}>
+            {original.PATIENT_ID}
+            </Link>
+            
+          );
         },
       },
-    {
-      Header: 'Age',
-      accessor: 'AGE',
-      filterable: true,
-      Cell: props => {
-        const { original } = props.cell.row;
-        return <span data-age={original.AGE}>{props.value}</span>;
+      {
+        Header: 'Day(s)',
+        accessor: 'daysOfWeek',
+        // filterable: true,
+        Cell: props => {
+          const { daysOfWeek } = props.cell.row.original;
+          let daysToDisplay = '';
+          if (daysOfWeek && typeof daysOfWeek === 'object') {
+            for (const day in daysOfWeek) {
+              daysToDisplay =
+                daysToDisplay === '' ? daysOfWeek[day] : `${daysToDisplay}, ${daysOfWeek[day]}`;
+            }
+          }
+          return (
+            <span
+              data-daysofweek={daysOfWeek && JSON.stringify(daysOfWeek)}
+              data-daysofweek-by-id={props.value}>
+              {daysToDisplay || '-'}
+            </span>
+          );
+        },
       },
-    },
-    {
-      Header: 'Zip',
-      accessor: 'ZIP',
-      filterable: true,
-      Cell: props => {
-        const { original } = props.cell.row;
-        return <span data-zip={original.ZIP}>{props.value}</span>;
+      {
+        Header: 'Timeframe',
+        accessor: 'timeframeNote',
+        Cell: props => {
+          const { original } = props.cell.row;
+          return <span data-timeframe={original.timeframeNote}>{props.value || '-'}</span>;
+        },
       },
-    },
+      {
+        Header: 'Priority',
+        accessor: 'priority',
+        // filterable: true,
+        Cell: props => {
+          const { original } = props.cell.row;
+          return <span data-priority={original.priority}>{props.value}</span>;
+        },
+      },
       {
         Header: 'Update',
         accessor: '_update',

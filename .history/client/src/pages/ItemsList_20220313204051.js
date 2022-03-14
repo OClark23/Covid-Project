@@ -75,7 +75,7 @@ class ItemsTable extends Component {
 
   fetchAllPatients = () => {
     api
-      .getAllPatients()
+      .getAllItems()
       .then(resp => {
         const { items } = resp.data;
         console.log('getAllItems: resp');
@@ -91,7 +91,7 @@ class ItemsTable extends Component {
 
   deleteSinglePatient = itemId => {
     return api
-      .deletePatientById(itemId)
+      .deleteItemById(itemId)
       .then(resp => {
         console.log('deletePatientById: resp');
         console.log(resp);
@@ -131,43 +131,58 @@ class ItemsTable extends Component {
         },
       },
       {
-        Header: 'Patient ID',
-        accessor: 'PATIENT_ID',
-        // filterable: true,
+        Header: 'Name',
+        accessor: 'name',
+        filterable: true,
         Cell: props => {
           const { original } = props.cell.row;
           return (
-            <Link data-item-id to={`item/patient-info/${original._id}`}> {`${original.PATIENT_ID}`}</Link>
+            <Link data-patient-id={original._id} to={`/item/patient-info/${original._id}`}>
+            {original.PATIENT_ID}
+            </Link>
+            
           );
         },
       },
       {
-        Header: 'Gender',
-        accessor: 'SEX',
-        filterable: true,
+        Header: 'Day(s)',
+        accessor: 'daysOfWeek',
+        // filterable: true,
         Cell: props => {
-          const { original } = props.cell.row;
-          return <span data-gender={original.SEX}>{props.value}</span>;
+          const { daysOfWeek } = props.cell.row.original;
+          let daysToDisplay = '';
+          if (daysOfWeek && typeof daysOfWeek === 'object') {
+            for (const day in daysOfWeek) {
+              daysToDisplay =
+                daysToDisplay === '' ? daysOfWeek[day] : `${daysToDisplay}, ${daysOfWeek[day]}`;
+            }
+          }
+          return (
+            <span
+              data-daysofweek={daysOfWeek && JSON.stringify(daysOfWeek)}
+              data-daysofweek-by-id={props.value}>
+              {daysToDisplay || '-'}
+            </span>
+          );
         },
       },
-    {
-      Header: 'Age',
-      accessor: 'AGE',
-      filterable: true,
-      Cell: props => {
-        const { original } = props.cell.row;
-        return <span data-age={original.AGE}>{props.value}</span>;
+      {
+        Header: 'Timeframe',
+        accessor: 'timeframeNote',
+        Cell: props => {
+          const { original } = props.cell.row;
+          return <span data-timeframe={original.timeframeNote}>{props.value || '-'}</span>;
+        },
       },
-    },
-    {
-      Header: 'Zip',
-      accessor: 'ZIP',
-      filterable: true,
-      Cell: props => {
-        const { original } = props.cell.row;
-        return <span data-zip={original.ZIP}>{props.value}</span>;
+      {
+        Header: 'Priority',
+        accessor: 'priority',
+        // filterable: true,
+        Cell: props => {
+          const { original } = props.cell.row;
+          return <span data-priority={original.priority}>{props.value}</span>;
+        },
       },
-    },
       {
         Header: 'Update',
         accessor: '_update',

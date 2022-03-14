@@ -53,12 +53,12 @@
 
 /*text size*/
 h1{
-    font-size: 18px !important;
+    font-size: 18px;
     padding-right: 5px;
 }
 
 .title{
-    font-size:35px !important;
+    font-size:40px;
 }
 
 .card-title{
