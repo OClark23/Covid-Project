@@ -11,13 +11,13 @@ const app = express();
 const apiPort = 3000;
 
 // Heroku
-const PORT = process.env.PORT || 5000
-const path = require("path");
-require("dotenv").config()
-app.use(express.static(path.resolve(__dirname, "./client/build")));
-app.get("*", function (request, response) {
-    response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-  });
+// const PORT = process.env.PORT || 5000
+// const path = require("path");
+// require("dotenv").config()
+// app.use(express.static(path.resolve(__dirname, "./client/build")));
+// app.get("*", function (request, response) {
+//     response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+//   });
 
 
 app.use(bodyParser.urlencoded({ extended: true }));

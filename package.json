@@ -4,19 +4,13 @@
     "version": "0.1.0",
     "private": true,
     "engines": {
-        "node": "16.14.0",
+        "node": "16.11.11",
         "npm": "6.4.1",
-        "yarn": "1.22.5"
+        "yarn": "1.22.11"
     },
     "scripts": {
         "startDev": "cd ./server && yarn server && cd ../client && yarn start",
-        "postinstall": "(cd server && yarn install); (cd client && yarn install)",
-        "build": "cd client && npm run build",
-        "install-client": "cd client && npm install",
-        "heroku-postbuild": "npm run install-client && npm run build",
-        "server": "cd ./server nodemon index.js",
-        "develop": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
-        "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
+        "postinstall": "(cd server && yarn install); (cd client && yarn install)"
 
     },
     "eslintConfig": {
