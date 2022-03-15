@@ -9,21 +9,25 @@ import {
     // itemExamUpdate,
     ItemInfo,
     SignUp,
-    Login
+    Login,
+
   } from '../pages';
 
 import { routes } from '../constants';
 
 // Static/Stateless
 import { Welcome, NavBar } from '../components';
+import NewNavBar from '../components/NewNavBar'
 import PatientForm from './forms/PatientForm';
 
 const FrontierContainer = () => {
     let history = useHistory();
     
-    return <>  <NavBar/>
+    return <>  
+    <NewNavBar/>
     <Switch>
-    <Route exact path={routes.HOME} component={SignUp} />
+    <Route exact path={routes.SIGN_UP} component={SignUp} />
+  
     <Route exact path={routes.LOG_IN} component={Login} />
     <Route exact path={routes.ITEM_UPDATE} component={PatientForm} />
     <Route exact path={routes.ITEM_INFO} component={ItemInfo} />

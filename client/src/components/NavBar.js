@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Links from './Links';
 import { UserContext } from '../context/userContext';
 import { useHistory } from 'react-router-dom';
-
+import { Button } from '@mui/material';
 
 
 
@@ -18,7 +18,7 @@ const Container = styled.div.attrs({
 
 
 const Nav = styled.nav.attrs({
-  className: 'navbar navbar-expand-lg navbar-dark bg-dark',
+  className: 'navbar navbar-expand-lg navbar-dark bg-white',
 })`
   margin-bottom: 20px;
 
@@ -54,7 +54,7 @@ const NavBar = () =>   {
       <Container>
         <Nav>
           <Links navBarItems={userInfo.email ? navBarItems : []} />
-{  userInfo.email && <button onClick={handleSignOut}>Sign out</button>
+{  userInfo.email && <Button color="inherit" onClick={handleSignOut}>Sign out</Button>
 }        </Nav>
       </Container>
     );

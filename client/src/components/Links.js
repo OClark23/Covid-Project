@@ -1,4 +1,6 @@
+import { color } from '@mui/system';
 import React, { Component, useContext } from 'react';
+import { FaBlackberry } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { UserContext } from '../context/userContext';
@@ -12,6 +14,7 @@ const Collapse = styled.div.attrs({
   @media screen and (max-width: 420px) {
     display: flex;
     flex-grow: 1;
+    
   }
 `;
 
@@ -35,12 +38,16 @@ const Item = styled.div.attrs({
 `;
 
 const homeStyles = {
-  marginLeft: `1em`,
+ 
+  color: "black",
+  fontFamily: "PT Sans",
+  fontSize: "20px"
 };
 
 const logoStyles = {
   height: '40px',
   width: '40px',
+  color: "black"
 };
 
 const Links = ({navBarItems}) => {
@@ -49,7 +56,7 @@ const Links = ({navBarItems}) => {
     return (
       <React.Fragment>
         <HomeWrapper>
-          <span style={{color: 'white'}}> {userInfo.name ? 'Dr. ' + userInfo.name : ''}</span>
+          <span style={homeStyles}> {userInfo.name ? 'Dr. ' + userInfo.name : ''}</span>
           <Link to="/" className="navbar-brand" style={homeStyles}>
             Home
           </Link>
@@ -58,7 +65,7 @@ const Links = ({navBarItems}) => {
           <List>
             {navBarItems.map(navBarItem => (
               <Item key={navBarItem.name}>
-                <Link to={userInfo.email ? navBarItem.toPathname : '/'} className={navBarItem.className}>
+                <Link style={homeStyles} to={userInfo.email ? navBarItem.toPathname : '/'} className={navBarItem.className}>
                   {navBarItem.name}
                 </Link>
               </Item>

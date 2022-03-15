@@ -1,49 +1,40 @@
-  import axios from 'axios';
-  import React, { useState, useContext, useEffect} from 'react';
-  import { useHistory, useLocation } from 'react-router-dom'
-  import styled from 'styled-components';
-  import { UserContext } from '../../context/userContext';
+import axios from 'axios';
+import React, { useState, useContext, useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import styled from 'styled-components';
+import { UserContext } from '../../context/userContext';
+import Button from '@mui/material/Button';
+import './PatientForm.css'
+const Input = styled.input`
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  font-family: 'Open Sans';
+  margin-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+`;
 
-  const Input = styled.input`
-    padding: 4px 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
-    font-family: 'Open Sans';
-    margin-bottom: 8px;
-    width: 100%;
-    box-sizing: border-box;
-    height: 40px;
-  `;
+const Form = styled.form`
+  width: 100%;
+  max-width: 400px;
+  background: white;
+  border: 1px solid #eee;
+  padding: 16px;
+  box-sizing: border-box;
+  color: black;
+  border-radius: 4px;
+  margin: auto;
+  .alt-text {
+    text-align: center;
+    margin: 10px 0;
+  }
+`;
 
-  const Form = styled.form`
-      width: 100%;
-      max-width: 400px;
-      background: white;
-      border: 1px solid #eee;
-      padding: 16px;
-      box-sizing: border-box;
-      color: black;
-      border-radius: 4px;
-      margin: auto;
-      .alt-text{
-          text-align: center;
-          margin: 10px 0;
-      }
-  `;
 
-  const Button = styled.button`
-    color: white;
-    background: blue;
-    font-weight: bold;
-    box-shadow: none;
-    border: none;
-    width: 100%;
-    display: block;
-    white-space: none;
-  `;
-
-  const Select = styled.select`
+const Select = styled.select`
   padding: 4px 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -55,7 +46,6 @@
   height: 40px;
   background: white;
   color: gray;
-
   option {
     color: black;
     background: white;
@@ -66,27 +56,51 @@
   }
 `;
 
-  const PatientForm = () => {
-    const {userId} = useContext(UserContext)
-    const history = useHistory()
-    let path = useLocation();
-    const [edit] = useState(path.pathname.includes("update"))
+const PatientForm = () => {
+  const { userId } = useContext(UserContext);
+  const history = useHistory();
+  let path = useLocation();
+  const [edit] = useState(path.pathname.includes('update'));
 
-    const [form, setForm] = useState({
-      name: '',
-      gender: '',
-      age: '',
-      zip: '',
-      priority: '',
-      covid: "",
-      testName: "",
-      content: '',
-  })
+  const [form, setForm] = useState({
+    PATIENT_ID: '',
+    AGE: '',
+    SEX: '',
+    RACE: '',
+    ZIP: '',
+    LATEST_BMI: ' ',
+    LATEST_WEIGHT: ' ',
+    LATEST_HEIGHT: ' ',
+    TUBERCULOSIS: ' ',
+    SYSTEMIC_LUPUS_ERYTHMATOSUS: ' ',
+    RHEUMATOID_ARTHRITIS: ' ',
+    EXTENSIVE_BURNS: ' ',
+    ASPLENIA: ' ',
+    HYPOSPLENIA: '',
+    MEASLES: '',
+    CYTOMEGALOVIRUS: '',
+    CHICKEN_POX: '',
+    HERPES_ZOSTER: '',
+    MALNUTRITION: '',
+    CURRENT_PREGNANT: '',
+    CHRONIC_KIDNEY_DISEASE: '',
+    DIABETES_TYPE_I: '',
+    DIABETES_TYPE_II: '',
+    TRANSPLANT: '',
+    HEMODIALYSIS_PRE_DIAGNOSIS: '',
+    HEMODIALYSIS_POST_DIAGNOSIS: '',
+    CANCER: '',
+    COVID_TEST_POSITIVE: '',
+    TEST_NAME: '',
+    ICU_ADMIT: '',
+    NUMBER_ICU_ADMITS: '',
+    MORTALITY: '',
+  });
 
   useEffect(() => {
-    if(edit) {
-      const splitPath = path.pathname.split('/')
-      const recordId = splitPath[splitPath.length - 1]
+    if (edit) {
+      const splitPath = path.pathname.split('/');
+      const recordId = splitPath[splitPath.length - 1];
 
       const api = axios.create({
         baseURL: process.env.REACT_APP_API_URL || 'http://localhost:3000/api',
@@ -96,112 +110,132 @@
         // }),
       });
       (async () => {
-        const res = await api.get(`/item/${recordId}`)
-        const {name, gender, age, zip, priority, covid, testName, content} = res.data.item
-        console.log(res.data.item)
-        setForm(prevForm => ({...prevForm, name, age, gender, zip, priority, covid, testName, content}))
-      })()
-
+        const res = await api.get(`/patient/${recordId}`);
+        const { PATIENT_ID, SEX, AGE, ZIP } = res.data.patient;
+        console.log(res.data.item);
+        setForm(prevForm => ({
+          ...prevForm,
+          PATIENT_ID,
+          AGE,
+          SEX,
+          ZIP,
+        }));
+      })();
     }
+  }, [edit]);
 
-  }, [edit])
+  const submit = async e => {
+    e.preventDefault();
+    try {
+      const api = axios.create({
+        baseURL: process.env.REACT_APP_API_URL || 'http://localhost:3000/api',
+        hostname: process.env.REEACT_APP_API_HOST || 'http://localhost:3000/',
+        // httpsAgent: https.Agent({
+        //   rejectUnauthorized: false,
+        // }),
+      });
 
-    const submit = async e => {
-      e.preventDefault();
-      try {
-
-        const api = axios.create({
-          baseURL: process.env.REACT_APP_API_URL || 'http://localhost:3000/api',
-          hostname: process.env.REEACT_APP_API_HOST || 'http://localhost:3000/',
-          // httpsAgent: https.Agent({
-          //   rejectUnauthorized: false,
-          // }),
-        });
-
-        if (edit) {
-          const splitPath = path.pathname.split('/')
-          const recordId = splitPath[splitPath.length - 1]
-          const userInfo = await api.put(`/item/${recordId}`, {...form, savedBy: userId })
-        } else {
-          const userInfo = await api.post('/item', {...form, savedBy: userId })
-        }
-
-        history.push('/items')
-      } catch (err) {
-        console.log(err.message);
+      if (edit) {
+        const splitPath = path.pathname.split('/');
+        const recordId = splitPath[splitPath.length - 1];
+        const userInfo = await api.put(`/patient/${recordId}`, { ...form, savedBy: userId });
+      } else {
+        const userInfo = await api.post('/patient', { ...form, savedBy: userId });
       }
-    };
-    return (
-      <Form>
-        <span>Patient Intake</span>
-        <Input
-          name="name"
-          placeholder="name"
-          onChange={e => {
-            e.persist();
-            setForm(prevName => ({...prevName, name: e.target.value}))
 
-          }
-          }
-          value={form.name}
-        />
-<Select value={form.gender}  onChange={e => {
-e.persist();
-          setForm(prevName => ({...prevName, gender: e.target.value}))
-        }
-        } >
-         <option value="" disabled selected hidden>gender</option>
-        <option  value="Male">Male</option>
-        <option   value="Female">Female</option>
-      </Select>
-          <Input
-          name="age"
-          placeholder="age"
-          onChange={e => {
-            e.persist();
-            setForm(prevName => ({...prevName, age: e.target.value}))
-          }
-          }
-          value={form.age}
-        />
-         <Input
-          name="zip"
-          placeholder="zip"
-          onChange={e =>
-            {
-              e.persist();
-              setForm(prevName => ({...prevName, zip: e.target.value}))}
-            }
-
-          value={form.zip}
-        />
-                 <Input
-          name="priority"
-          placeholder="priority"
-          onChange={e => {e.persist(); setForm(prevName => ({...prevName, priority: e.target.value}))}}
-          value={form.priority}
-        />
-                 <Input
-          name="covid"
-          placeholder="covid"
-          onChange={e => {e.persist(); setForm(prevName => ({...prevName, covid: e.target.value}))}}
-          value={form.covid}
-        />
-                 <Input
-          name="testName"
-          placeholder="test name"
-          onChange={e => {e.persist();setForm(prevName => ({...prevName, testName: e.target.value}))}}
-          value={form.testName}
-        />
-                 <Input
-          name="notes"
-          placeholder="notes"
-          onChange={e => {e.persist();setForm(prevName => ({...prevName, content: e.target.value}))}}
-          value={form.content}
-        />
-        <Button onClick={submit}>{edit ? 'save' : 'submit'}</Button>
-      </Form>
-    );
+      history.push('/items');
+    } catch (err) {
+      console.log(err.message);
+    }
   };
+  return (
+    <div className='Form'>
+      <div className='svg-title'>
+      <svg width="421" height="50" viewBox="0 0 421 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 13.1562V31.0938H17.9688C19.1979 31.0938 20.3542 30.8646 21.4375 30.4062C22.5208 29.9271 23.4688 29.2812 24.2812 28.4688C25.0938 27.6562 25.7292 26.7083 26.1875 25.625C26.6667 24.5208 26.9062 23.3542 26.9062 22.125C26.9062 20.8958 26.6667 19.7396 26.1875 18.6562C25.7292 17.5521 25.0938 16.5938 24.2812 15.7812C23.4688 14.9688 22.5208 14.3333 21.4375 13.875C20.3542 13.3958 19.1979 13.1562 17.9688 13.1562H9ZM9 49H0.03125V4.1875H17.9688C19.6146 4.1875 21.1979 4.40625 22.7188 4.84375C24.2396 5.26042 25.6562 5.86458 26.9688 6.65625C28.3021 7.42708 29.5104 8.36458 30.5938 9.46875C31.6979 10.5521 32.6354 11.7604 33.4062 13.0938C34.1979 14.4271 34.8021 15.8542 35.2188 17.375C35.6562 18.8958 35.875 20.4792 35.875 22.125C35.875 24.5833 35.4062 26.9062 34.4688 29.0938C33.5312 31.2604 32.25 33.1562 30.625 34.7812C29 36.4062 27.0938 37.6875 24.9062 38.625C22.7396 39.5625 20.4271 40.0312 17.9688 40.0312H9V49ZM72.6562 49H70.5938L67.2812 44.4062C66.4688 45.1354 65.6042 45.8229 64.6875 46.4688C63.7917 47.0938 62.8438 47.6458 61.8438 48.125C60.8438 48.5833 59.8125 48.9479 58.75 49.2188C57.7083 49.4896 56.6458 49.625 55.5625 49.625C53.2083 49.625 50.9896 49.2292 48.9062 48.4375C46.8438 47.6458 45.0312 46.5 43.4688 45C41.9271 43.4792 40.7083 41.625 39.8125 39.4375C38.9167 37.25 38.4688 34.7604 38.4688 31.9688C38.4688 29.3646 38.9167 26.9792 39.8125 24.8125C40.7083 22.625 41.9271 20.75 43.4688 19.1875C45.0312 17.625 46.8438 16.4167 48.9062 15.5625C50.9896 14.6875 53.2083 14.25 55.5625 14.25C56.6458 14.25 57.7188 14.3854 58.7812 14.6562C59.8438 14.9271 60.875 15.3021 61.875 15.7812C62.875 16.2604 63.8229 16.8229 64.7188 17.4688C65.6354 18.1146 66.4896 18.8125 67.2812 19.5625L70.5938 15.5938H72.6562V49ZM64.0625 31.9688C64.0625 30.8021 63.8333 29.6771 63.375 28.5938C62.9375 27.4896 62.3333 26.5208 61.5625 25.6875C60.7917 24.8333 59.8854 24.1562 58.8438 23.6562C57.8229 23.1354 56.7292 22.875 55.5625 22.875C54.3958 22.875 53.2917 23.0729 52.25 23.4688C51.2292 23.8646 50.3333 24.4479 49.5625 25.2188C48.8125 25.9896 48.2188 26.9479 47.7812 28.0938C47.3438 29.2188 47.125 30.5104 47.125 31.9688C47.125 33.4271 47.3438 34.7292 47.7812 35.875C48.2188 37 48.8125 37.9479 49.5625 38.7188C50.3333 39.4896 51.2292 40.0729 52.25 40.4688C53.2917 40.8646 54.3958 41.0625 55.5625 41.0625C56.7292 41.0625 57.8229 40.8125 58.8438 40.3125C59.8854 39.7917 60.7917 39.1146 61.5625 38.2812C62.3333 37.4271 62.9375 36.4583 63.375 35.375C63.8333 34.2708 64.0625 33.1354 64.0625 31.9688ZM95.9688 49C93.9062 49 91.9688 48.6146 90.1562 47.8438C88.3438 47.0521 86.75 45.9792 85.375 44.625C84.0208 43.25 82.9479 41.6562 82.1562 39.8438C81.3854 38.0312 81 36.0938 81 34.0312V24.0938H76.8438V15.5938H81V2.21875H89.5V15.5938H102.438V24.0938H89.5V34.0312C89.5 34.9271 89.6667 35.7708 90 36.5625C90.3333 37.3333 90.7917 38.0104 91.375 38.5938C91.9583 39.1771 92.6458 39.6458 93.4375 40C94.2292 40.3333 95.0729 40.5 95.9688 40.5H102.438V49H95.9688ZM117.312 6.4375C117.312 7.22917 117.156 7.96875 116.844 8.65625C116.552 9.34375 116.146 9.94792 115.625 10.4688C115.104 10.9688 114.49 11.375 113.781 11.6875C113.094 11.9792 112.354 12.125 111.562 12.125C110.771 12.125 110.021 11.9792 109.312 11.6875C108.625 11.375 108.021 10.9688 107.5 10.4688C107 9.94792 106.594 9.34375 106.281 8.65625C105.99 7.96875 105.844 7.22917 105.844 6.4375C105.844 5.66667 105.99 4.9375 106.281 4.25C106.594 3.54167 107 2.9375 107.5 2.4375C108.021 1.91667 108.625 1.51042 109.312 1.21875C110.021 0.90625 110.771 0.75 111.562 0.75C112.354 0.75 113.094 0.90625 113.781 1.21875C114.49 1.51042 115.104 1.91667 115.625 2.4375C116.146 2.9375 116.552 3.54167 116.844 4.25C117.156 4.9375 117.312 5.66667 117.312 6.4375ZM115.844 49H107.25V15.5312H115.844V49ZM135.688 40.8125C136.021 40.9167 136.354 40.9896 136.688 41.0312C137.021 41.0521 137.354 41.0625 137.688 41.0625C138.521 41.0625 139.323 40.9479 140.094 40.7188C140.865 40.4896 141.583 40.1667 142.25 39.75C142.938 39.3125 143.542 38.7917 144.062 38.1875C144.604 37.5625 145.042 36.875 145.375 36.125L151.625 42.4062C150.833 43.5312 149.917 44.5417 148.875 45.4375C147.854 46.3333 146.74 47.0938 145.531 47.7188C144.344 48.3438 143.083 48.8125 141.75 49.125C140.438 49.4583 139.083 49.625 137.688 49.625C135.333 49.625 133.115 49.1875 131.031 48.3125C128.969 47.4375 127.156 46.2188 125.594 44.6562C124.052 43.0938 122.833 41.2396 121.938 39.0938C121.042 36.9271 120.594 34.5521 120.594 31.9688C120.594 29.3229 121.042 26.9062 121.938 24.7188C122.833 22.5312 124.052 20.6667 125.594 19.125C127.156 17.5833 128.969 16.3854 131.031 15.5312C133.115 14.6771 135.333 14.25 137.688 14.25C139.083 14.25 140.448 14.4167 141.781 14.75C143.115 15.0833 144.375 15.5625 145.562 16.1875C146.771 16.8125 147.896 17.5833 148.938 18.5C149.979 19.3958 150.896 20.4062 151.688 21.5312L135.688 40.8125ZM140.062 23.2188C139.667 23.0729 139.271 22.9792 138.875 22.9375C138.5 22.8958 138.104 22.875 137.688 22.875C136.521 22.875 135.417 23.0938 134.375 23.5312C133.354 23.9479 132.458 24.5521 131.688 25.3438C130.938 26.1354 130.344 27.0938 129.906 28.2188C129.469 29.3229 129.25 30.5729 129.25 31.9688C129.25 32.2812 129.26 32.6354 129.281 33.0312C129.323 33.4271 129.375 33.8333 129.438 34.25C129.521 34.6458 129.615 35.0312 129.719 35.4062C129.823 35.7812 129.958 36.1146 130.125 36.4062L140.062 23.2188ZM164.531 49H156V15.5312H158.062L160.875 18.7812C162.25 17.5312 163.802 16.5729 165.531 15.9062C167.281 15.2188 169.104 14.875 171 14.875C173.042 14.875 174.969 15.2708 176.781 16.0625C178.594 16.8333 180.177 17.9062 181.531 19.2812C182.885 20.6354 183.948 22.2292 184.719 24.0625C185.51 25.875 185.906 27.8125 185.906 29.875V49H177.375V29.875C177.375 29 177.208 28.1771 176.875 27.4062C176.542 26.6146 176.083 25.9271 175.5 25.3438C174.917 24.7604 174.24 24.3021 173.469 23.9688C172.698 23.6354 171.875 23.4688 171 23.4688C170.104 23.4688 169.26 23.6354 168.469 23.9688C167.677 24.3021 166.99 24.7604 166.406 25.3438C165.823 25.9271 165.365 26.6146 165.031 27.4062C164.698 28.1771 164.531 29 164.531 29.875V49ZM208.344 49C206.281 49 204.344 48.6146 202.531 47.8438C200.719 47.0521 199.125 45.9792 197.75 44.625C196.396 43.25 195.323 41.6562 194.531 39.8438C193.76 38.0312 193.375 36.0938 193.375 34.0312V24.0938H189.219V15.5938H193.375V2.21875H201.875V15.5938H214.812V24.0938H201.875V34.0312C201.875 34.9271 202.042 35.7708 202.375 36.5625C202.708 37.3333 203.167 38.0104 203.75 38.5938C204.333 39.1771 205.021 39.6458 205.812 40C206.604 40.3333 207.448 40.5 208.344 40.5H214.812V49H208.344ZM247.438 49H238.469V4.1875H247.438V49ZM263.406 49H254.875V15.5312H256.938L259.75 18.7812C261.125 17.5312 262.677 16.5729 264.406 15.9062C266.156 15.2188 267.979 14.875 269.875 14.875C271.917 14.875 273.844 15.2708 275.656 16.0625C277.469 16.8333 279.052 17.9062 280.406 19.2812C281.76 20.6354 282.823 22.2292 283.594 24.0625C284.385 25.875 284.781 27.8125 284.781 29.875V49H276.25V29.875C276.25 29 276.083 28.1771 275.75 27.4062C275.417 26.6146 274.958 25.9271 274.375 25.3438C273.792 24.7604 273.115 24.3021 272.344 23.9688C271.573 23.6354 270.75 23.4688 269.875 23.4688C268.979 23.4688 268.135 23.6354 267.344 23.9688C266.552 24.3021 265.865 24.7604 265.281 25.3438C264.698 25.9271 264.24 26.6146 263.906 27.4062C263.573 28.1771 263.406 29 263.406 29.875V49ZM307.219 49C305.156 49 303.219 48.6146 301.406 47.8438C299.594 47.0521 298 45.9792 296.625 44.625C295.271 43.25 294.198 41.6562 293.406 39.8438C292.635 38.0312 292.25 36.0938 292.25 34.0312V24.0938H288.094V15.5938H292.25V2.21875H300.75V15.5938H313.688V24.0938H300.75V34.0312C300.75 34.9271 300.917 35.7708 301.25 36.5625C301.583 37.3333 302.042 38.0104 302.625 38.5938C303.208 39.1771 303.896 39.6458 304.688 40C305.479 40.3333 306.323 40.5 307.219 40.5H313.688V49H307.219ZM350.906 49H348.844L345.531 44.4062C344.719 45.1354 343.854 45.8229 342.938 46.4688C342.042 47.0938 341.094 47.6458 340.094 48.125C339.094 48.5833 338.062 48.9479 337 49.2188C335.958 49.4896 334.896 49.625 333.812 49.625C331.458 49.625 329.24 49.2292 327.156 48.4375C325.094 47.6458 323.281 46.5 321.719 45C320.177 43.4792 318.958 41.625 318.062 39.4375C317.167 37.25 316.719 34.7604 316.719 31.9688C316.719 29.3646 317.167 26.9792 318.062 24.8125C318.958 22.625 320.177 20.75 321.719 19.1875C323.281 17.625 325.094 16.4167 327.156 15.5625C329.24 14.6875 331.458 14.25 333.812 14.25C334.896 14.25 335.969 14.3854 337.031 14.6562C338.094 14.9271 339.125 15.3021 340.125 15.7812C341.125 16.2604 342.073 16.8229 342.969 17.4688C343.885 18.1146 344.74 18.8125 345.531 19.5625L348.844 15.5938H350.906V49ZM342.312 31.9688C342.312 30.8021 342.083 29.6771 341.625 28.5938C341.188 27.4896 340.583 26.5208 339.812 25.6875C339.042 24.8333 338.135 24.1562 337.094 23.6562C336.073 23.1354 334.979 22.875 333.812 22.875C332.646 22.875 331.542 23.0729 330.5 23.4688C329.479 23.8646 328.583 24.4479 327.812 25.2188C327.062 25.9896 326.469 26.9479 326.031 28.0938C325.594 29.2188 325.375 30.5104 325.375 31.9688C325.375 33.4271 325.594 34.7292 326.031 35.875C326.469 37 327.062 37.9479 327.812 38.7188C328.583 39.4896 329.479 40.0729 330.5 40.4688C331.542 40.8646 332.646 41.0625 333.812 41.0625C334.979 41.0625 336.073 40.8125 337.094 40.3125C338.135 39.7917 339.042 39.1146 339.812 38.2812C340.583 37.4271 341.188 36.4583 341.625 35.375C342.083 34.2708 342.312 33.1354 342.312 31.9688ZM366.031 49H357.438V2.21875H366.031V31.7188L378.75 15.5938H388.562L377.469 29.5312L388.562 49H378.75L371.969 36.8438L366.031 44.7188V49ZM404.188 40.8125C404.521 40.9167 404.854 40.9896 405.188 41.0312C405.521 41.0521 405.854 41.0625 406.188 41.0625C407.021 41.0625 407.823 40.9479 408.594 40.7188C409.365 40.4896 410.083 40.1667 410.75 39.75C411.438 39.3125 412.042 38.7917 412.562 38.1875C413.104 37.5625 413.542 36.875 413.875 36.125L420.125 42.4062C419.333 43.5312 418.417 44.5417 417.375 45.4375C416.354 46.3333 415.24 47.0938 414.031 47.7188C412.844 48.3438 411.583 48.8125 410.25 49.125C408.938 49.4583 407.583 49.625 406.188 49.625C403.833 49.625 401.615 49.1875 399.531 48.3125C397.469 47.4375 395.656 46.2188 394.094 44.6562C392.552 43.0938 391.333 41.2396 390.438 39.0938C389.542 36.9271 389.094 34.5521 389.094 31.9688C389.094 29.3229 389.542 26.9062 390.438 24.7188C391.333 22.5312 392.552 20.6667 394.094 19.125C395.656 17.5833 397.469 16.3854 399.531 15.5312C401.615 14.6771 403.833 14.25 406.188 14.25C407.583 14.25 408.948 14.4167 410.281 14.75C411.615 15.0833 412.875 15.5625 414.062 16.1875C415.271 16.8125 416.396 17.5833 417.438 18.5C418.479 19.3958 419.396 20.4062 420.188 21.5312L404.188 40.8125ZM408.562 23.2188C408.167 23.0729 407.771 22.9792 407.375 22.9375C407 22.8958 406.604 22.875 406.188 22.875C405.021 22.875 403.917 23.0938 402.875 23.5312C401.854 23.9479 400.958 24.5521 400.188 25.3438C399.438 26.1354 398.844 27.0938 398.406 28.2188C397.969 29.3229 397.75 30.5729 397.75 31.9688C397.75 32.2812 397.76 32.6354 397.781 33.0312C397.823 33.4271 397.875 33.8333 397.938 34.25C398.021 34.6458 398.115 35.0312 398.219 35.4062C398.323 35.7812 398.458 36.1146 398.625 36.4062L408.562 23.2188Z" fill="white"/>
+</svg>
+</div>
+    <Form>
+      <Input
+        name="Patient ID"
+        placeholder="patient id"
+        onChange={e => {
+          e.persist();
+          setForm(prevName => ({ ...prevName, PATIENT_ID: e.target.value }));
+        }}
+        value={form.PATIENT_ID}
+      />
+      <Select
+        value={form.SEX}
+        onChange={e => {
+          e.persist();
+          setForm(prevName => ({ ...prevName, SEX: e.target.value }));
+        }}>
+        <option value="" disabled selected hidden>
+          gender
+        </option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Prefer not to say">Prefer not to say</option>
+      </Select>
+      <Input
+        name="age"
+        placeholder="age"
+        onChange={e => {
+          e.persist();
+          setForm(prevName => ({ ...prevName, AGE: e.target.value }));
+        }}
+        value={form.AGE}
+      />
+      <Input
+        name="zip"
+        placeholder="zip"
+        onChange={e => {
+          e.persist();
+          setForm(prevName => ({ ...prevName, ZIP: e.target.value }));
+        }}
+        value={form.ZIP}
+      />
+      {/* <Input
+        name="priority"
+        placeholder="priority"
+        onChange={e => {
+          e.persist();
+          setForm(prevName => ({ ...prevName, priority: e.target.value }));
+        }}
+        value={form.priority}
+      />
+      <Input
+        name="covid"
+        placeholder="covid"
+        onChange={e => {
+          e.persist();
+          setForm(prevName => ({ ...prevName, covid: e.target.value }));
+        }}
+        value={form.covid}
+      />
+      <Input
+        name="testName"
+        placeholder="test name"
+        onChange={e => {
+          e.persist();
+          setForm(prevName => ({ ...prevName, testName: e.target.value }));
+        }}
+        value={form.testName}
+      />
+      <Input
+        name="notes"
+        placeholder="notes"
+        onChange={e => {
+          e.persist();
+          setForm(prevName => ({ ...prevName, content: e.target.value }));
+        }}
+        value={form.content}
+      /> */}
+      <Button style={{ fontWeight:"bold",  fontSize:"15px", fontFamily: '"PT Sans", sans-serif', width:"100%"}}  onClick={submit}>{edit ? 'save' : 'submit'}</Button>
+    </Form>
+    </div>
+  );
+};
 
-  export default PatientForm;
+export default PatientForm;

@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom'
 import styled from 'styled-components';
 import { UserContext } from '../context/userContext';
 import PatientForm from '../components/forms/PatientForm';
+import { Button } from '@mui/material';
+import './Login.css';
 
 const Input = styled.input`
   padding: 4px 8px;
@@ -34,16 +36,7 @@ const Form = styled.form`
     }
 `;
 
-const Button = styled.button`
-  color: white;
-  background: blue;
-  font-weight: bold;
-  box-shadow: none;
-  border: none;
-  width: 100%;
-  display: block;
-  white-space: none;
-`;
+
 
 const Login = () => {
   const {userInfo, setUserInfo} = useContext(UserContext)
@@ -75,21 +68,32 @@ const Login = () => {
     }
   };
   return (
+    <div className='Login'>
+         <h1 className='Title-Login'>Login</h1>
     <Form>
+      <div className='Form'>
+      <div className='TextBoxForm'>
       <Input
         name="email"
-        placeholder="email"
+        placeholder="Email"
         onChange={e => setEmail(e.target.value)}
         value={email}
       />
+      </div>
+      <div className='TextBoxForm'>
       <Input
         name="password"
-        placeholder="password"
+        placeholder="Password"
         onChange={e => setPassword(e.target.value)}
         value={password}
       />
-      <Button onClick={register}>Login</Button>
+      </div>
+      <div className='Button'>
+      <Button style={{ fontWeight:"bold",  fontSize:"15px", fontFamily: '"PT Sans", sans-serif', minWidth:"100%"}} variant="contained" onClick={register}>Login</Button>
+      </div>
+      </div>
     </Form>
+    </div>
   );
 };
 

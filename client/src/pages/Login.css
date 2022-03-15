@@ -1,0 +1,31 @@
+.Login{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+.Title-Login{
+    font-family: "PT Sans", sans-serif;
+    font-size: 60px;
+    color: aliceblue;
+    margin-bottom: 5%;
+    font-weight: bold;
+}
+
+.Form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.Button{
+margin-top: 2%;
+min-width: 300px;
+}
+
+.TextBoxForm{
+    margin-top: 2%;
+    width: 100%;
+}

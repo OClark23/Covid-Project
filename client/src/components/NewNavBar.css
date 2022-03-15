@@ -1,0 +1,21 @@
+.text{
+    font-family: "PT Sans", sans-serif;
+}
+
+.header-nav{
+    width: 100%;
+    background-size: auto 180px;
+    transform: rotate(180deg);
+    display: flex;
+    flex-direction: column;
+
+  }
+
+
+
+  .wave-overlap3 {
+    margin-top: -120px;
+  }
+  .wave-overlap4 {
+    margin-top: -150px;
+  }

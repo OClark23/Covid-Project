@@ -5,19 +5,19 @@ const Item = new Schema(
     {
         name: {
             type: String,
-            required: true
+            required: false
         },
         gender: {
             type: String,
-            required: true
+            required: false
         },
         age: {
             type: Number,
-            required: true
+            required: false
         },
         zip: {
             type: String,
-            required: true
+            required: false
         },
 
         daysOfWeek: {
@@ -35,22 +35,22 @@ const Item = new Schema(
         },
         covid : {
 type: String,
-require: true
+require: false
         },
         testName : {
             type: String,
-            require: true
+            require: false
                     },
         content: {
             type: String,
-            required: true
+            required: false
         },
         // savedBy: {
         //     type: Schema.ObjectId,
         //     required: true
         // }
     },
-    { timestamps: true },
+    { timestamps: false },
 );
 
 module.exports = mongoose.model('item', Item);

@@ -1,0 +1,21 @@
+.Table{
+ width: 100%;
+}
+
+.Table-Container{
+    background-color: white;
+    border-radius: 30px 30px 30px 30px;
+    max-width: 90%;
+    min-height: 600px;
+    margin-left: 5%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+   margin-top: 5%;
+}
+
+
+.svg-title{
+    margin-bottom: 5%;
+    margin-top: 5%;
+}

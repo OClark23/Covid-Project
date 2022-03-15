@@ -9,7 +9,7 @@ import { Button } from '@material-ui/core';
 import styled from 'styled-components';
 
 import { ItemsList, ItemsPlain, ItemsTable } from '../pages';
-
+import './Items.css';
 const LinksGridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(10, 1fr [col-start]);
@@ -33,19 +33,19 @@ const linkTextColor = linkPathname => {
 const itemsPageVariants = [
   {
     //name: 'Items',
-    name: 'EXAMS',
+    name: 'Exam Default View',
     toPathname: routes.ITEMS,
     pageComonent: ItemsList,
   },
   {
     //name: 'Items (using react-table-v6)',
-    name: 'EXAMS (TABLE VIEW)',
+    name: 'Exams Table View',
     toPathname: `${routes.ITEMS}/react-table-v6`,
     pageComponent: ItemsTable,
   },
   {
   //  name: 'Items (with only styled-components)',
-    name: 'EXAMS (LIST)',
+    name: 'Exams Image View',
     toPathname: `${routes.ITEMS}/items-plain`,
     pageComponent: ItemsPlain,
   },
@@ -63,13 +63,19 @@ class Items extends Component {
     );
 
     return (
-      <>
+      <div className='page-buttons'>
         <LinksGridContainer>
           {itemsPageVariants.map((itemsPageVariant, i) => (
             <LinkGridWrapper
               key={itemsPageVariant.name}
               style={{ gridColumn: `${(i + 2) * 2 - 1} / span 2` }}>
-              <Button className="bg-dark" variant="contained">
+              <Button  style={{
+        fontSize: '15px',
+        fontFamily: '"PT Sans", sans-serif',
+        backgroundColor: "#6461EF",
+        fontWeight:"bold"
+      
+    }}  variant="contained">
                 <Link
                   style={{ color: linkTextColor(itemsPageVariant.toPathname) }}
                   to={itemsPageVariant.toPathname}>
@@ -80,7 +86,7 @@ class Items extends Component {
           ))}
         </LinksGridContainer>
         {itemsPages}
-      </>
+      </div>
     );
   }
 }
