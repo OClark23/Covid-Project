@@ -8,7 +8,7 @@ getPatients = async (req, res) => {
   await Patient.aggregate([{$lookup: {
     from: 'patient-images',
     localField: 'PATIENT_ID',
-    foreignField: 'PATIENT_ID',
+    foreignField: 'patient_Id',
     as: 'PATIENT_IMAGES'
   }}], (err, items) => {
     if (err) {

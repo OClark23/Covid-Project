@@ -1,0 +1,107 @@
+.ItemPage{
+    
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    }
+
+
+
+.ItemContainer{
+    margin-top: 10%;
+    display:flex;
+    align-items:center;
+    flex-direction: row; 
+    border-collapse: separate;
+    justify-content: space-evenly;
+}
+
+
+.ItemPatient{
+    margin-left: 20px;
+    background-color:#F5F5F5;
+    border: solid grey;
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    min-height: 300px;
+    border-radius: 10px 10px 10px 10px;
+    align-items: left;
+    padding-left: 30px;
+}
+
+.ItemExam{
+    position: relative;
+    background-color:#F5F5F5;
+    border: solid grey;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 20px;
+    min-width: 320px;
+    min-height: 300px;
+    align-items: left;
+    padding-left: 30px;
+    }
+
+.ItemText{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1%; 
+}
+
+/*text size*/
+h1{
+    font-size: 18px;
+     padding-right: 5px;
+}
+
+.title{
+    font-size:40px;
+}
+
+.card-title{
+    margin-top: 15%;
+    font-size: 30px;
+    text-align: left;
+    font-weight: 500;
+}
+
+img{
+    width:300px;
+    height: 300px;
+    align-items: right;
+    padding-left: 30px;
+}
+
+.previewExam img{
+    margin-top: 20px;
+    width:100px;
+    height:100px;
+    margin-right: 60px;
+
+}
+
+.examLink{
+    margin-right:35px;
+    margin-top: 20px;
+}
+
+.examLink:hover{
+    color: blue;
+    font-weight: bold;
+}
+
+.card-title{
+    display:grid;
+    align-items: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 50px 1fr; /*look this up*/
+}
+
+@media screen and (max-width: 200px) {
+    .title{
+        color: red;
+    }
+  }
+  
